@@ -15,7 +15,7 @@ public class Usuario extends EntidadBase
 
     @Column( name = "apellido" )
     private String _apellido;
-
+  
     @Column( name = "correoelectronico" )
     private String _correoelectronico;
 
