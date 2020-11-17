@@ -16,8 +16,8 @@ public class pruebaORMWS_Test
         ucab.dsw.servicio.pruebaORMWS servicio = new ucab.dsw.servicio.pruebaORMWS();
         UsuarioDto usuarioDto = new UsuarioDto();
         usuarioDto.setNombre( "Cristiano" );
-        usuarioDto.setApellido( "Messi" );
-        usuarioDto.setCorreoelectronico( "lapulga@gmail.com" );
+        usuarioDto.setApellido( "Ronaldo" );
+        usuarioDto.setCorreoelectronico( "elbicho@gmail.com" );
         usuarioDto.setEstatus( "A" );
         TipoUsuarioDto tipoUsuario = new TipoUsuarioDto( 5);
         usuarioDto.setTipoUsuarioDto( tipoUsuario );
