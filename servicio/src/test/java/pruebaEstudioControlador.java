@@ -15,8 +15,9 @@ public class pruebaEstudioControlador {
         ucab.dsw.servicio.EstudioControlador servicio = new ucab.dsw.servicio.EstudioControlador();
         EstudioDto estudioDto = new EstudioDto();
         estudioDto.setEstatus("A");
+        //Arreglar formato de fecha 
         estudioDto.setFechaCreacion( new Date());
-        UsuarioDto usuarioDto = new UsuarioDto(8);
+        UsuarioDto usuarioDto = new UsuarioDto(11);
         estudioDto.setUsuario( usuarioDto);
         // Agregar solicitud cuando se unan las ramas
         SolicitudDto solicitudDto = new SolicitudDto(2);
