@@ -10,7 +10,7 @@ public class pruebaDirectorioActivo
     {
         UsuarioDto user = new UsuarioDto();
         user.setCorreoelectronico( "bismarckpm2@gmail.com" );
-        user.setContrasena( "PruebaLDAP1234" );
+
         DirectorioActivo ldap = new DirectorioActivo();
         ldap.addEntryToLdap( user );
     }
@@ -38,7 +38,7 @@ public class pruebaDirectorioActivo
     {
         UsuarioDto user = new UsuarioDto();
         user.setCorreoelectronico( "bismarckpmpruebaLDAP@gmail.com" );
-        user.setContrasena( "MARIAPEPE" );
+
         DirectorioActivo ldap = new DirectorioActivo();
         ldap.changePassword( user );
     }
@@ -48,7 +48,7 @@ public class pruebaDirectorioActivo
     {
         UsuarioDto user = new UsuarioDto();
         user.setCorreoelectronico( "bismarckpmpruebaLDAP@gmail.com" );
-        user.setContrasena( "MARIAPEPE" );
+
         DirectorioActivo ldap = new DirectorioActivo();
         ldap.userAuthentication( user );
     }
