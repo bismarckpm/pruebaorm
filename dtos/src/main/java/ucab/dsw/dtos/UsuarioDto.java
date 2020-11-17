@@ -1,8 +1,23 @@
 package ucab.dsw.dtos;
 
+import java.util.List;
+
 public class UsuarioDto extends DtoBase
 {
     private String nombre;
+    private String apellido;
+    private String correoelectronico;
+    private TipoUsuarioDto tipoUsuarioDto;
+    private List<EstudioDto> estudios;
+    private String contrasena;
+    private String estatus;
+
+    public UsuarioDto(long id) throws Exception {
+        super(id);
+    }
+
+    public UsuarioDto() {
+    }
 
     public String getNombre()
     {
@@ -44,10 +59,6 @@ public class UsuarioDto extends DtoBase
         this.tipoUsuarioDto = tipoUsuarioDto;
     }
 
-    private String apellido;
-    private String correoelectronico;
-    private TipoUsuarioDto tipoUsuarioDto;
-
     public String getContrasena()
     {
         return contrasena;
@@ -57,8 +68,6 @@ public class UsuarioDto extends DtoBase
     {
         this.contrasena = contrasena;
     }
-
-    private String contrasena;
 
     public String getEstatus()
     {
@@ -70,5 +79,11 @@ public class UsuarioDto extends DtoBase
         this.estatus = estatus;
     }
 
-    private String estatus;
+    public List<EstudioDto> getEstudios() {
+        return estudios;
+    }
+
+    public void setEstudios(List<EstudioDto> estudios) {
+        this.estudios = estudios;
+    }
 }
