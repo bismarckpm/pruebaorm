@@ -48,6 +48,7 @@ public class pruebaORMWS extends AplicacionBase
 
     @GET
     @Path( "/consulta" )
+    @Produces(value = MediaType.TEXT_PLAIN)
     public String consulta()
     {
         return "Epa";
