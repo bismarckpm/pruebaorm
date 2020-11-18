@@ -16,6 +16,9 @@ public class EntidadBase implements Serializable
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private long _id;
 
+    public void set_id(long _id) {
+        this._id = _id;
+    }
 
     @Column( name = "estatus" )
     private String _estatus;
