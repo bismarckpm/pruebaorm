@@ -10,8 +10,7 @@ import java.util.List;
 
 @Entity
 @Table( name = "tipousuario" )
-public class TipoUsuario extends EntidadBase
-{
+public class TipoUsuario extends EntidadBase {
     public String get_descripcion()
     {
         return _descripcion;
