@@ -7,6 +7,7 @@ import java.util.Date;
 @Table( name = "estudio" )
 public class Estudio extends EntidadBase {
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column( name = "fechacreacion")
     private Date _fechaCreacion;
 

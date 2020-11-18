@@ -14,7 +14,7 @@ public class pruebaEstudioControlador {
     {
         ucab.dsw.servicio.EstudioControlador servicio = new ucab.dsw.servicio.EstudioControlador();
         EstudioDto estudioDto = new EstudioDto();
-        estudioDto.setEstatus("A");
+        estudioDto.setEstatus("C");
         //Arreglar formato de fecha 
         estudioDto.setFechaCreacion( new Date());
         UsuarioDto usuarioDto = new UsuarioDto(11);
