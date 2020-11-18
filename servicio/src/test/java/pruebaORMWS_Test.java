@@ -15,10 +15,10 @@ public class pruebaORMWS_Test
 {
     ucab.dsw.servicio.pruebaORMWS servicio = new ucab.dsw.servicio.pruebaORMWS();
     UsuarioDto usuarioDto = new UsuarioDto();
-    usuarioDto.setNombre( "Bismarck" );
-    usuarioDto.setApellido( "Ponce" );
-    usuarioDto.setCorreoelectronico( "bismarckpm@gmail.com" );
-    usuarioDto.setEstatus( "A" );
+    usuarioDto.setNombre( "Jesus" );
+    usuarioDto.setApellido( "Gomez" );
+    usuarioDto.setCorreoelectronico( "JGomez@gmail.com" );
+    usuarioDto.setEstatus( "B" );
     TipoUsuarioDto tipoUsuario = new TipoUsuarioDto( 1);
     usuarioDto.setTipoUsuarioDto( tipoUsuario );
     UsuarioDto resultado = servicio.addUser( usuarioDto );
