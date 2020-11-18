@@ -14,6 +14,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import ucab.dsw.accesodatos.DaoOpcion;
+import ucab.dsw.dtos.OpcionDto;
+import ucab.dsw.entidades.Opcion;
 
 
 @Path( "/prueba" )
@@ -44,6 +47,26 @@ public class pruebaORMWS extends AplicacionBase
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+    
+    @PUT
+    @Path("/addpregunta")
+    public OpcionDto addOpcion (OpcionDto opcionDto){
+        OpcionDto resultado = new OpcionDto();
+        
+        try {
+            DaoOpcion dao = new DaoOpcion();
+            Opcion opcion = new Opcion();
+            opcion.setDescripcion(opcionDto.getDescripcion());
+            opcion.set_estatus(opcionDto.getEstatus());
+//            Pregunta pregunta = new Pregunta(opcionDto.getPreguntaDto().getId());
+//            opcion.setIdPregunta(pregunta);
+            Opcion resul = dao.insert(opcion);
+            resultado.setId(resul.get_id());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return resultado;
     }
 
     @GET
