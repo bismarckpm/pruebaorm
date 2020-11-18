@@ -1,7 +1,9 @@
 package ucab.dsw.entidades;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "pregunta")
@@ -28,6 +30,9 @@ public class Pregunta extends EntidadBase {
     @ManyToOne
     @JoinColumn( name = "idTipoPregunta" )
     private TipoPregunta _tipoPregunta;
+
+    @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Opcion> _opciones = new ArrayList<>();
 
     public Pregunta(long id) {
         super(id);
@@ -85,4 +90,6 @@ public class Pregunta extends EntidadBase {
     public void set_tipoPregunta(TipoPregunta _tipoPregunta) {
         this._tipoPregunta = _tipoPregunta;
     }
+
+
 }
