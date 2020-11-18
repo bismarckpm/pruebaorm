@@ -13,7 +13,9 @@ public class Encuesta extends  EntidadBase{
     private Date _fechacreacion;
 
     public Date get_fechacreacion() {return _fechacreacion;}
-    public void set_fechacreacion() {this._fechacreacion = _fechacreacion;}
+    public void set_fechacreacion(Date _fechacreacion) {
+        this._fechacreacion = _fechacreacion;
+    }
 
     @Column(name = "estatus")
     private String _estatus;
@@ -33,13 +35,34 @@ public class Encuesta extends  EntidadBase{
     @JoinColumn(name="idUsuario_Creador")
     private Usuario _usuariocreador;
 
+    public Usuario get_usuariocreador() {
+        return _usuariocreador;
+    }
+    public void set_usuariocreador(Usuario _usuariocreador) {
+        this._usuariocreador = _usuariocreador;
+    }
+
     @ManyToOne
     @JoinColumn(name="idUsuario_Analista")
     private Usuario _usuarioanalista;
 
+    public Usuario get_usuarioanalista() {
+        return _usuarioanalista;
+    }
+    public void set_usuarioanalista(Usuario _usuarioanalista) {
+        this._usuarioanalista = _usuarioanalista;
+    }
+
     @ManyToOne
     @JoinColumn(name = "idEstudio")
     private Estudio _estudio;
+
+    public Estudio get_estudio() {
+        return _estudio;
+    }
+    public void set_estudio(Estudio _estudio) {
+        this._estudio = _estudio;
+    }
 
     /* EjecucionEncuesta
     @OneToMany( mappedBy = "_encuesta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )

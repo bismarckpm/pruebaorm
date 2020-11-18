@@ -53,16 +53,34 @@ public class Pregunta extends EntidadBase {
     @JoinColumn( name = "idTipoPregunta" )
     private TipoPregunta _tipopregunta;
 
+    public TipoPregunta get_tipopregunta() {
+        return _tipopregunta;
+    }
+    public void set_tipopregunta(TipoPregunta _tipopregunta) {
+        this._tipopregunta = _tipopregunta;
+    }
 
     @ManyToOne
     @JoinColumn( name = "idSubCategoria")
     private Subcategoria _subcategoria;
 
+    public Subcategoria get_subcategoria() {
+        return _subcategoria;
+    }
+    public void set_subcategoria(Subcategoria _subcategoria) {
+        this._subcategoria = _subcategoria;
+    }
 
     @ManyToOne
     @JoinColumn( name = "idUsuario")
     private Usuario _usuario;
 
+    public Usuario get_usuario() {
+        return _usuario;
+    }
+    public void set_usuario(Usuario _usuario) {
+        this._usuario = _usuario;
+    }
 
     /* Con Opcion
     @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
