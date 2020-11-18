@@ -7,7 +7,7 @@
 
 | serverTimezone  | useTimezone  | useSSL  | password  | databaseName  | serverName |        datasourceName       | user | portNumber |
 |-----------------|--------------|---------|-----------|---------------|------------|-----------------------------|------|------------|
-|      UTC        |      true    |  false  |   root    |     test      |  localhost | com.cj.jdbc.MysqlDataSource | root |   3306     |
+|      UTC        |      true    |  false  |   root    |     mydb      |  localhost | com.cj.jdbc.MysqlDataSource | root |   3306     |
 
 6. Click en JDBC -> JDBC Resources -> New
 7. Nombrar el recurso `jdbc/TallerDb` y seleccionar el pool `TallerPool`
