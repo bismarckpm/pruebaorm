@@ -86,12 +86,23 @@ public class Usuario extends EntidadBase
     @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<Estudio> _estudios = new ArrayList<>();
 
+    @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Pregunta> _preguntas;
+
     public List<Estudio> get_estudios() {
         return _estudios;
     }
 
     public void set_estudios(List<Estudio> _estudios) {
         this._estudios = _estudios;
+    }
+
+    public List<Pregunta> get_preguntas() {
+        return _preguntas;
+    }
+
+    public void set_preguntas(List<Pregunta> _preguntas) {
+        this._preguntas = _preguntas;
     }
 
     public Usuario(long id )

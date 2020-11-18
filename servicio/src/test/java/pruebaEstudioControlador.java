@@ -12,7 +12,7 @@ public class pruebaEstudioControlador {
     @Test
     public void obtenerEstudioPrueba() throws Exception{
         ucab.dsw.servicio.EstudioControlador servicio = new ucab.dsw.servicio.EstudioControlador();
-        EstudioDto resultado = servicio.obtenerEstudio((long) 6);
+        EstudioDto resultado = servicio.obtenerEstudio( (long) 6);
         Assert.assertEquals( resultado.getId(), 6);
     }
 
@@ -51,7 +51,7 @@ public class pruebaEstudioControlador {
     @Test
     public void borrarEstudioPrueba() throws Exception{
         ucab.dsw.servicio.EstudioControlador servicio = new ucab.dsw.servicio.EstudioControlador();
-        EstudioDto resultado = servicio.borrarEstudio((long) 5);
-        Assert.assertEquals( resultado.getId(), 5);
+        EstudioDto resultado = servicio.borrarEstudio((long) 12);
+        Assert.assertEquals( resultado.getId(), 12);
     }
 }

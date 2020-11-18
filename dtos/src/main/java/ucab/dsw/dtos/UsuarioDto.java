@@ -9,6 +9,7 @@ public class UsuarioDto extends DtoBase
     private String correoelectronico;
     private TipoUsuarioDto tipoUsuarioDto;
     private List<EstudioDto> estudios;
+    private List<PreguntaDto> preguntas;
     private String contrasena;
     private String estatus;
 
