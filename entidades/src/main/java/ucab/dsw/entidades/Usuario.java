@@ -82,7 +82,6 @@ public class Usuario extends EntidadBase
     @JoinColumn( name = "idTipoUsuario" )
     private TipoUsuario _tipousuario;
 
-
     public Usuario( long id )
     {
         super( id );
