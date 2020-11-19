@@ -19,4 +19,20 @@ public class Categoria extends EntidadBase {
 
     public Categoria() {
     }
+
+    public String get_descripcion() {
+        return _descripcion;
+    }
+
+    public void set_descripcion(String _descripcion) {
+        this._descripcion = _descripcion;
+    }
+
+    public List<Subcategoria> get_subcategorias() {
+        return _subcategorias;
+    }
+
+    public void set_subcategorias(List<Subcategoria> _subcategorias) {
+        this._subcategorias = _subcategorias;
+    }
 }
