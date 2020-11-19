@@ -21,7 +21,9 @@ public class pruebaORMWS_Test
         usuarioDto.setEstatus( "A" );
         TipoUsuarioDto tipoUsuario = new TipoUsuarioDto( 1);
         usuarioDto.setTipoUsuarioDto( tipoUsuario );
+        System.out.println(usuarioDto);
         UsuarioDto resultado = servicio.addUser( usuarioDto );
+        System.out.println(resultado);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 

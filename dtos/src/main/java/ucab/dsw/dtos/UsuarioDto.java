@@ -71,4 +71,16 @@ public class UsuarioDto extends DtoBase
     }
 
     private String estatus;
+
+    @Override
+    public String toString() {
+        return "UsuarioDto{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", correoelectronico='" + correoelectronico + '\'' +
+                ", tipoUsuarioDto=" + tipoUsuarioDto +
+                ", contrasena='" + contrasena + '\'' +
+                ", estatus='" + estatus + '\'' +
+                '}';
+    }
 }

@@ -21,7 +21,7 @@ import javax.ws.rs.core.MediaType;
 @Consumes( MediaType.APPLICATION_JSON )
 public class pruebaORMWS extends AplicacionBase
 {
-    @PUT
+    @POST
     @Path( "/adduser" )
     public UsuarioDto addUser( UsuarioDto usuarioDto )
     {
@@ -43,7 +43,7 @@ public class pruebaORMWS extends AplicacionBase
         {
             String problema = ex.getMessage();
         }
-        return  resultado;
+        return resultado;
     }
 
     @GET

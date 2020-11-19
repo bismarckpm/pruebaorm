@@ -92,4 +92,15 @@ public class Usuario extends EntidadBase
     {
 
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "_nombre='" + _nombre + '\'' +
+                ", _apellido='" + _apellido + '\'' +
+                ", _correoelectronico='" + _correoelectronico + '\'' +
+                ", _estatus='" + _estatus + '\'' +
+                ", _tipousuario=" + _tipousuario +
+                '}';
+    }
 }
