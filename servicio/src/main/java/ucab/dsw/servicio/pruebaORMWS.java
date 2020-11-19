@@ -36,8 +36,8 @@ public class pruebaORMWS extends AplicacionBase
             usuario.set_correoelectronico( usuarioDto.getCorreoelectronico() );
             TipoUsuario tipoUsuario = new TipoUsuario(usuarioDto.getTipoUsuarioDto().getId());
             usuario.set_tipousuario( tipoUsuario );
-            Usuario resul = dao.insert( usuario );
-            resultado.setId( resul.get_id() );
+            Usuario result = dao.insert( usuario );
+            resultado.setId( result.get_id() );
         }
         catch ( Exception ex )
         {

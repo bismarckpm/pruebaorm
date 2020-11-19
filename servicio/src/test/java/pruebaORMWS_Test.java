@@ -24,6 +24,4 @@ public class pruebaORMWS_Test
         UsuarioDto resultado = servicio.addUser( usuarioDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
-
-
 }

@@ -1,3 +1,9 @@
-ucab\dsw\entidades\EntidadBase.class
 ucab\dsw\entidades\Usuario.class
+ucab\dsw\entidades\SubCategoria.class
 ucab\dsw\entidades\TipoUsuario.class
+ucab\dsw\entidades\EntidadBase.class
+ucab\dsw\entidades\Solicitud.class
+ucab\dsw\entidades\enums\EstadoEnum.class
+ucab\dsw\entidades\ComposedKeys\SolicitudId.class
+ucab\dsw\entidades\ComposedKeys\SubCategoriaId.class
+ucab\dsw\entidades\TipoPregunta.class
