@@ -3,34 +3,62 @@ package ucab.dsw.entidades;
 import javax.persistence.*;
 
 @Entity
-@Table( name = "subcategoria" )
-public class SubCategoria extends EntidadBase {
-
+@Table( name = "subCategoria" )
+public class SubCategoria extends EntidadBase{
 
     @Column( name = "descripcion" )
-    private String descripcion;
+    private String _descripcion;
 
-    @Column(  name = "estatus" ,columnDefinition = "CHECK (estatus IN ('I','A'))")
-    private String estatus;
+    public String get_descripcion()
+    {
+        return _descripcion;
+    }
+
+    public void set_descripcion( String _descripcion )
+    {
+        this._descripcion = _descripcion;
+    }
+
+    @Column( name = "estatus" )
+    private String _estatus;
+
+    @Override
+    public String get_estatus()
+    {
+        return _estatus;
+    }
+
+    @Override
+    public void set_estatus( String _estatus )
+    {
+        this._estatus = _estatus;
+    }
+
+
+
+    public Categoria get_categoria()
+    {
+        return _categoria;
+    }
+
+    public void set_categoria( Categoria _categoria )
+    {
+        this._categoria = _categoria;
+    }
 
     @ManyToOne
     @JoinColumn( name = "idCategoria" )
-    private Categoria _idCategoria;
+    private Categoria _categoria;
 
-
-    public Categoria get_idCategoria() { return _idCategoria; }
-
-    public void set_idCategoria(Categoria _idCategoria) { this._idCategoria = _idCategoria; }
-
-    public String getDescripcion() {
-        return descripcion;
+    public SubCategoria( long id )
+    {
+        super( id );
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public SubCategoria( )
+    {
+
     }
 
-    public String getEstatus() { return estatus;}
 
-    public void setEstatus(String estatus) { this.estatus = estatus;}
 }

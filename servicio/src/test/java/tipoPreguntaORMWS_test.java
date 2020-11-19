@@ -15,8 +15,7 @@ public class tipoPreguntaORMWS_test {
 
         TipoPreguntaDto resultado = servicio.add( tipoPreguntaDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
-    }*/
-/*
+
     @Test
     public void deleteUserTest() throws Exception{
         ucab.dsw.servicio.UsuarioORMWS servicio = new ucab.dsw.servicio.UsuarioORMWS();

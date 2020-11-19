@@ -28,4 +28,14 @@ public class TipoPregunta extends EntidadBase {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public TipoPregunta( long id )
+    {
+        super( id );
+    }
+
+    public TipoPregunta( )
+    {
+
+    }
 }

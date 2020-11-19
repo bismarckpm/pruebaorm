@@ -2,49 +2,60 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import ucab.dsw.dtos.CategoriaDto;
 import ucab.dsw.dtos.EstudioDto;
-import ucab.dsw.entidades.Categoria;
+import ucab.dsw.dtos.EstudioDto;
+import ucab.dsw.dtos.UsuarioDto;
+import ucab.dsw.entidades.Estudio;
 import ucab.dsw.entidades.Estudio;
 import java.util.List;
 
 public class EstudioORMWS_Test {
 
     @Test
-    public void addCategoriaTest() throws Exception {
-        ucab.dsw.servicio.categoriaORMWS servicio = new ucab.dsw.servicio.categoriaORMWS();
-        CategoriaDto categoriaDto = new CategoriaDto();
-        categoriaDto.setDescripcion( "Categoria1" );
-        categoriaDto.setEstatus( "A" );
-        CategoriaDto resultado = servicio.addCategoria( categoriaDto );
+    public void addEstudioTest() throws Exception {
+        ucab.dsw.servicio.estudioORMWS servicio = new ucab.dsw.servicio.estudioORMWS();
+        EstudioDto estudioDto = new EstudioDto();
+        java.util.Date fecha = new java.util.Date("21/11/2020");
+        estudioDto.setFechaCreacion(fecha);
+        estudioDto.setEstatus( "C" );
+        UsuarioDto usuario = new UsuarioDto( 1);
+        estudioDto.setUsuario( usuario );
+        SolicitudDto solicitud = new SolicitudDto( 1);
+        estudioDto.setSolicitud( solicitud );
+        EstudioDto resultado = servicio.addEstudio( estudioDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
     @Test
-    public void showCategoriaTest() throws Exception
+    public void showEstudioTest() throws Exception
     {
-        ucab.dsw.servicio.categoriaORMWS servicio = new ucab.dsw.servicio.categoriaORMWS();
-        List<Categoria> categorias = servicio.showCategoria();
-        Assert.assertFalse("Consulta Realizada con Exito",categorias.isEmpty());
+        ucab.dsw.servicio.estudioORMWS servicio = new ucab.dsw.servicio.estudioORMWS();
+        List<Estudio> estudios = servicio.showEstudio();
+        Assert.assertFalse("Consulta Realizada con Exito",estudios.isEmpty());
     }
 
     @Test
-    public void updateCategoriaTest() throws Exception{
+    public void updateEstudioTest() throws Exception{
 
-        ucab.dsw.servicio.categoriaORMWS servicio = new ucab.dsw.servicio.categoriaORMWS();
-        CategoriaDto categoriaDto = new CategoriaDto(1);
-        categoriaDto.setDescripcion( "Categoria2" );
-        categoriaDto.setEstatus( "I" );
-        CategoriaDto resultado = servicio.editCategoria (categoriaDto);
+        ucab.dsw.servicio.estudioORMWS servicio = new ucab.dsw.servicio.estudioORMWS();
+        EstudioDto estudioDto = new EstudioDto(1);
+        java.util.Date fecha = new java.util.Date("22/11/2020");
+        estudioDto.setFechaCreacion(fecha);
+        estudioDto.setEstatus( "E" );
+        UsuarioDto usuario = new UsuarioDto( 1);
+        estudioDto.setUsuario( usuario );
+        SolicitudDto solicitud = new SolicitudDto( 1);
+        estudioDto.setSolicitud( solicitud );
+        EstudioDto resultado = servicio.editEstudio (estudioDto);
         Assert.assertNotEquals( resultado.getId(), 0);
     }
 
     @Test
-    public void deleteCategoriaTest() throws Exception{
+    public void deleteEstudioTest() throws Exception{
 
-        ucab.dsw.servicio.categoriaORMWS servicio = new ucab.dsw.servicio.categoriaORMWS();
-        CategoriaDto categoriaDto = new CategoriaDto(1);
-        CategoriaDto resultado = servicio.deleteCategoria(categoriaDto);
+        ucab.dsw.servicio.estudioORMWS servicio = new ucab.dsw.servicio.estudioORMWS();
+        EstudioDto estudioDto = new EstudioDto(1);
+        EstudioDto resultado = servicio.deleteEstudio(estudioDto);
         Assert.assertNotEquals( resultado.getId(), 0 );
 
     }

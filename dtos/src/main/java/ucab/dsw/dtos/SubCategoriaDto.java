@@ -38,4 +38,13 @@ public class SubCategoriaDto extends DtoBase{
     public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
+
+    public SubCategoriaDto()
+    {
+    }
+
+    public SubCategoriaDto( long id ) throws Exception
+    {
+        super( id );
+    }
 }

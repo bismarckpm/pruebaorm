@@ -50,17 +50,23 @@ public class encuestaORMWS {
     @Path("/buscar")
     public List<Encuesta> showEncuesta()
     {
-        List<Encuesta> categorias = null;
+        List<Encuesta> encuestas = null;
         try {
             DaoEncuesta dao = new DaoEncuesta();
-            categorias = dao.findAll(Encuesta.class);
+            encuestas = dao.findAll(Encuesta.class);
             System.out.println("Encuestas: ");
-            for(Encuesta encuesta : categorias) {
+            for(Encuesta encuesta : encuestas) {
                 System.out.print(encuesta.get_id());
                 System.out.print(", ");
-                System.out.print(encuesta.get_descripcion());
+                System.out.print(encuesta.get_fechaCreacion());
                 System.out.print(", ");
                 System.out.print(encuesta.get_estatus());
+                System.out.print(", ");
+                System.out.print(encuesta.get_usuariocreador());
+                System.out.print(", ");
+                System.out.print(encuesta.get_usuarioanalista());
+                System.out.print(", ");
+                System.out.print(encuesta.get_estudio());
                 System.out.println();
             }
         }
@@ -68,7 +74,7 @@ public class encuestaORMWS {
         {
             String problema = ex.getMessage();
         }
-        return categorias;
+        return encuestas;
     }
 
 
@@ -80,9 +86,15 @@ public class encuestaORMWS {
         try
         {
             DaoEncuesta dao = new DaoEncuesta();
-            Encuesta encuesta = new Encuesta(encuestaDto.getId());
-            encuesta.set_descripcion( encuestaDto.getDescripcion());
-            encuesta.set_estatus (encuestaDto.getEstatus());
+            Encuesta encuesta = new Encuesta();
+            encuesta.set_fechaCreacion( encuestaDto.getFechaCreacion() );
+            encuesta.set_estatus( encuestaDto.getEstatus() );
+            Usuario usuarioCreador = new Usuario(encuestaDto.getUsuarioCreadorDto().getId());
+            encuesta.set_usuariocreador( usuarioCreador );
+            Usuario usuarioAnalista = new Usuario(encuestaDto.getUsuarioAnalistaDto().getId());
+            encuesta.set_usuarioanalista( usuarioAnalista );
+            Estudio estudio = new Estudio(encuestaDto.getEstudioDto().getId());
+            encuesta.set_estudio( estudio );
             Encuesta resul = dao.update (encuesta );
             resultado.setId(resul.get_id());
 
