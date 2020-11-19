@@ -55,7 +55,8 @@ public class CategoriaController extends AplicacionBase{
         try{
             DaoCategoria dao = new DaoCategoria();
             Categoria categoria = dao.find(categoriaDto.getId(), Categoria.class);
-            Categoria resul = dao.delete( categoria );
+            categoria.set_estatus(categoriaDto.getStatus());
+            Categoria resul = dao.update( categoria );
             resultado.setId( resul.get_id());
         }catch (Exception e){
             String problema = e.getMessage();

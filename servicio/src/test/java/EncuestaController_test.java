@@ -46,6 +46,14 @@ public class EncuestaController_test {
         EncuestaDto resultado = servicio.obtenerEncuesta( encuestaDto );
         Assert.assertEquals( resultado.getId(), 3 );
     }
+    @Test
+    public void deleteEncuestaTest() throws Exception {
+        EncuestaController servicio = new EncuestaController();
+        EncuestaDto encuestaDto = new EncuestaDto(3);
+        encuestaDto.setStatus("E");
+        EncuestaDto resultado = servicio.deleteEncuesta( encuestaDto );
+        Assert.assertEquals( resultado.getId(), 3 );
+    }
 
 
 }

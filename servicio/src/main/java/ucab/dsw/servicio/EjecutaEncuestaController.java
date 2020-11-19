@@ -2,8 +2,10 @@ package ucab.dsw.servicio;
 
 import ucab.dsw.accesodatos.DaoCategoria;
 import ucab.dsw.accesodatos.DaoEjecutaEncuesta;
+import ucab.dsw.accesodatos.DaoEncuesta;
 import ucab.dsw.dtos.CategoriaDto;
 import ucab.dsw.dtos.EjecutaEncuestaDto;
+import ucab.dsw.dtos.EncuestaDto;
 import ucab.dsw.entidades.*;
 
 import javax.ws.rs.*;
@@ -86,6 +88,22 @@ public class EjecutaEncuestaController extends AplicacionBase{
             String problema = e.getMessage();
         }
 
+        return resultado;
+    }
+
+    @PUT
+    @Path("/deleteEncuesta")
+    public EjecutaEncuestaDto deleteEjecutaEncuesta(EjecutaEncuestaDto ejecutaEncuestaDto){
+        EjecutaEncuestaDto resultado = new EjecutaEncuestaDto();
+        try{
+            DaoEjecutaEncuesta dao = new DaoEjecutaEncuesta();
+            EjecutaEncuesta ejecutaEncuesta = dao.find(ejecutaEncuestaDto.getId(), EjecutaEncuesta.class);
+            ejecutaEncuesta.set_estatus(ejecutaEncuestaDto.getEstatus());
+            EjecutaEncuesta resul = dao.update( ejecutaEncuesta );
+            resultado.setId( resul.get_id());
+        }catch (Exception e){
+            String problema = e.getMessage();
+        }
         return resultado;
     }
 }

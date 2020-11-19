@@ -26,7 +26,8 @@ public class CategoriaController_test {
     @Test
     public void deleteCategoriaTest() throws Exception {
         CategoriaController servicio = new CategoriaController();
-        CategoriaDto categoriaDto = new CategoriaDto(3);
+        CategoriaDto categoriaDto = new CategoriaDto(5);
+        categoriaDto.setStatus("I");
         CategoriaDto resultado = servicio.deleteCategoria( categoriaDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
     }

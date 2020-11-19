@@ -63,14 +63,15 @@ public class EncuestaController extends AplicacionBase{
         return resultado;
     }
 
-    @DELETE
+    @PUT
     @Path("/deleteEncuesta")
     public EncuestaDto deleteEncuesta(EncuestaDto encuestaDto){
         EncuestaDto resultado = new EncuestaDto();
         try{
             DaoEncuesta dao = new DaoEncuesta();
             Encuesta encuesta = dao.find(encuestaDto.getId(), Encuesta.class);
-            Encuesta resul = dao.delete( encuesta );
+            encuesta.set_estatus(encuestaDto.getStatus());
+            Encuesta resul = dao.update( encuesta );
             resultado.setId( resul.get_id());
         }catch (Exception e){
             String problema = e.getMessage();
