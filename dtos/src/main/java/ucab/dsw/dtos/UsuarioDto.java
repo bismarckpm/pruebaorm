@@ -4,6 +4,15 @@ public class UsuarioDto extends DtoBase
 {
     private String nombre;
 
+    public UsuarioDto(){}
+    public UsuarioDto(String nombre, String apellido, String correoelectronico, String estatus) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.correoelectronico = correoelectronico;
+        this.tipoUsuarioDto = tipoUsuarioDto;
+        this.estatus = estatus;
+    }
+
     public String getNombre()
     {
         return nombre;

@@ -1,20 +1,13 @@
 package ucab.dsw.dtos;
 
-public class TipoUsuarioDto extends DtoBase
-{
+public class TipoUsuarioDto extends DtoBase {
 
-
-    public TipoUsuarioDto()
-    {
-    }
-
-    public TipoUsuarioDto( long id ) throws Exception
-    {
-        super( id );
-    }
-
-
+    private String estatus;
     private String descripcion;
+
+    public TipoUsuarioDto() { }
+
+    public TipoUsuarioDto( long id ) throws Exception { super( id ); }
 
     public String getDescripcion()
     {
@@ -36,5 +29,5 @@ public class TipoUsuarioDto extends DtoBase
         this.estatus = estatus;
     }
 
-    private String estatus;
+
 }

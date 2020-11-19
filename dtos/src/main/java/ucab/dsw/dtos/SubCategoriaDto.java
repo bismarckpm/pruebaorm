@@ -1,26 +1,10 @@
-package ucab.dsw.entidades;
+package ucab.dsw.dtos;
 
-import javax.persistence.*;
-
-@Entity
-public class TipoPregunta {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class SubCategoriaDto extends DtoBase{
 
     private String descripcion;
 
-    @Column(columnDefinition = "CHECK (status IN ('I','A'))")
     private String status;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDescripcion() {
         return descripcion;
