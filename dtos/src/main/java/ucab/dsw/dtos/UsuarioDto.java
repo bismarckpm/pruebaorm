@@ -11,6 +11,7 @@ public class UsuarioDto extends DtoBase
     {
         super( id );
     }
+
     private String nombre;
 
     public String getNombre()
