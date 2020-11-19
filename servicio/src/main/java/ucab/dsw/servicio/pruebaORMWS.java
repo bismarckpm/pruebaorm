@@ -15,8 +15,11 @@ import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import ucab.dsw.accesodatos.DaoOpcion;
+import ucab.dsw.accesodatos.DaoTipoPregunta;
 import ucab.dsw.dtos.OpcionDto;
+import ucab.dsw.dtos.TipoPreguntaDto;
 import ucab.dsw.entidades.Opcion;
+import ucab.dsw.entidades.TipoPregunta;
 
 
 @Path( "/prueba" )
@@ -67,6 +70,27 @@ public class pruebaORMWS extends AplicacionBase
             System.out.println(e.getMessage());
         }
         return resultado;
+    }
+    
+    @PUT
+    @Path( "/addtipopregunta" )
+    public TipoPreguntaDto addTipoPregunta( TipoPreguntaDto tipopreguntaDto )
+    {
+        TipoPreguntaDto resultado = new TipoPreguntaDto();
+        try
+        {
+            DaoTipoPregunta dao = new DaoTipoPregunta();
+            TipoPregunta tipoPregunta = new TipoPregunta();
+            tipoPregunta.setDescripcion(tipopreguntaDto.getDescripcion());
+            tipoPregunta.set_estatus(tipopreguntaDto.getEstatus());
+            TipoPregunta resul = dao.insert(tipoPregunta);
+            resultado.setId(resul.get_id());
+        }
+        catch ( Exception ex )
+        {
+            String problema = ex.getMessage();
+        }
+        return  resultado;
     }
 
     @GET
