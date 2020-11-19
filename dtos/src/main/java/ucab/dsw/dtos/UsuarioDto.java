@@ -68,4 +68,12 @@ public class UsuarioDto extends DtoBase
     {
         this.estatus = estatus;
     }
+    public UsuarioDto()
+    {
+    }
+
+    public UsuarioDto( long id ) throws Exception
+    {
+        super( id );
+    }
 }

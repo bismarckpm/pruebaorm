@@ -68,4 +68,14 @@ public class Encuesta extends EntidadBase{
         this._estatus = _estatus;
     }
 
+    public Encuesta( long id )
+    {
+        super( id );
+    }
+
+    public Encuesta()
+    {
+
+    }
+
 }

@@ -1,0 +1,25 @@
+import org.junit.Assert;
+import org.junit.Test;
+import ucab.dsw.dtos.EncuestaDto;
+import ucab.dsw.dtos.EstudioDto;
+import ucab.dsw.dtos.UsuarioDto;
+import ucab.dsw.servicio.EncuestaController;
+
+public class EncuestaController_test {
+    @Test
+    public void addEncuestaTest() throws Exception
+    {
+        EncuestaController servicio = new EncuestaController();
+        EncuestaDto encuestaDto = new EncuestaDto();
+        encuestaDto.setStatus("C");
+        encuestaDto.setFechaCreacion(java.sql.Date.valueOf("2020-11-18"));
+        UsuarioDto usuarioDtoCreador = new UsuarioDto(8);
+        UsuarioDto usuarioDtoAnalista = new UsuarioDto(9);
+        encuestaDto.setIdUsuario_Creador(usuarioDtoCreador);
+        encuestaDto.setIdUsuario_Analista(usuarioDtoAnalista);
+        EstudioDto estudio = new EstudioDto(3);
+        encuestaDto.setIdEstudio(estudio);
+        EncuestaDto resultado = servicio.addEncuesta(encuestaDto);
+        Assert.assertNotEquals( resultado.getId(), 0  );
+    }
+}
