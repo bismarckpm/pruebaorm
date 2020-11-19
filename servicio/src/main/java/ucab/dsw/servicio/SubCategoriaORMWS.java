@@ -2,14 +2,14 @@ package ucab.dsw.servicio;
 
 import ucab.dsw.accesodatos.DaoSubCategoria;
 import ucab.dsw.accesodatos.DaoTipoPregunta;
+import ucab.dsw.accesodatos.DaoUsuario;
 import ucab.dsw.dtos.SubCategoriaDto;
+import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.entidades.Categoria;
 import ucab.dsw.entidades.SubCategoria;
+import ucab.dsw.entidades.Usuario;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path( "/sub-categoria" )
@@ -47,6 +47,54 @@ public class SubCategoriaORMWS {
         }
 
         return resultado;
+    }
+
+    @DELETE
+    @Path( "/delete" )
+    public SubCategoriaDto delete(long id ) {
+        SubCategoriaDto subCategoriaDto = new SubCategoriaDto();
+
+        try {
+            DaoSubCategoria dao = new DaoSubCategoria();
+
+            SubCategoria usuario = dao.find(id, SubCategoria.class);
+
+            dao.delete( usuario );
+
+            SubCategoria firstSubcategoria = dao.find(id, SubCategoria.class);
+
+            subCategoriaDto.setId(firstSubcategoria.get_id());
+
+            return subCategoriaDto;
+
+        }catch ( Exception ex ){
+
+            String problema = ex.getMessage();
+        }
+        return subCategoriaDto;
+    }
+
+    @GET
+    @Path( "/first-one/{id}" )
+    public SubCategoriaDto getFirstOne(long id ) {
+
+        SubCategoriaDto subCategoriaDto = new SubCategoriaDto();
+
+        try{
+            DaoSubCategoria dao = new DaoSubCategoria();
+
+            SubCategoria firstOneSubCategoria = dao.find( id, SubCategoria.class );
+            subCategoriaDto.setId(firstOneSubCategoria.get_id());
+
+            return subCategoriaDto;
+
+        }catch (Exception ex ){
+
+            String problema = ex.getMessage();
+
+        }
+
+        return subCategoriaDto;
     }
 
 
