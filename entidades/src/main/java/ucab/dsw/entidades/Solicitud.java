@@ -12,6 +12,7 @@ public class Solicitud extends EntidadBase {
     private String _nombre;
 
     @Column(name = "fecha")
+    @Temporal(TemporalType.DATE)
     private Date _fecha;
 
     @ManyToOne
