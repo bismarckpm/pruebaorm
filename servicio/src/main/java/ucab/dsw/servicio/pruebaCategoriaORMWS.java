@@ -44,7 +44,8 @@ public class pruebaCategoriaORMWS extends AplicacionBase {
         {
             DaoCategoria dao = new DaoCategoria();
             Categoria categoria = dao.find(_id,Categoria.class);
-            Categoria resul = dao.delete(categoria);
+            categoria.set_estatus("I");
+            Categoria resul = dao.update(categoria);
             resultado.setId( resul.get_id() );
         }
         catch ( Exception ex )

@@ -1,14 +1,7 @@
 package ucab.dsw.entidades;
 
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +10,7 @@ import java.util.List;
 public class Estudio extends EntidadBase {
 
     @Column(name = "fechacreacion")
+    @Temporal(TemporalType.DATE)
     private Date _fechacreacion;
 
     @ManyToOne
@@ -35,6 +29,38 @@ public class Estudio extends EntidadBase {
     }
 
     public Estudio() {
+    }
+
+    public Date get_fechacreacion() {
+        return _fechacreacion;
+    }
+
+    public void set_fechacreacion(Date _fechacreacion) {
+        this._fechacreacion = _fechacreacion;
+    }
+
+    public Usuario get_usuario() {
+        return _usuario;
+    }
+
+    public void set_usuario(Usuario _usuario) {
+        this._usuario = _usuario;
+    }
+
+    public Solicitud get_solicitud() {
+        return _solicitud;
+    }
+
+    public void set_solicitud(Solicitud _solicitud) {
+        this._solicitud = _solicitud;
+    }
+
+    public List<Encuesta> get_encuestas() {
+        return _encuestas;
+    }
+
+    public void set_encuestas(List<Encuesta> _encuestas) {
+        this._encuestas = _encuestas;
     }
 }
 

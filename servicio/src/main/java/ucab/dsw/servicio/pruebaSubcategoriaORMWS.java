@@ -46,7 +46,8 @@ public class pruebaSubcategoriaORMWS extends AplicacionBase {
         {
             DaoSubcategoria dao = new DaoSubcategoria();
             Subcategoria subcategoria = dao.find(_id,Subcategoria.class);
-            Subcategoria resul = dao.delete(subcategoria);
+            subcategoria.set_estatus("I");
+            Subcategoria resul = dao.update(subcategoria);
             resultado.setId( resul.get_id() );
         }
         catch ( Exception ex )

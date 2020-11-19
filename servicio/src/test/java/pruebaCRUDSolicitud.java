@@ -40,7 +40,7 @@ public class pruebaCRUDSolicitud {
     {
         SolicitudDto solicitudDto = new SolicitudDto();
         solicitudDto.setNombre("Solicitud B");
-        DateFormat  formato= new SimpleDateFormat("yyyy-mm-dd");
+        DateFormat  formato= new SimpleDateFormat("yyyy-MM-dd");
         solicitudDto.setFecha(formato.parse("2020-12-25"));
         solicitudDto.setEstatus("A");
 

@@ -51,7 +51,8 @@ public class pruebaSolicitudORMWS extends AplicacionBase{
         {
             DaoSolicitud dao = new DaoSolicitud();
             Solicitud solicitud = dao.find(_id,Solicitud.class);
-            Solicitud resul = dao.delete(solicitud);
+            solicitud.set_estatus("I");
+            Solicitud resul = dao.update(solicitud);
             resultado.setId( resul.get_id() );
         }
         catch ( Exception ex )
