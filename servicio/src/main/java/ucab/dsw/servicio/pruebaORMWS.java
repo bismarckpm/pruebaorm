@@ -1,6 +1,9 @@
 package ucab.dsw.servicio;
+import ucab.dsw.accesodatos.DaoCategoria;
 import ucab.dsw.accesodatos.DaoUsuario;
 import ucab.dsw.dtos.UsuarioDto;
+import ucab.dsw.dtos.categoriaDto;
+import ucab.dsw.entidades.Categoria;
 import ucab.dsw.entidades.TipoUsuario;
 import ucab.dsw.entidades.Usuario;
 
