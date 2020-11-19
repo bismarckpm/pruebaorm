@@ -25,7 +25,7 @@ public class prueba_categoria_Test
     public void changeCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.prueba_Categoria servicio = new ucab.dsw.servicio.prueba_Categoria();
-        categoriaDto  CategoriaDto= new categoriaDto( 1);
+        categoriaDto  CategoriaDto= new categoriaDto( 2);
         CategoriaDto.setDescripcion( "epa" );
         CategoriaDto.setEstatus("A");
         categoriaDto resultado = servicio.changeCategoria( CategoriaDto );
@@ -37,7 +37,7 @@ public class prueba_categoria_Test
     public void deleteCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.prueba_Categoria servicio = new ucab.dsw.servicio.prueba_Categoria();
-        categoriaDto  CategoriaDto= new categoriaDto( 1);
+        categoriaDto  CategoriaDto= new categoriaDto( 2);
         categoriaDto resultado = servicio.deleteCategoria( CategoriaDto.getId() );
         Assert.assertNotEquals( resultado.getId(), 0 );
 
