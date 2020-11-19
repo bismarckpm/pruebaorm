@@ -25,8 +25,18 @@ public class Categoria extends EntidadBase{
     /*@OneToMany( mappedBy = "_categoria", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<SubCategoria> _categorias;*/
 
+    @OneToMany( mappedBy = "_idCategoria", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<SubCategoria> _subCategorias;
 
-    public Categoria( long id )
+    public List<SubCategoria> get_subCategorias() {
+        return _subCategorias;
+    }
+
+    public void set_subCategorias(List<SubCategoria> _subCategorias) {
+        this._subCategorias = _subCategorias;
+    }
+
+    public Categoria(long id )
     {
         super( id );
     }

@@ -3,16 +3,34 @@ package ucab.dsw.entidades;
 import javax.persistence.*;
 
 @Entity
-public class SubCategoria {
+@Table( name = "subcategoria" )
+public class SubCategoria extends EntidadBase {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
+    @Column( name = "descripcion" )
     private String descripcion;
 
-    @Column(columnDefinition = "CHECK (status IN ('I','A'))")
-    private String status;
+    @Column(  name = "estatus" ,columnDefinition = "CHECK (estatus IN ('I','A'))")
+    private String estatus;
+
+    @ManyToOne
+    @JoinColumn( name = "idCategoria" )
+    private Categoria _idCategoria;
 
 
+    public Categoria get_idCategoria() { return _idCategoria; }
+
+    public void set_idCategoria(Categoria _idCategoria) { this._idCategoria = _idCategoria; }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getEstatus() { return estatus;}
+
+    public void setEstatus(String estatus) { this.estatus = estatus;}
 }

@@ -5,7 +5,7 @@ import ucab.dsw.dtos.TipoUsuarioDto;
 import ucab.dsw.entidades.TipoPregunta;
 
 public class tipoPreguntaORMWS_test {
-
+/*
     @Test
     public void addTipoPreguntaTest() throws Exception {
         ucab.dsw.servicio.TipoPreguntaORMWS servicio = new ucab.dsw.servicio.TipoPreguntaORMWS();
@@ -15,7 +15,7 @@ public class tipoPreguntaORMWS_test {
 
         TipoPreguntaDto resultado = servicio.add( tipoPreguntaDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
-    }
+    }*/
 /*
     @Test
     public void deleteUserTest() throws Exception{
