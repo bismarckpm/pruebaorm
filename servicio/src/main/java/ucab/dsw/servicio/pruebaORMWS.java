@@ -4,10 +4,6 @@ import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.entidades.TipoUsuario;
 import ucab.dsw.entidades.Usuario;
 
-import ucab.dsw.accesodatos.DaoCategoria;
-import ucab.dsw.dtos.CategoriaDto;
-import ucab.dsw.entidades.Categoria;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -41,27 +37,6 @@ public class pruebaORMWS extends AplicacionBase
             TipoUsuario tipoUsuario = new TipoUsuario(usuarioDto.getTipoUsuarioDto().getId());
             usuario.set_tipousuario( tipoUsuario );
             Usuario resul = dao.insert( usuario );
-            resultado.setId( resul.get_id() );
-        }
-        catch ( Exception ex )
-        {
-            String problema = ex.getMessage();
-        }
-        return  resultado;
-    }
-
-    @PUT
-    @Path( "/addcategoria" )
-    public CategoriaDto addCategoria( CategoriaDto categoriaDto )
-    {
-        CategoriaDto resultado = new CategoriaDto();
-        try
-        {
-            DaoCategoria dao = new DaoCategoria();
-            Categoria categoria = new Categoria();
-            categoria.set_descripcion( categoriaDto.getDescripcion() );
-            categoria.set_estatus( categoriaDto.getEstatus() );
-            Categoria resul = dao.insert( categoria );
             resultado.setId( resul.get_id() );
         }
         catch ( Exception ex )

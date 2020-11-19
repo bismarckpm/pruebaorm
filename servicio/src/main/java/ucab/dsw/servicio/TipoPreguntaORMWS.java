@@ -7,11 +7,9 @@ import ucab.dsw.entidades.TipoPregunta;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-@Path( "/tipo-pregunta" )
-@Produces( MediaType.APPLICATION_JSON )
-@Consumes( MediaType.APPLICATION_JSON )
-public class TipoPreguntaORMWS {
 
+public class TipoPreguntaORMWS {
+/*
     @POST
     @Path( "/add" )
     public TipoPreguntaDto add(TipoPreguntaDto tipoPreguntaDto ) {
