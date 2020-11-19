@@ -19,8 +19,6 @@ public class UsuarioDto extends DtoBase
 
     public UsuarioDto() {
     }
-    private String contrasena;
-    private String estatus;
 
     public String getNombre()
     {
@@ -81,18 +79,12 @@ public class UsuarioDto extends DtoBase
     {
         this.estatus = estatus;
     }
-    public UsuarioDto()
-    {
-    }
 
     public List<EstudioDto> getEstudios() {
         return estudios;
     }
 
     public void setEstudios(List<EstudioDto> estudios) {
-        this.estudios = estudios;
-    public UsuarioDto( long id ) throws Exception
-    {
-        super( id );
-    }
+        this.estudios = estudios; }
+
 }

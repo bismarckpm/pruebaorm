@@ -1,10 +1,6 @@
 package ucab.dsw.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,12 +76,6 @@ public class Usuario extends EntidadBase
         this._estatus = _estatus;
     }
 
-    @Column( name = "estatus" )
-    private String _estatus;
-
-    @ManyToOne
-    @JoinColumn( name = "idTipoUsuario" )
-    private TipoUsuario _tipousuario;
 
     @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<Estudio> _estudios = new ArrayList<>();

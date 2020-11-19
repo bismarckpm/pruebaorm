@@ -90,13 +90,5 @@ public class Pregunta extends EntidadBase {
     public void set_tipoPregunta(TipoPregunta _tipoPregunta) {
         this._tipoPregunta = _tipoPregunta;
     }
-    public Pregunta( long id )
-    {
-        super( id );
-    }
-
-    public Pregunta()
-    {
 
     }
-}
