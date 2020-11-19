@@ -34,8 +34,8 @@ public class CategoriaController_test {
     @Test
     public void getCategoriaTest() throws Exception {
         CategoriaController servicio = new CategoriaController();
-        CategoriaDto categoriaDto = new CategoriaDto(3);
+        CategoriaDto categoriaDto = new CategoriaDto(4);
         CategoriaDto resultado = servicio.obtenerCategoria( categoriaDto );
-        Assert.assertEquals( resultado.getId(), 3 );
+        Assert.assertEquals( resultado.getId(), 4 );
     }
 }
