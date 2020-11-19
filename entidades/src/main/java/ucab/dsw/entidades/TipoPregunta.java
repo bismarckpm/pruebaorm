@@ -3,24 +3,15 @@ package ucab.dsw.entidades;
 import javax.persistence.*;
 
 @Entity
-public class TipoPregunta {
+@Table( name = "tipopregunta" )
+public class TipoPregunta extends EntidadBase {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
+    @Column( name = "descripcion", nullable = false )
     private String descripcion;
 
-    @Column(columnDefinition = "CHECK (status IN ('I','A'))")
+    @Column( name = "status",columnDefinition = "CHECK (status IN ('I','A'))")
     private String status;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getDescripcion() {
         return descripcion;
