@@ -21,22 +21,7 @@ public class TipoPregunta extends EntidadBase {
     }
 
 
-    @Column( name = "estatus" )
-    private String _estatus;
-
-    @Override
-    public String get_estatus()
-    {
-        return _estatus;
-    }
-
-    @Override
-    public void set_estatus( String _estatus )
-    {
-        this._estatus = _estatus;
-    }
-
-
+/*
     @OneToMany( mappedBy = "_tipopregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<Pregunta> _pregunta;
 
@@ -49,7 +34,7 @@ public class TipoPregunta extends EntidadBase {
     {
         this._pregunta = _pregunta;
     }
-
+*/
 
     public TipoPregunta( long id )
     {
