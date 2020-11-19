@@ -46,7 +46,7 @@ public class prueba_TipoUsuario extends AplicacionBase
     }
 
     @PUT
-    @Path( "/changecategoria" )
+    @Path( "/changeTipoUser" )
     public TipoUsuarioDto changeTipoUser(TipoUsuarioDto tipoUsuarioDto ) throws Exception
     {
         TipoUsuarioDto resultado = new TipoUsuarioDto();
