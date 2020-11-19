@@ -4,10 +4,7 @@ import ucab.dsw.accesodatos.DaoCategoria;
 import ucab.dsw.dtos.CategoriaDto;
 import ucab.dsw.entidades.Categoria;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path( "/prueba" )
@@ -49,6 +46,38 @@ public class CategoriaController extends AplicacionBase{
         }catch (Exception e){
             String problema = e.getMessage();
         }
+        return resultado;
+    }
+    @DELETE
+    @Path("/deleteCategory")
+    public CategoriaDto deleteCategoria( CategoriaDto categoriaDto){
+        CategoriaDto resultado = new CategoriaDto();
+        try{
+            DaoCategoria dao = new DaoCategoria();
+            Categoria categoria = dao.find(categoriaDto.getId(), Categoria.class);
+            Categoria resul = dao.delete( categoria );
+            resultado.setId( resul.get_id());
+        }catch (Exception e){
+            String problema = e.getMessage();
+        }
+        return resultado;
+    }
+
+    @GET
+    @Path( "/{id}" )
+    // @PathParam("id") Long id
+    public CategoriaDto obtenerCategoria(CategoriaDto categoriaDto)
+    {
+        CategoriaDto resultado = new CategoriaDto();
+        try{
+            DaoCategoria dao = new DaoCategoria();
+            Categoria encontrado = dao.find(categoriaDto.getId(), Categoria.class);
+            resultado.setId(encontrado.get_id());
+        }
+        catch (Exception e){
+            String problema = e.getMessage();
+        }
+
         return resultado;
     }
 }

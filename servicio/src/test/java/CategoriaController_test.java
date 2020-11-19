@@ -23,4 +23,18 @@ public class CategoriaController_test {
         CategoriaDto resultado = servicio.modificarCategoria( categoriaDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
+    @Test
+    public void deleteCategoriaTest() throws Exception {
+        CategoriaController servicio = new CategoriaController();
+        CategoriaDto categoriaDto = new CategoriaDto(3);
+        CategoriaDto resultado = servicio.deleteCategoria( categoriaDto );
+        Assert.assertNotEquals( resultado.getId(), 0  );
+    }
+    @Test
+    public void getCategoriaTest() throws Exception {
+        CategoriaController servicio = new CategoriaController();
+        CategoriaDto categoriaDto = new CategoriaDto(3);
+        CategoriaDto resultado = servicio.obtenerCategoria( categoriaDto );
+        Assert.assertEquals( resultado.getId(), 3 );
+    }
 }

@@ -1,15 +1,15 @@
 package ucab.dsw.servicio;
 
+import ucab.dsw.accesodatos.DaoCategoria;
 import ucab.dsw.accesodatos.DaoEncuesta;
+import ucab.dsw.dtos.CategoriaDto;
 import ucab.dsw.dtos.EncuestaDto;
+import ucab.dsw.entidades.Categoria;
 import ucab.dsw.entidades.Encuesta;
 import ucab.dsw.entidades.Estudio;
 import ucab.dsw.entidades.Usuario;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path( "/prueba" )
@@ -62,4 +62,37 @@ public class EncuestaController extends AplicacionBase{
         }
         return resultado;
     }
+
+    @DELETE
+    @Path("/deleteEncuesta")
+    public EncuestaDto deleteEncuesta(EncuestaDto encuestaDto){
+        EncuestaDto resultado = new EncuestaDto();
+        try{
+            DaoEncuesta dao = new DaoEncuesta();
+            Encuesta encuesta = dao.find(encuestaDto.getId(), Encuesta.class);
+            Encuesta resul = dao.delete( encuesta );
+            resultado.setId( resul.get_id());
+        }catch (Exception e){
+            String problema = e.getMessage();
+        }
+        return resultado;
+    }
+    @GET
+    @Path( "/{id}" )
+    // @PathParam("id") Long id
+    public EncuestaDto obtenerEncuesta(EncuestaDto encuestaDto)
+    {
+        EncuestaDto resultado = new EncuestaDto();
+        try{
+            DaoEncuesta dao = new DaoEncuesta();
+            Encuesta encontrado = dao.find(encuestaDto.getId(), Encuesta.class);
+            resultado.setId(encontrado.get_id());
+        }
+        catch (Exception e){
+            String problema = e.getMessage();
+        }
+
+        return resultado;
+    }
+
 }

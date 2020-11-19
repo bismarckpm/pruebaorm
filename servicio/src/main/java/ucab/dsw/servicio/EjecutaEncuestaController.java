@@ -6,10 +6,7 @@ import ucab.dsw.dtos.CategoriaDto;
 import ucab.dsw.dtos.EjecutaEncuestaDto;
 import ucab.dsw.entidades.*;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path( "/prueba" )
@@ -72,5 +69,23 @@ public class EjecutaEncuestaController extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @GET
+    @Path( "/{id}" )
+    // @PathParam("id") Long id
+    public EjecutaEncuestaDto obtenerEjecutaEncuesta(EjecutaEncuestaDto ejecutaEncuestaDto)
+    {
+        EjecutaEncuestaDto resultado = new EjecutaEncuestaDto();
+        try{
+            DaoEjecutaEncuesta dao = new DaoEjecutaEncuesta();
+            EjecutaEncuesta encontrado = dao.find(ejecutaEncuestaDto.getId(), EjecutaEncuesta.class);
+            resultado.setId(encontrado.get_id());
+        }
+        catch (Exception e){
+            String problema = e.getMessage();
+        }
+
+        return resultado;
     }
 }

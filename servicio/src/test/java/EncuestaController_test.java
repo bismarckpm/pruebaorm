@@ -1,8 +1,10 @@
 import org.junit.Assert;
 import org.junit.Test;
+import ucab.dsw.dtos.CategoriaDto;
 import ucab.dsw.dtos.EncuestaDto;
 import ucab.dsw.dtos.EstudioDto;
 import ucab.dsw.dtos.UsuarioDto;
+import ucab.dsw.servicio.CategoriaController;
 import ucab.dsw.servicio.EncuestaController;
 
 
@@ -36,5 +38,14 @@ public class EncuestaController_test {
         EncuestaDto resultado = servicio.modificarEncuesta(encuestaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
+
+    @Test
+    public void getEncuestaTest() throws Exception {
+        EncuestaController servicio = new EncuestaController();
+        EncuestaDto encuestaDto = new EncuestaDto(3);
+        EncuestaDto resultado = servicio.obtenerEncuesta( encuestaDto );
+        Assert.assertEquals( resultado.getId(), 3 );
+    }
+
 
 }
