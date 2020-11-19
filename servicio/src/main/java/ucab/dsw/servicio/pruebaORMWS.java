@@ -1,8 +1,11 @@
 package ucab.dsw.servicio;
+import ucab.dsw.accesodatos.DaoCategoria;
+import ucab.dsw.accesodatos.DaoEncuesta;
 import ucab.dsw.accesodatos.DaoUsuario;
+import ucab.dsw.dtos.CategoriaDto;
+import ucab.dsw.dtos.EncuestaDto;
 import ucab.dsw.dtos.UsuarioDto;
-import ucab.dsw.entidades.TipoUsuario;
-import ucab.dsw.entidades.Usuario;
+import ucab.dsw.entidades.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
@@ -30,12 +33,15 @@ public class pruebaORMWS extends AplicacionBase
         {
             DaoUsuario dao = new DaoUsuario();
             Usuario usuario = new Usuario();
+
             usuario.set_nombre( usuarioDto.getNombre() );
             usuario.set_apellido( usuarioDto.getApellido() );
             usuario.set_estatus( usuarioDto.getEstatus() );
             usuario.set_correoelectronico( usuarioDto.getCorreoelectronico() );
+
             TipoUsuario tipoUsuario = new TipoUsuario(usuarioDto.getTipoUsuarioDto().getId());
             usuario.set_tipousuario( tipoUsuario );
+
             Usuario resul = dao.insert( usuario );
             resultado.setId( resul.get_id() );
         }

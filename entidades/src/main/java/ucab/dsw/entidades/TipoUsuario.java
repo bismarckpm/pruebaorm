@@ -12,6 +12,12 @@ import java.util.List;
 @Table( name = "tipousuario" )
 public class TipoUsuario extends EntidadBase
 {
+    @Column( name = "descripcion", nullable = false )
+    private String _descripcion;
+
+    @OneToMany( mappedBy = "_tipousuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Usuario> _usuarios;
+
     public String get_descripcion()
     {
         return _descripcion;
@@ -22,9 +28,6 @@ public class TipoUsuario extends EntidadBase
         this._descripcion = _descripcion;
     }
 
-    @Column( name = "descripcion", nullable = false )
-    private String _descripcion;
-
     public List<Usuario> get_usuarios()
     {
         return _usuarios;
@@ -34,9 +37,6 @@ public class TipoUsuario extends EntidadBase
     {
         this._usuarios = _usuarios;
     }
-
-    @OneToMany( mappedBy = "_tipousuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<Usuario> _usuarios;
 
     public TipoUsuario( long id )
     {

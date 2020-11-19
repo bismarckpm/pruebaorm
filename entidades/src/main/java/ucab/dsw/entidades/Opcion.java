@@ -48,5 +48,13 @@ public class Opcion extends EntidadBase{
 
     public void set_pregunta(Pregunta _pregunta) {
         this._pregunta = _pregunta;
+    public Opcion( long id )
+    {
+        super( id );
+    }
+
+    public Opcion()
+    {
+
     }
 }

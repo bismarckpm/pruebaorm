@@ -1,12 +1,9 @@
 package ucab.dsw.entidades;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +14,19 @@ public class Usuario extends EntidadBase
 {
     @Column( name = "nombre" )
     private String _nombre;
+
+    @Column( name = "apellido" )
+    private String _apellido;
+  
+    @Column( name = "correoelectronico" )
+    private String _correoelectronico;
+
+    @Column( name = "estatus" )
+    private String _estatus;
+
+    @ManyToOne
+    @JoinColumn( name = "idTipoUsuario" )
+    private TipoUsuario _tipousuario;
 
     public String get_nombre()
     {
@@ -57,12 +67,6 @@ public class Usuario extends EntidadBase
     {
         this._tipousuario = _tipousuario;
     }
-
-    @Column( name = "apellido" )
-    private String _apellido;
-
-    @Column( name = "correoelectronico" )
-    private String _correoelectronico;
 
     @Override
     public String get_estatus()

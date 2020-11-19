@@ -46,5 +46,12 @@ public class EstudioDto extends DtoBase {
 
     public void setUsuario(UsuarioDto usuario) {
         this.usuario = usuario;
+public class EstudioDto extends DtoBase{
+    public EstudioDto()
+    {
+    }
+
+    public EstudioDto( long id ) throws Exception
+    {
     }
 }

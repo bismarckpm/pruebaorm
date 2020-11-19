@@ -74,5 +74,12 @@ public class PreguntaDto extends DtoBase{
 
     public void setOpciones(List<OpcionDto> opciones) {
         this.opciones = opciones;
+public class PreguntaDto extends DtoBase{
+    public PreguntaDto()
+    {
+    }
+
+    public PreguntaDto( long id ) throws Exception
+    {
     }
 }

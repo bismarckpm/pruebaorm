@@ -65,4 +65,13 @@ public class Estudio extends EntidadBase {
         this._estatus = _estatus;
     }
 
+    public Estudio( long id )
+    {
+        super( id );
+    }
+
+    public Estudio()
+    {
+
+    }
 }

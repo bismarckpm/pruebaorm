@@ -2,9 +2,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import ucab.dsw.dtos.TipoUsuarioDto;
-import ucab.dsw.dtos.UsuarioDto;
-import ucab.dsw.entidades.Usuario;
+import ucab.dsw.dtos.*;
 
 
 public class pruebaORMWS_Test
@@ -24,6 +22,4 @@ public class pruebaORMWS_Test
         UsuarioDto resultado = servicio.addUser( usuarioDto );
         Assert.assertNotEquals( resultado.getId(), 1  );
     }
-
-
 }
