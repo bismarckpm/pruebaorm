@@ -53,8 +53,4 @@ public class usuarioORMWS_test {
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
-
-
-
-
 }
