@@ -167,4 +167,12 @@ public class Dao<T>
     {
         return _daoHandler;
     }
+
+    public DaoHandler get_daoHandler() {
+        return _daoHandler;
+    }
+
+    public EntityManager get_em() {
+        return _em;
+    }
 }
