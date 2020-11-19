@@ -2,8 +2,6 @@ package ucab.dsw.dtos;
 
 public class TipoUsuarioDto extends DtoBase
 {
-
-
     public TipoUsuarioDto()
     {
     }
@@ -12,7 +10,6 @@ public class TipoUsuarioDto extends DtoBase
     {
         super( id );
     }
-
 
     private String descripcion;
 

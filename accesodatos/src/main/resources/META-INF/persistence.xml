@@ -5,6 +5,9 @@
     <persistence-unit name="ormprueba">
         <class>ucab.dsw.entidades.TipoUsuario</class>
         <class>ucab.dsw.entidades.Usuario</class>
+        <class>ucab.dsw.entidades.Categoria</class>
+        <class>ucab.dsw.entidades.Subcategoria</class>
+        <class>ucab.dsw.entidades.Solicitud</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
