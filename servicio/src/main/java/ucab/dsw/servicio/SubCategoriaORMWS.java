@@ -23,17 +23,16 @@ public class SubCategoriaORMWS {
 
         SubCategoriaDto resultado = new SubCategoriaDto();
         try{
-            DaoTipoPregunta daoaa = new DaoTipoPregunta();
 
             SubCategoria subCategoria = new SubCategoria();
             DaoSubCategoria dao = new DaoSubCategoria();
 
-            subCategoria.setDescripcion(subCategoriaDto.getDescripcion());
-            subCategoria.setEstatus(subCategoriaDto.getEstatus());
+            subCategoria.set_descripcion(subCategoriaDto.getDescripcion());
+            subCategoria.set_estatus(subCategoriaDto.getEstatus());
 
             Categoria categoria = new Categoria(subCategoriaDto.getId());
 
-            subCategoria.set_idCategoria(categoria);
+            subCategoria.set_categoria(categoria);
             SubCategoria result = dao.insert(subCategoria);
 
             resultado.setId(result.get_id());
@@ -49,4 +48,6 @@ public class SubCategoriaORMWS {
 
         return resultado;
     }
+
+
 }

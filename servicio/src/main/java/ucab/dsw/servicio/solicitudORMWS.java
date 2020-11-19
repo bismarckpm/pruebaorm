@@ -37,8 +37,7 @@ public class solicitudORMWS extends AplicacionBase{
 
     @PUT
     @Path( "/addsolicitud" )
-    public SolicitudDto addSolicitud( SolicitudDto solicitudDto )
-    {
+    public SolicitudDto addSolicitud( SolicitudDto solicitudDto ) throws Exception {
         SolicitudDto resultado = new SolicitudDto();
         try
         {

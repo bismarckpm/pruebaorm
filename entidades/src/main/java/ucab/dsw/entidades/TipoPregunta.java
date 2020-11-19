@@ -10,8 +10,8 @@ public class TipoPregunta extends EntidadBase {
     @Column( name = "descripcion", nullable = false )
     private String descripcion;
 
-    @Column( name = "status",columnDefinition = "CHECK (status IN ('I','A'))")
-    private String status;
+    @Column( name = "estatus",columnDefinition = "CHECK (estatus IN ('I','A'))")
+    private String estatus;
 
     public String getDescripcion() {
         return descripcion;
@@ -21,15 +21,15 @@ public class TipoPregunta extends EntidadBase {
         this.descripcion = descripcion;
     }
 
-    public String getStatus() {
-        return status;
+    public String getEstatus() {
+        return estatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
     }
 
-    public TipoPregunta( long id )
+    public TipoPregunta(long id )
     {
         super( id );
     }

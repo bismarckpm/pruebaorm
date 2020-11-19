@@ -13,7 +13,7 @@ public class EstudioDto extends DtoBase{
 
     private UsuarioDto usuario;
 
-   // private SolicitudDto solicitud;
+    private SolicitudDto solicitud;
 
 
     public EstudioDto( long id ) throws Exception
@@ -56,13 +56,13 @@ public class EstudioDto extends DtoBase{
         this.usuario = usuario;
     }
 
-   /* public SolicitudDto getSolicitud()
+   public SolicitudDto getSolicitud()
     {
         return solicitud;
-    }*/
-/*
+    }
+
     public void setSolicitud( SolicitudDto solicitud )
     {
         this.solicitud = solicitud;
-    }*/
+    }
 }

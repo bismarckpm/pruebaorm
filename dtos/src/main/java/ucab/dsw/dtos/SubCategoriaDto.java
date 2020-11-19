@@ -39,12 +39,4 @@ public class SubCategoriaDto extends DtoBase{
         this.estatus = estatus;
     }
 
-    public SubCategoriaDto()
-    {
-    }
-
-    public SubCategoriaDto( long id ) throws Exception
-    {
-        super( id );
-    }
 }

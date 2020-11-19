@@ -12,11 +12,11 @@ public class EjecucionEncuestaDto extends DtoBase{
 
     private EncuestaDto encuesta;
 
-    //private PreguntaDto pregunta;
+    private PreguntaDto pregunta;
 
     private UsuarioDto usuarioEncuestado;
 
-    //private OpcionDto opcion;
+    private OpcionDto opcion;
 
     public EjecucionEncuestaDto( long id ) throws Exception
     {
@@ -58,16 +58,16 @@ public class EjecucionEncuestaDto extends DtoBase{
         this.encuesta = encuesta;
     }
 
-  /*public PreguntaDto getPregunta()
+    public PreguntaDto getPregunta()
     {
         return pregunta;
-    }*/
-/*
+    }
+
     public void setPregunta( PreguntaDto pregunta )
     {
         this.pregunta = pregunta;
     }
-*/
+
     public UsuarioDto get_usuarioEncuestado()
     {
         return usuarioEncuestado;
@@ -77,13 +77,9 @@ public class EjecucionEncuestaDto extends DtoBase{
     {
         this.usuarioEncuestado = usuarioEncuestado;
     }
-<<<<<<< HEAD
-/*
-    public OpcionDto getPpcion()
-=======
+
 
     public OpcionDto getOpcion()
->>>>>>> b410740f8880e4db90945d2c5edc0041412c4332
     {
         return opcion;
     }
@@ -91,5 +87,5 @@ public class EjecucionEncuestaDto extends DtoBase{
     public void setOpcion( OpcionDto opcion )
     {
         this.opcion = opcion;
-    }*/
+    }
 }
