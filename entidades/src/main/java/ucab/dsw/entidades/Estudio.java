@@ -1,0 +1,19 @@
+package ucab.dsw.entidades;
+
+
+import javax.persistence.*;
+import java.util.Date;
+
+@Entity
+public class Estudio {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+
+    private Date fechaCreacion;
+
+    @Column(columnDefinition = "CHECK (status IN ('C','EP','F', 'E'))")
+    private String status;
+}
