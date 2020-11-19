@@ -13,7 +13,7 @@ public class pruebaCategoriaTest
     public void addCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
-        CategoriaDto  CategoriaDto= new CategoriaDto();
+        CategoriaDto CategoriaDto= new CategoriaDto();
         CategoriaDto.setDescripcion( "Bismarck" );
         CategoriaDto.setEstatus("A");
         CategoriaDto resultado = servicio.addCategoria( CategoriaDto );
@@ -25,7 +25,7 @@ public class pruebaCategoriaTest
     public void changeCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
-        CategoriaDto  CategoriaDto= new CategoriaDto( 1);
+        CategoriaDto  CategoriaDto= new CategoriaDto( 4);
         CategoriaDto.setDescripcion( "Pedro" );
         CategoriaDto.setEstatus("A");
         CategoriaDto resultado = servicio.changeCategoria( CategoriaDto );

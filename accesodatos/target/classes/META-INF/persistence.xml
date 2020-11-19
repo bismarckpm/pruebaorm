@@ -6,6 +6,9 @@
         <class>ucab.dsw.entidades.TipoUsuario</class>
         <class>ucab.dsw.entidades.Usuario</class>
         <class>ucab.dsw.entidades.Categoria</class>
+        <class>ucab.dsw.entidades.Pregunta</class>
+        <class>ucab.dsw.entidades.TipoPregunta</class>
+
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

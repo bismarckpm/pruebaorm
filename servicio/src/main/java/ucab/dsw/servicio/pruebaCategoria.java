@@ -3,7 +3,6 @@ import ucab.dsw.accesodatos.DaoCategoria;
 import ucab.dsw.dtos.CategoriaDto;
 
 import ucab.dsw.entidades.Categoria;
-import ucab.dsw.entidades.Usuario;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
@@ -50,7 +49,7 @@ public class pruebaCategoria extends AplicacionBase
         CategoriaDto resultado = new CategoriaDto();
         try
         {
-            DaoCategoria dao = new  DaoCategoria();
+            DaoCategoria dao = new DaoCategoria();
             Categoria categoria = new Categoria(CategoriaDto.getId());
             categoria.set_descripcion( CategoriaDto.getDescripcion() );
             categoria.set_estatus( CategoriaDto.getEstatus() );
@@ -72,7 +71,7 @@ public class pruebaCategoria extends AplicacionBase
         CategoriaDto resultado = new CategoriaDto();
         try
         {
-            DaoCategoria dao = new  DaoCategoria();
+            DaoCategoria dao = new DaoCategoria();
             Categoria delete = dao.find( id,Categoria.class );
             Categoria resul = dao.delete( delete);
             resultado.setId( resul.get_id() );
