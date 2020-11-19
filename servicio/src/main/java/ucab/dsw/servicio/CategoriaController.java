@@ -35,4 +35,20 @@ public class CategoriaController extends AplicacionBase{
         }
         return  resultado;
     }
+    @PUT
+    @Path("/modifyCategory")
+    public CategoriaDto modificarCategoria( CategoriaDto categoriaDto){
+        CategoriaDto resultado = new CategoriaDto();
+        try{
+            DaoCategoria dao = new DaoCategoria();
+            Categoria categoria = new Categoria( categoriaDto.getId());
+            categoria.set_descripcion( categoriaDto.getDescripcion());
+            categoria.set_estatus( categoriaDto.getStatus());
+            Categoria resul = dao.update( categoria );
+            resultado.setId( resul.get_id());
+        }catch (Exception e){
+            String problema = e.getMessage();
+        }
+        return resultado;
+    }
 }

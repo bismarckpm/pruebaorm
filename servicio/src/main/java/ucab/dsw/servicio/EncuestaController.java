@@ -42,4 +42,24 @@ public class EncuestaController extends AplicacionBase{
         }
         return  resultado;
     }
+
+    @PUT
+    @Path("/modifyEncuesta")
+    public EncuestaDto modificarEncuesta(EncuestaDto encuestaDto){
+        EncuestaDto resultado = new EncuestaDto();
+        try{
+            DaoEncuesta dao = new DaoEncuesta();
+            Encuesta encuesta = new Encuesta(encuestaDto.getId());
+            encuesta.set_estatus(encuestaDto.getStatus());
+            encuesta.set_fechacreacion( encuestaDto.getFechaCreacion());
+            encuesta.set_idUsuario_Creador(new Usuario(encuestaDto.getIdUsuario_Creador().getId()));
+            encuesta.set_idUsuario_Analista(new Usuario(encuestaDto.getIdUsuario_Analista().getId()));
+            encuesta.set_idEstudio(new Estudio(encuestaDto.getIdEstudio().getId()));
+            Encuesta resul = dao.update( encuesta );
+            resultado.setId( resul.get_id() );
+        }catch (Exception e){
+            String problema = e.getMessage();
+        }
+        return resultado;
+    }
 }

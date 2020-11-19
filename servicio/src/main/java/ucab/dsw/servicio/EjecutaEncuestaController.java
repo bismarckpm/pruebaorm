@@ -26,23 +26,45 @@ public class EjecutaEncuestaController extends AplicacionBase{
         {
             DaoEjecutaEncuesta dao = new DaoEjecutaEncuesta();
             EjecutaEncuesta ejecutaEncuesta = new EjecutaEncuesta();
-
             ejecutaEncuesta.set_estatus(ejecutaEncuestaDto.getEstatus());
             ejecutaEncuesta.set_respuesta(ejecutaEncuestaDto.getRespuesta());
-
             Usuario idUsuarioEncuestado = new Usuario(ejecutaEncuestaDto.getIdUsuario_Encuestado().getId());
             ejecutaEncuesta.setIdUsuario_Encuestado(idUsuarioEncuestado);
-
             Encuesta encuesta = new Encuesta(ejecutaEncuestaDto.getIdEncuesta().getId());
             ejecutaEncuesta.setIdEncuesta(encuesta);
-
             Opcion opcion = new Opcion(ejecutaEncuestaDto.getIdOpcion().getId());
             ejecutaEncuesta.setIdOpcion(opcion);
-
             Pregunta pregunta = new Pregunta(ejecutaEncuestaDto.getIdPregunta().getId());
             ejecutaEncuesta.setIdPregunta(pregunta);
-
             EjecutaEncuesta resul = dao.insert( ejecutaEncuesta );
+            resultado.setId( resul.get_id() );
+        }
+        catch ( Exception ex )
+        {
+            String problema = ex.getMessage();
+        }
+        return  resultado;
+    }
+    @PUT
+    @Path( "/modifyejecutaencuesta" )
+    public EjecutaEncuestaDto modifyEjecutaEncuesta(EjecutaEncuestaDto ejecutaEncuestaDto )
+    {
+        EjecutaEncuestaDto resultado = new EjecutaEncuestaDto();
+        try
+        {
+            DaoEjecutaEncuesta dao = new DaoEjecutaEncuesta();
+            EjecutaEncuesta ejecutaEncuesta = new EjecutaEncuesta(ejecutaEncuestaDto.getId());
+            ejecutaEncuesta.set_estatus(ejecutaEncuestaDto.getEstatus());
+            ejecutaEncuesta.set_respuesta(ejecutaEncuestaDto.getRespuesta());
+            Usuario idUsuarioEncuestado = new Usuario(ejecutaEncuestaDto.getIdUsuario_Encuestado().getId());
+            ejecutaEncuesta.setIdUsuario_Encuestado(idUsuarioEncuestado);
+            Encuesta encuesta = new Encuesta(ejecutaEncuestaDto.getIdEncuesta().getId());
+            ejecutaEncuesta.setIdEncuesta(encuesta);
+            Opcion opcion = new Opcion(ejecutaEncuestaDto.getIdOpcion().getId());
+            ejecutaEncuesta.setIdOpcion(opcion);
+            Pregunta pregunta = new Pregunta(ejecutaEncuestaDto.getIdPregunta().getId());
+            ejecutaEncuesta.setIdPregunta(pregunta);
+            EjecutaEncuesta resul = dao.update( ejecutaEncuesta );
             resultado.setId( resul.get_id() );
         }
         catch ( Exception ex )

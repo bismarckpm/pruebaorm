@@ -60,4 +60,13 @@ public class EjecutaEncuestaDto extends DtoBase{
     public void setIdOpcion(OpcionDto idOpcion) {
         this.idOpcion = idOpcion;
     }
+
+    public EjecutaEncuestaDto()
+    {
+    }
+
+    public EjecutaEncuestaDto( long id ) throws Exception
+    {
+        super( id );
+    }
 }

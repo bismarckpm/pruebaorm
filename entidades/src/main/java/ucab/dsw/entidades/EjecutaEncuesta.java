@@ -77,4 +77,12 @@ public class EjecutaEncuesta extends EntidadBase{
     public void setIdOpcion(Opcion idOpcion) {
         this.idOpcion = idOpcion;
     }
+    public EjecutaEncuesta()
+    {
+    }
+
+    public EjecutaEncuesta( long id ) throws Exception
+    {
+        super( id );
+    }
 }

@@ -14,4 +14,13 @@ public class CategoriaController_test {
         CategoriaDto resultado = servicio.addCategory(categoriaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
+    @Test
+    public void modificarCategoriaTest() throws Exception {
+        CategoriaController servicio = new CategoriaController();
+        CategoriaDto categoriaDto = new CategoriaDto(3);
+        categoriaDto.setDescripcion("SOY UNA MODIFICACION");
+        categoriaDto.setStatus("A");
+        CategoriaDto resultado = servicio.modificarCategoria( categoriaDto );
+        Assert.assertNotEquals( resultado.getId(), 0  );
+    }
 }

@@ -5,6 +5,7 @@ import ucab.dsw.dtos.EstudioDto;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.servicio.EncuestaController;
 
+
 public class EncuestaController_test {
     @Test
     public void addEncuestaTest() throws Exception
@@ -22,4 +23,18 @@ public class EncuestaController_test {
         EncuestaDto resultado = servicio.addEncuesta(encuestaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
+    @Test
+    public void modifyEncuestaTest() throws Exception
+    {
+        EncuestaController servicio = new EncuestaController();
+        EncuestaDto encuestaDto = new EncuestaDto(8);
+        encuestaDto.setStatus("C");
+        encuestaDto.setFechaCreacion(java.sql.Date.valueOf("2019-11-17"));
+        encuestaDto.setIdUsuario_Creador(new UsuarioDto(9));
+        encuestaDto.setIdUsuario_Analista(new UsuarioDto(8));
+        encuestaDto.setIdEstudio(new EstudioDto(3));
+        EncuestaDto resultado = servicio.modificarEncuesta(encuestaDto);
+        Assert.assertNotEquals( resultado.getId(), 0  );
+    }
+
 }
