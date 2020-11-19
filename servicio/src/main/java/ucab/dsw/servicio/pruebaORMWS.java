@@ -52,47 +52,6 @@ public class pruebaORMWS extends AplicacionBase
         return  resultado;
     }
     
-    @PUT
-    @Path("/addpregunta")
-    public OpcionDto addOpcion (OpcionDto opcionDto){
-        OpcionDto resultado = new OpcionDto();
-        
-        try {
-            DaoOpcion dao = new DaoOpcion();
-            Opcion opcion = new Opcion();
-            opcion.setDescripcion(opcionDto.getDescripcion());
-            opcion.set_estatus(opcionDto.getEstatus());
-//            Pregunta pregunta = new Pregunta(opcionDto.getPreguntaDto().getId());
-//            opcion.setIdPregunta(pregunta);
-            Opcion resul = dao.insert(opcion);
-            resultado.setId(resul.get_id());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return resultado;
-    }
-    
-    @PUT
-    @Path( "/addtipopregunta" )
-    public TipoPreguntaDto addTipoPregunta( TipoPreguntaDto tipopreguntaDto )
-    {
-        TipoPreguntaDto resultado = new TipoPreguntaDto();
-        try
-        {
-            DaoTipoPregunta dao = new DaoTipoPregunta();
-            TipoPregunta tipoPregunta = new TipoPregunta();
-            tipoPregunta.setDescripcion(tipopreguntaDto.getDescripcion());
-            tipoPregunta.set_estatus(tipopreguntaDto.getEstatus());
-            TipoPregunta resul = dao.insert(tipoPregunta);
-            resultado.setId(resul.get_id());
-        }
-        catch ( Exception ex )
-        {
-            String problema = ex.getMessage();
-        }
-        return  resultado;
-    }
-
     @GET
     @Path( "/consulta" )
     public String consulta()

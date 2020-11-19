@@ -35,9 +35,9 @@ public class Pregunta extends EntidadBase {
 
     @ManyToOne
     @JoinColumn(name = "idSubCategoria" )
-    private SubCategoria _subcategoria;
-    public SubCategoria get_subcategoria() { return _subcategoria; }
-    public void set_subcategoria(SubCategoria _subcategoria) { this._subcategoria = _subcategoria; }
+    private Subcategoria _subcategoria;
+    public Subcategoria get_subcategoria() { return _subcategoria; }
+    public void set_subcategoria(Subcategoria _subcategoria) { this._subcategoria = _subcategoria; }
 
     @ManyToOne
     @JoinColumn(name = "idUsuario" )
