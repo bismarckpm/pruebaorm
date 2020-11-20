@@ -37,6 +37,10 @@ public class SubcategoriaEnt extends EntidadBase{
         return solicitudes;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "idCategoria")
+    private Categoria categorias;
+
     public void setSolicitudes(List<SolicitudEnt> solicitudes) {
         this.solicitudes = solicitudes;
     }
