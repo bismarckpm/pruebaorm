@@ -15,7 +15,7 @@ public class SolicitudDto  extends DtoBase{
     public SolicitudDto() {
     }
 
-    public UsuarioDto getUsuario() {
+    public UsuarioDto getUsuarioDto() {
         return Usuario;
     }
 
@@ -27,7 +27,7 @@ public class SolicitudDto  extends DtoBase{
         return SubcategoriaDto;
     }
 
-    public void setSubcategoriaDto(ucab.dsw.dtos.SubcategoriaDto subcategoriaDto) {
+    public void setSubcategoria(ucab.dsw.dtos.SubcategoriaDto subcategoriaDto) {
         SubcategoriaDto = subcategoriaDto;
     }
 

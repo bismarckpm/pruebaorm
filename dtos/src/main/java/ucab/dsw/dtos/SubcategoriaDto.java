@@ -6,7 +6,7 @@ public class SubcategoriaDto extends DtoBase{
     private String descripcion;
     private String estatus;
 
-    public ucab.dsw.dtos.CategoriaDto getCategoriaDto() {
+   public CategoriaDto getCategoriaDto() {
         return CategoriaDto;
     }
 
