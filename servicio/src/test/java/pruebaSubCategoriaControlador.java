@@ -27,14 +27,14 @@ public class pruebaSubCategoriaControlador {
     public void bgetSubCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.SubCategoriaControlador servicio = new ucab.dsw.servicio.SubCategoriaControlador();
-        SubCategoriaDto resultado = servicio.obtenerSubCategoria(getTest_id());
-        Assert.assertEquals( resultado.getId(),getTest_id());
+        SubCategoriaDto resultado = servicio.obtenerSubCategoria(11);
+        Assert.assertEquals( resultado.getId(),11);
     }
     @Test
     public void cupdateSubCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.SubCategoriaControlador servicio = new ucab.dsw.servicio.SubCategoriaControlador();
-        SubCategoriaDto subCategoriaDto = new SubCategoriaDto(getTest_id());
+        SubCategoriaDto subCategoriaDto = new SubCategoriaDto(11);
         subCategoriaDto.setEstatus("A");
         subCategoriaDto.setDescripcion("upd_desc_sc");
         CategoriaDto categoriaDto = new CategoriaDto(1);
@@ -46,7 +46,7 @@ public class pruebaSubCategoriaControlador {
     public void ddeleteSubCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.SubCategoriaControlador servicio = new ucab.dsw.servicio.SubCategoriaControlador();
-        SubCategoriaDto resultado = servicio.deleteSubCategoria(getTest_id() - 1);
-        Assert.assertEquals( resultado.getId(), getTest_id() - 1);
+        SubCategoriaDto resultado = servicio.deleteSubCategoria(10 );
+        Assert.assertEquals( resultado.getId(),10);
     }
 }

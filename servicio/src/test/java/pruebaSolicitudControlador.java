@@ -13,7 +13,7 @@ public class pruebaSolicitudControlador {
         SolicitudDto solicitudDto = new SolicitudDto();
         solicitudDto.setFecha("2020-11-20");
         solicitudDto.setEstatus("A");
-        solicitudDto.setNombre("Solictud_test");
+        solicitudDto.setNombre("Solictud_test_2");
         solicitudDto.set_SubCategoria(new SubCategoriaDto(28));
         solicitudDto.set_Usuario(new UsuarioDto(89));
         SolicitudDto resultado = servicio.addSolicitud(solicitudDto);
@@ -24,10 +24,10 @@ public class pruebaSolicitudControlador {
     public void updateSolicitudTest() throws Exception
     {
         ucab.dsw.servicio.SolicitudControlador servicio = new ucab.dsw.servicio.SolicitudControlador();
-        SolicitudDto solicitudDto = new SolicitudDto(1);
+        SolicitudDto solicitudDto = new SolicitudDto(11);
         solicitudDto.setFecha("2020-11-20");
         solicitudDto.setEstatus("A");
-        solicitudDto.setNombre("upd_Solictud_test");
+        solicitudDto.setNombre("upd_Solictud_test_2");
         solicitudDto.set_SubCategoria(new SubCategoriaDto(28));
         solicitudDto.set_Usuario(new UsuarioDto(89));
         SolicitudDto resultado = servicio.updateSolicitud(solicitudDto);
@@ -38,14 +38,14 @@ public class pruebaSolicitudControlador {
     public void getSolicitudTest() throws Exception
     {
         ucab.dsw.servicio.SolicitudControlador servicio = new ucab.dsw.servicio.SolicitudControlador();
-        SolicitudDto resultado = servicio.obtenerSolicitud( 5);
-        Assert.assertEquals( resultado.getId(),5);
+        SolicitudDto resultado = servicio.obtenerSolicitud( 11);
+        Assert.assertEquals( resultado.getId(),11);
     }
     @Test
     public void ddeleteSolicitudTest() throws Exception
     {
         ucab.dsw.servicio.SolicitudControlador servicio = new ucab.dsw.servicio.SolicitudControlador();
-        SolicitudDto resultado = servicio.deleteSolicitud((long) 2);
-        Assert.assertEquals( resultado.getId(), 2);
+        SolicitudDto resultado = servicio.deleteSolicitud((long) 10);
+        Assert.assertEquals( resultado.getId(), 10);
     }
 }

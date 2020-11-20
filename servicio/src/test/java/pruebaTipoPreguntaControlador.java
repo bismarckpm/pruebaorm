@@ -4,7 +4,7 @@ import ucab.dsw.dtos.TipoPreguntaDto;
 
 public class pruebaTipoPreguntaControlador {
 
-    public long test_id = 9;
+    public long test_id = 10;
 
     @Test
     public void acreateTipoPreguntaTest() throws Exception
@@ -33,7 +33,7 @@ public class pruebaTipoPreguntaControlador {
     {
 
         ucab.dsw.servicio.TipoPreguntaControlador servicio = new ucab.dsw.servicio.TipoPreguntaControlador();
-        TipoPreguntaDto resultado = servicio.obtenerTipoPregunta(test_id+1);
+        TipoPreguntaDto resultado = servicio.obtenerTipoPregunta(test_id);
         Assert.assertEquals( resultado.getId(),test_id);
     }
 
