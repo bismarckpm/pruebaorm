@@ -81,7 +81,8 @@ public class Dao<T>
         try
         {
             _daoHandler.beginTransaction();
-            _em.remove( entity );
+            T toBeRemoved = _em.merge( entity );
+            _em.remove( toBeRemoved );
             _em.flush();
             _daoHandler.finishTransaction();
 
