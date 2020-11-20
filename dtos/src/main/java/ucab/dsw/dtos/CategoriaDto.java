@@ -1,10 +1,5 @@
 package ucab.dsw.dtos;
 
-<<<<<<< HEAD
-public class CategoriaDto extends DtoBase {
-    public CategoriaDto() {
-
-=======
 public class CategoriaDto extends DtoBase{
 
     private String descripcion;
@@ -24,6 +19,5 @@ public class CategoriaDto extends DtoBase{
     public CategoriaDto( long id ) throws Exception
     {
         super( id );
->>>>>>> 18306e02dbb87b05e8ed4f696540e88bd40b3b48
     }
 }

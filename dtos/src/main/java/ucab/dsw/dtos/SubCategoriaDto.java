@@ -1,21 +1,14 @@
 package ucab.dsw.dtos;
 
 public class SubCategoriaDto extends DtoBase {
-    public SubCategoriaDto(long id) throws Exception {
-        super(id);
-    }
-
-    public SubCategoriaDto() {
-
-    }
-    private Integer cat_id;
+    private CategoriaDto cat_id;
     private String descripcion;
     private String estatus;
 
-    public void setCatId(Integer catid){
+    public void setCatId(CategoriaDto catid){
         this.cat_id = catid;
     }
-    public Integer get_catid(){
+    public CategoriaDto get_catid(){
         return cat_id;
     }
 
@@ -31,5 +24,12 @@ public class SubCategoriaDto extends DtoBase {
     }
     public String get_estatus(){
         return estatus;
+    }
+
+    public SubCategoriaDto() {
+
+    }
+    public SubCategoriaDto(long id) throws Exception {
+        super(id);
     }
 }
