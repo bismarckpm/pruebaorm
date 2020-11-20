@@ -1,18 +1,15 @@
 package ucab.dsw.entidades;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.List;
 
 @Entity
-@Table(name = "subcategoria")
-public class SubcategoriaEnt extends EntidadBase {
+@Table(name = "subcategoria", schema = "mydb")
+public class SubcategoriaEnt extends EntidadBase{
+    private List<SolicitudEnt> solicitudes;
 
-    @Column(name = "descripcion", length = 45)
+    @Column(name = "descripcion")
     private String descripcion;
-
-    @ManyToOne
-    @JoinColumn( name = "idCategoria" )
-    private Categoria categorias;
 
     public String getDescripcion() {
         return descripcion;
@@ -22,4 +19,34 @@ public class SubcategoriaEnt extends EntidadBase {
         this.descripcion = descripcion;
     }
 
+    @Column(name = "estatus")
+    private String _estatus;
+
+    @Override
+    public String get_estatus() {
+        return _estatus;
+    }
+
+    @Override
+    public void set_estatus(String _estatus) {
+        this._estatus = _estatus;
+    }
+
+    @OneToMany(mappedBy = "subcategoria")
+    public List<SolicitudEnt> getSolicitudes() {
+        return solicitudes;
+    }
+
+    public void setSolicitudes(List<SolicitudEnt> solicitudes) {
+        this.solicitudes = solicitudes;
+    }
+    public SubcategoriaEnt( long id )
+    {
+        super( id );
+    }
+
+    public SubcategoriaEnt( )
+    {
+
+    }
 }

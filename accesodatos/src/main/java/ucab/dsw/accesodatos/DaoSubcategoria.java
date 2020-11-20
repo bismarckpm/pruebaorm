@@ -1,7 +1,6 @@
 package ucab.dsw.accesodatos;
 
 import ucab.dsw.entidades.SubcategoriaEnt;
-
 import javax.persistence.EntityManager;
 
 public class DaoSubcategoria extends Dao<SubcategoriaEnt> {
