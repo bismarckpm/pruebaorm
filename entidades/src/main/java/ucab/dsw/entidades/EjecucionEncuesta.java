@@ -18,7 +18,7 @@ public class EjecucionEncuesta extends EntidadBase
         return _respuesta;
     }
 
-    public void set_respuesta( String _respuesta ) { this._respuesta = _respuesta; }
+    public static void set_respuesta(String _respuesta) { this._respuesta = _respuesta; }
 
     @Override
     public String get_estatus()
@@ -27,7 +27,7 @@ public class EjecucionEncuesta extends EntidadBase
     }
 
     @Override
-    public void set_estatus( String _estatus )
+    public static void set_estatus(String _estatus)
     {
         this._estatus = _estatus;
     }

@@ -2,7 +2,8 @@ package ucab.dsw.dtos;
 
 public class EstudioDto extends DtoBase
 {
-    private ucab.dsw.dtos.UsuarioDto UsuarioDto;
+    private UsuarioDto UsuarioDto;
+    private SolicitudDto SolicitudDto;
 
     public EstudioDto()
     {
@@ -38,7 +39,7 @@ public class EstudioDto extends DtoBase
     }
 
 
-    public UsuarioDto getUsuario1Dto()
+    public UsuarioDto getUsuarioDto()
     {
         return UsuarioDto;
     }

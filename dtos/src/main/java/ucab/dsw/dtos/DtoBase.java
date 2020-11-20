@@ -1,6 +1,7 @@
 package ucab.dsw.dtos;
 
 
+import ucab.dsw.entidades.Pregunta;
 import ucab.dsw.excepciones.PruebaExcepcion;
 
 public class DtoBase

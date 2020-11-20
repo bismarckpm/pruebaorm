@@ -3,10 +3,10 @@ package ucab.dsw.dtos;
 public class EjecucionEncuestaDto extends DtoBase
 {
 
-    private ucab.dsw.dtos.TipoUsuarioDto tipoUsuarioDto;
-    private ucab.dsw.dtos.UsuarioDto usuarioDto;
-    private ucab.dsw.dtos.EncuestaDto encuestaDto;
-    private ucab.dsw.dtos.PreguntaDto preguntaDto;
+    private TipoUsuarioDto tipoUsuarioDto;
+    private UsuarioDto usuarioDto;
+    private EncuestaDto encuestaDto;
+    private PreguntaDto preguntaDto;
 
 
     public EjecucionEncuestaDto (long id ) throws Exception

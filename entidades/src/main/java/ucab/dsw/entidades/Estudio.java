@@ -23,7 +23,7 @@ public class Estudio extends EntidadBase
         return _fechacreacion;
     }
 
-    public void set_fechacreacion( String _fechacreacion ) { this._fechacreacion = _fechacreacion; }
+    public void set_fechacreacion(String _fechacreacion) { this._fechacreacion = _fechacreacion; }
 
 
     @Override
@@ -33,7 +33,7 @@ public class Estudio extends EntidadBase
     }
 
     @Override
-    public void set_estatus( String _estatus )
+    public void set_estatus(String _estatus)
     {
         this._estatus = _estatus;
     }

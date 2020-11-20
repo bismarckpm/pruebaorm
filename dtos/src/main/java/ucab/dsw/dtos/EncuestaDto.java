@@ -2,8 +2,8 @@ package ucab.dsw.dtos;
 
 public class EncuestaDto extends DtoBase
 {
-    private ucab.dsw.dtos.UsuarioDto UsuarioDto;
-    private ucab.dsw.dtos.EstudioDto EstudioDto;
+    private UsuarioDto UsuarioDto;
+    private EstudioDto EstudioDto;
 
     public EncuestaDto()
     {

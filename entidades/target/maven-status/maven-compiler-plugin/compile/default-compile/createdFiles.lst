@@ -1,3 +1,9 @@
-ucab\dsw\entidades\EntidadBase.class
+ucab\dsw\entidades\Opcion.class
 ucab\dsw\entidades\Usuario.class
+ucab\dsw\entidades\SubCategoria.class
 ucab\dsw\entidades\TipoUsuario.class
+ucab\dsw\entidades\EntidadBase.class
+ucab\dsw\entidades\Solicitud.class
+ucab\dsw\entidades\Categoria.class
+ucab\dsw\entidades\Pregunta.class
+ucab\dsw\entidades\TipoPregunta.class

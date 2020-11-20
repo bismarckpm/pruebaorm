@@ -18,7 +18,7 @@ public class Encuesta extends EntidadBase
         return _fechacreacion;
     }
 
-    public void set_fechacreacion( String _fechacreacion ) { this._fechacreacion = _fechacreacion; }
+    public void set_fechacreacion(String _fechacreacion) { this._fechacreacion = _fechacreacion; }
 
     @Override
     public String get_estatus()
@@ -27,7 +27,7 @@ public class Encuesta extends EntidadBase
     }
 
     @Override
-    public void set_estatus( String _estatus )
+    public void set_estatus(String _estatus)
     {
         this._estatus = _estatus;
     }
