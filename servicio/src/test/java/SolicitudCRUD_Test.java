@@ -16,7 +16,7 @@ public class SolicitudCRUD_Test {
         solicitudDto.setFecha("01/01/2000");
         SubcategoriaDto subcategoriaDto = new SubcategoriaDto(1);
         solicitudDto.setSubcategoria(subcategoriaDto);
-        UsuarioDto usuarioDto = new UsuarioDto(8);
+        UsuarioDto usuarioDto = new UsuarioDto();
         solicitudDto.setUsuario( usuarioDto );
         SolicitudDto resultado = servicio.addSolicitud( solicitudDto );
         Assert.assertNotEquals( resultado.getId(), 0 );

@@ -41,6 +41,14 @@ public class SubcategoriaEnt extends EntidadBase{
     @JoinColumn(name = "idCategoria")
     private Categoria categorias;
 
+    public Categoria getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(Categoria categorias) {
+        this.categorias = categorias;
+    }
+
     public void setSolicitudes(List<SolicitudEnt> solicitudes) {
         this.solicitudes = solicitudes;
     }
@@ -49,8 +57,7 @@ public class SubcategoriaEnt extends EntidadBase{
         super( id );
     }
 
-    public SubcategoriaEnt( )
-    {
+    public SubcategoriaEnt() {
 
     }
 }

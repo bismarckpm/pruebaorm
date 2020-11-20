@@ -31,4 +31,11 @@ public class SubcategoriaDto extends DtoBase {
     public void setCategorias(CategoriaDto categorias) {
         this.categorias = categorias;
     }
+
+    public SubcategoriaDto (long id) throws Exception{
+        super(id);
+    }
+
+    public SubcategoriaDto (){
+    }
 }

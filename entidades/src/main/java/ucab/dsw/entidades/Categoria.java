@@ -13,6 +13,12 @@ public class Categoria extends EntidadBase {
     @OneToMany( mappedBy = "categorias")
     private List<SubcategoriaEnt> subcategoriaEnts;
 
+    public Categoria () {
+    }
+    public Categoria (long id) {
+        super(id);
+    }
+
     public String getDescripcion() {
         return descripcion;
     }
