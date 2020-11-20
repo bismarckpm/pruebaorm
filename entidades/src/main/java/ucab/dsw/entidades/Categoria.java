@@ -26,7 +26,18 @@ public class Categoria extends EntidadBase
     public void set_descripcion( String _descripcion ) { this._descripcion = _descripcion; }
 
 
+    public List<Subcategoria> getsubcategoria()
+    {
+        return _subcategoria;
+    }
 
+    public void setsubcategoria( List<Subcategoria> _subcategoria )
+    {
+        this._subcategoria = _subcategoria;
+    }
+
+    @OneToMany( mappedBy = "_Categoria", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Subcategoria> _subcategoria;
 
     public Categoria ( long id )
     {

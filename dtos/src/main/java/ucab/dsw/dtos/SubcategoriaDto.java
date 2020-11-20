@@ -1,10 +1,10 @@
 package ucab.dsw.dtos;
 
-public class SubCategoriaDto extends DtoBase{
-    public SubCategoriaDto()
+public class SubcategoriaDto extends DtoBase{
+    public SubcategoriaDto()
     {
     }
-    public SubCategoriaDto( long id ) throws Exception
+    public SubcategoriaDto(long id ) throws Exception
     { super( id ); }
     private String descripcion;
 

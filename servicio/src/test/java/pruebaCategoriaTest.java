@@ -26,7 +26,7 @@ public class pruebaCategoriaTest
     {
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
         CategoriaDto  CategoriaDto= new CategoriaDto( 4);
-        CategoriaDto.setDescripcion( "Pedro" );
+        CategoriaDto.setDescripcion( "Juan" );
         CategoriaDto.setEstatus("A");
         CategoriaDto resultado = servicio.changeCategoria( CategoriaDto );
         Assert.assertNotEquals( resultado.getId(), 0 );
@@ -37,7 +37,7 @@ public class pruebaCategoriaTest
     public void deleteCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
-        CategoriaDto resultado = servicio.deleteCategoria( 2 );
+        CategoriaDto resultado = servicio.deleteCategoria( 10 );
         Assert.assertNotEquals( resultado.getId(), 0 );
 
     }
@@ -48,7 +48,7 @@ public class pruebaCategoriaTest
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
         CategoriaDto  CategoriaDto= new CategoriaDto( 6);
         CategoriaDto resultado = servicio.showCategoria( CategoriaDto.getId() );
-        Assert.assertEquals( resultado.getDescripcion(), "hola");
+        Assert.assertEquals( resultado.getDescripcion(), "Bismarck");
 
     }
 

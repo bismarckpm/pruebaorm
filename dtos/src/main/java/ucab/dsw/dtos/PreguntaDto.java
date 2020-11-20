@@ -7,7 +7,7 @@ public class PreguntaDto extends DtoBase {
     private String pregunta;
     private Date fechacreacion;
     private String status;
-    private SubCategoriaDto subcategoria;
+    private SubcategoriaDto subcategoria;
     private UsuarioDto idusuario;
     private TipoPreguntaDto tipopregunta;
 
@@ -20,8 +20,8 @@ public class PreguntaDto extends DtoBase {
     public String getStatus() { return status; }
     public void setStatus(String status) { this.status = status; }
 
-    public SubCategoriaDto getSubcategoria() { return subcategoria; }
-    public void setSubcategoria(SubCategoriaDto subcategoria) { this.subcategoria = subcategoria; }
+    public SubcategoriaDto getSubcategoria() { return subcategoria; }
+    public void setSubcategoria(SubcategoriaDto subcategoria) { this.subcategoria = subcategoria; }
 
     public UsuarioDto getIdusuario() { return idusuario; }
     public void setIdusuario(UsuarioDto idusuario) { this.idusuario = idusuario; }
