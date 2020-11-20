@@ -40,9 +40,69 @@ public class pruebaORMWS extends AplicacionBase
             usuario.set_apellido( usuarioDto.getApellido() );
             usuario.set_estatus( usuarioDto.getEstatus() );
             usuario.set_correoelectronico( usuarioDto.getCorreoelectronico() );
-            TipoUsuario tipoUsuario = new TipoUsuario(usuarioDto.getTipoUsuarioDto().getId());
+            TipoUsuario tipoUsuario = new TipoUsuario( usuarioDto.getTipoUsuarioDto().getId() );
             usuario.set_tipousuario( tipoUsuario );
             Usuario resul = dao.insert( usuario );
+            resultado.setId( resul.get_id() );
+        }
+        catch ( Exception ex )
+        {
+            String problema = ex.getMessage();
+        }
+        return  resultado;
+    }
+
+    public UsuarioDto changeUser( UsuarioDto usuarioDto ) throws Exception
+    {
+        UsuarioDto resultado = new UsuarioDto();
+        try
+        {
+            DaoUsuario dao = new DaoUsuario();
+            Usuario usuario = new Usuario(usuarioDto.getId());
+            usuario.set_nombre( usuarioDto.getNombre() );
+            usuario.set_apellido( usuarioDto.getApellido() );
+            usuario.set_estatus( usuarioDto.getEstatus() );
+            usuario.set_correoelectronico( usuarioDto.getCorreoelectronico() );
+            TipoUsuario tipoUsuario = new TipoUsuario(usuarioDto.getTipoUsuarioDto().getId());
+            usuario.set_tipousuario( tipoUsuario );
+            Usuario resul = dao.update( usuario );
+            resultado.setId( resul.get_id() );
+        }
+        catch ( Exception ex )
+        {
+            String problema = ex.getMessage();
+        }
+        return  resultado;
+    }
+
+    @PUT
+    @Path( "/{id}" )
+    public UsuarioDto deleteUser( long id )
+    {
+        UsuarioDto resultado = new UsuarioDto();
+        try
+        {
+            DaoUsuario dao = new DaoUsuario();
+            Usuario delete = dao.find( id, Usuario.class );
+            Usuario resul = dao.delete( delete );
+            resultado.setId( resul.get_id() );
+        }
+        catch ( Exception ex )
+        {
+            String problema = ex.getMessage();
+        }
+        return  resultado;
+    }
+
+
+    @PUT
+    @Path( "/{id}" )
+    public UsuarioDto showUser( long id )
+    {
+        UsuarioDto resultado = new UsuarioDto();
+        try {
+            DaoUsuario dao = new DaoUsuario();
+            Usuario resul = dao.find( id, Usuario.class );
             resultado.setId( resul.get_id() );
         }
         catch ( Exception ex )

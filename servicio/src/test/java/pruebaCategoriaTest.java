@@ -14,7 +14,7 @@ public class pruebaCategoriaTest
     {
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
         CategoriaDto CategoriaDto= new CategoriaDto();
-        CategoriaDto.setDescripcion( "Bismarck" );
+        CategoriaDto.setDescripcion( "Jose" );
         CategoriaDto.setEstatus("A");
         CategoriaDto resultado = servicio.addCategoria( CategoriaDto );
         Assert.assertNotEquals( resultado.getId(), 1 );
