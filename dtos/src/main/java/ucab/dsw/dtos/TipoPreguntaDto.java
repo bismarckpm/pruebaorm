@@ -22,4 +22,13 @@ public class TipoPreguntaDto extends DtoBase{
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public TipoPreguntaDto()
+    {
+    }
+
+    public TipoPreguntaDto( long id ) throws Exception
+    {
+        super( id );
+    }
 }

@@ -32,7 +32,7 @@ public class estudioORMWS {
             estudio.set_estatus( estudioDto.getEstatus() );
             Usuario usuario = new Usuario(estudioDto.getUsuario().getId());
             estudio.set_usuario( usuario );
-            Solicitud solicitud = new Usuario(estudioDto.getSolicitud().getId());
+            Solicitud solicitud = new Solicitud(estudioDto.getSolicitud().getId());
             estudio.set_solicitud( solicitud );
             Estudio resul = dao.insert( estudio );
             resultado.setId( resul.get_id() );
@@ -84,7 +84,7 @@ public class estudioORMWS {
             estudio.set_estatus( estudioDto.getEstatus() );
             Usuario usuario = new Usuario(estudioDto.getUsuario().getId());
             estudio.set_usuario( usuario );
-            Solicitud solicitud = new Usuario(estudioDto.getSolicitud().getId());
+            Solicitud solicitud = new Solicitud(estudioDto.getSolicitud().getId());
             estudio.set_solicitud( solicitud );
             Estudio resul = dao.update (estudio );
             resultado.setId(resul.get_id());
