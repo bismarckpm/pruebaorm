@@ -78,10 +78,43 @@ public class Usuario extends EntidadBase
     @Column( name = "estatus" )
     private String _estatus;
 
+    @OneToMany(mappedBy = "idusuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    private List<solicitud> solicitud;
+
+    public List<solicitud> get_solicitud()
+    {
+        return solicitud;
+    }
+
+    public void set_solicitud( List<solicitud> S )
+    {
+        this.solicitud = S;
+    }
+
+
+    @OneToMany(mappedBy = "idUsuarioCreador", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    private List<Encuesta> Usuario_Creador;
+
+    public List<Encuesta> get_Usuario_Creador(){return this.Usuario_Creador;}
+
+    public void set_Usuario_Creador( List<Encuesta> UC )
+    {
+        this.Usuario_Creador = UC;
+    }
+
+    @OneToMany(mappedBy = "idUsuarioAnalista", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    private List<Encuesta> UsuarioAnalista;
+
+    public List<Encuesta> get_Usuario_Analista(){return this.UsuarioAnalista;}
+
+    public void set_Usuario_Analista( List<Encuesta> UA )
+    {
+        this.UsuarioAnalista = UA;
+    }
+
     @ManyToOne
     @JoinColumn( name = "idTipoUsuario" )
     private TipoUsuario _tipousuario;
-
 
     public Usuario( long id )
     {
