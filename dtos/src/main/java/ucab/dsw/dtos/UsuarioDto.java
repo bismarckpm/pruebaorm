@@ -2,6 +2,14 @@ package ucab.dsw.dtos;
 
 public class UsuarioDto extends DtoBase
 {
+    public UsuarioDto()
+    {
+    }
+
+    public UsuarioDto( long id ) throws Exception
+    {
+        super( id );
+    }
     private String nombre;
 
     public String getNombre()
