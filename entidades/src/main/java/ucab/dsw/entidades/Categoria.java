@@ -53,7 +53,7 @@ public class Categoria extends EntidadBase
     {
 
     }
-    @OneToMany( mappedBy = "_categoria", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+  /*  @OneToMany( mappedBy = "_categoria", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<SubCategoria> _subcategorias;
 
     public List<SubCategoria> get_subcategorias()
@@ -64,5 +64,5 @@ public class Categoria extends EntidadBase
     public void set_subcategorias( List<SubCategoria> _subcategorias )
     {
         this._subcategorias = _subcategorias;
-    }
+    }*/
 }

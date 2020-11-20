@@ -8,7 +8,7 @@ public class EjecucionEncuestaDto extends DtoBase{
 
     private EncuestaDto encuesta;
 
-    private PreguntaDto pregunta;
+  //  private PreguntaDto pregunta;
 
     private UsuarioDto usuarioEncuestado;
 
@@ -58,7 +58,7 @@ public class EjecucionEncuestaDto extends DtoBase{
         this.encuesta = encuesta;
     }
 
-    public PreguntaDto getPregunta()
+    /*public PreguntaDto getPregunta()
     {
         return pregunta;
     }
@@ -67,7 +67,7 @@ public class EjecucionEncuestaDto extends DtoBase{
     {
         this.pregunta = pregunta;
     }
-
+    */
     public UsuarioDto get_usuarioEncuestado()
     {
         return usuarioEncuestado;
