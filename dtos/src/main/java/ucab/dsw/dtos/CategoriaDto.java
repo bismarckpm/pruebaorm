@@ -13,7 +13,6 @@ public class CategoriaDto extends DtoBase
         super( id );
     }
 
-
     private String descripcion;
 
     public String getDescripcion()
