@@ -7,12 +7,15 @@ import java.util.Objects;
 
 @Entity
 public class Encuesta implements Serializable {
+    public static final long serialVersionUID = 1L;
+
     private int id;
     private Date fechacreacion;
     private String estatus;
 
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }

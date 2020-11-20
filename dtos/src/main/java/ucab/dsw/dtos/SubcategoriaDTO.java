@@ -1,12 +1,26 @@
 package ucab.dsw.dtos;
 
-public class SubcategoriaDTO extends DtoBase {
+public class SubcategoriaDTO {
+    private int id;
     private CategoriaDTO categoriaDTO;
+    private int idCategoria;
     private String descripcion;
     private String estatus;
 
-    public SubcategoriaDTO(long id) throws Exception {
-        super(id);
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public CategoriaDTO getCategoriaDTO() {

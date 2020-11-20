@@ -4,8 +4,21 @@
     <persistence-unit name="TallerPU">
         <jta-data-source>jdbc/TallerDb</jta-data-source>
         <class>ucab.dsw.entidades.Categoria</class>
-        <properties>
-            <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-        </properties>
+        <class>ucab.dsw.entidades.Subcategoria</class>
+
+        <!--
+        <class>ucab.dsw.entidades.Ejecucionencuesta</class>
+        <class>ucab.dsw.entidades.Encuesta</class>
+        <class>ucab.dsw.entidades.Estudio</class>
+        <class>ucab.dsw.entidades.Opcion</class>
+        <class>ucab.dsw.entidades.Pregunta</class>
+        <class>ucab.dsw.entidades.Solicitud</class>
+        <class>ucab.dsw.entidades.Subcategoria</class>
+        <class>ucab.dsw.entidades.Tipopregunta</class>
+        <class>ucab.dsw.entidades.TipoUsuario</class>
+        <class>ucab.dsw.entidades.Usuario</class>
+        <class>ucab.dsw.entidades.EntidadBase</class>
+        -->
+
     </persistence-unit>
 </persistence>

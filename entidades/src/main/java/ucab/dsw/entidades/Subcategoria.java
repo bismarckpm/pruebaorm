@@ -2,16 +2,19 @@ package ucab.dsw.entidades;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
 
 @Entity
+@Table(name = "subcategoria")
+@NamedQueries({
+        @NamedQuery(name = "Subcategoria.findAll", query = "SELECT s FROM Subcategoria s ORDER BY s.id")
+})
 public class Subcategoria implements Serializable {
-    private int id;
-    private String descripcion;
-    private String estatus;
-
+    public static final long serialVersionUID = 1L;
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     public int getId() {
         return id;
     }
@@ -22,6 +25,8 @@ public class Subcategoria implements Serializable {
 
     @Basic
     @Column(name = "descripcion", nullable = false, length = 45)
+    private String descripcion;
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -30,8 +35,12 @@ public class Subcategoria implements Serializable {
         this.descripcion = descripcion;
     }
 
+
     @Basic
     @Column(name = "estatus", nullable = false)
+    private String estatus;
+
+
     public String getEstatus() {
         return estatus;
     }
@@ -40,22 +49,23 @@ public class Subcategoria implements Serializable {
         this.estatus = estatus;
     }
 
+
     @JoinColumn(name = "idCategoria", referencedColumnName = "id")
     @ManyToOne
     private Categoria categoria;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Subcategoria that = (Subcategoria) o;
-        return id == that.id &&
-                Objects.equals(descripcion, that.descripcion) &&
-                Objects.equals(estatus, that.estatus);
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, descripcion, estatus);
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public Subcategoria() {
+    }
+
+    public Subcategoria(int id) {
+        this.id = id;
     }
 }

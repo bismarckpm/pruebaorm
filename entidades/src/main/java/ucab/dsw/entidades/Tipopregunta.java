@@ -1,20 +1,20 @@
 package ucab.dsw.entidades;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 public class Tipopregunta implements Serializable {
+    public static final long serialVersionUID = 1L;
+
     private int id;
     private String descripcion;
     private String estatus;
 
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }

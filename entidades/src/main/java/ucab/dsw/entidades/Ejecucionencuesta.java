@@ -6,12 +6,15 @@ import java.util.Objects;
 
 @Entity
 public class Ejecucionencuesta implements Serializable {
+    public static final long serialVersionUID = 1L;
+
     private int id;
     private String respuesta;
     private String estatus;
 
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
