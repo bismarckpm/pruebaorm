@@ -1,16 +1,9 @@
-package ucab.dsw.entidades;
+package ucab.dsw.dtos;
 
-import javax.persistence.*;
+public class SubCategoriaDto extends DtoBase{
 
-@Entity
-@Table( name = "tipopregunta" )
-public class TipoPregunta extends EntidadBase {
-
-
-    @Column( name = "descripcion", nullable = false )
     private String descripcion;
 
-    @Column( name = "status",columnDefinition = "CHECK (status IN ('I','A'))")
     private String status;
 
     public String getDescripcion() {

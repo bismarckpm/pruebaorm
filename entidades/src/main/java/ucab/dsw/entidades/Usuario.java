@@ -14,6 +14,7 @@ import java.util.List;
 @Table( name = "usuario" )
 public class Usuario extends EntidadBase
 {
+
     @Column( name = "nombre" )
     private String _nombre;
 
@@ -81,7 +82,6 @@ public class Usuario extends EntidadBase
     @ManyToOne
     @JoinColumn( name = "idTipoUsuario" )
     private TipoUsuario _tipousuario;
-
 
     public Usuario( long id )
     {

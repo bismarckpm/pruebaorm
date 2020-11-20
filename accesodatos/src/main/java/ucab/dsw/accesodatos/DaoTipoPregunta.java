@@ -1,14 +1,15 @@
 package ucab.dsw.accesodatos;
 
-import ucab.dsw.entidades.SubCategoria;
+import ucab.dsw.entidades.TipoPregunta;
 
 import javax.persistence.EntityManager;
 
-public class DaoSubCategoria extends Dao<SubCategoria> {
+public class DaoTipoPregunta extends Dao<TipoPregunta> {
+
     private EntityManager _em;
     static DaoHandler _handler = new DaoHandler();
 
-    public DaoSubCategoria( )
+    public DaoTipoPregunta( )
     {
         super( _handler );
     }
