@@ -20,6 +20,9 @@ public class TipoPregunta extends EntidadBase {
     @Column( name = "estatus", nullable = false  )
     private String _estatus;
 
+    @OneToMany( mappedBy = "_tipopregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Pregunta> _pregunta;
+
     public String get_descripcion() {
         return _descripcion;
     }

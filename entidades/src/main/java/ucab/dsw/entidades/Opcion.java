@@ -22,7 +22,7 @@ public class Opcion extends EntidadBase {
 
     @ManyToOne
     @JoinColumn( name = "idPregunta" )
-    private TipoUsuario _pregunta;
+    private Pregunta _pregunta;
 
     public String get_descripcion() {
         return _descripcion;
@@ -42,11 +42,11 @@ public class Opcion extends EntidadBase {
         this._estatus = _estatus;
     }
 
-    public TipoUsuario get_pregunta() {
+    public Pregunta get_pregunta() {
         return _pregunta;
     }
 
-    public void set_pregunta(TipoUsuario _pregunta) {
+    public void set_pregunta(Pregunta _pregunta) {
         this._pregunta = _pregunta;
     }
 
@@ -59,4 +59,5 @@ public class Opcion extends EntidadBase {
     {
 
     }
+
 }

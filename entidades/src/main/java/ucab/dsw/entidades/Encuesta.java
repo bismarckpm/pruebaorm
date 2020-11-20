@@ -2,6 +2,7 @@ package ucab.dsw.entidades;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="encuesta")
@@ -22,6 +23,10 @@ public class Encuesta extends EntidadBase {
     @ManyToOne
     @JoinColumn(name = "idEstudio")
     private Estudio _estudio;
+
+    @OneToMany( mappedBy = "_encuesta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<EjecucionEncuesta> _ejecucion;
+
 
     public Encuesta(long id) {
         super(id);

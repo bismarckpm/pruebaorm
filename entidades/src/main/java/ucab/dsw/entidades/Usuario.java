@@ -94,6 +94,9 @@ public class Usuario extends EntidadBase
     @OneToMany( mappedBy = "_usuarioAnalista", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<Encuesta> _encuestasAnalista;
 
+    @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<EjecucionEncuesta> _ejecucion;
+
     public Usuario( long id )
     {
         super( id );
