@@ -1,18 +1,15 @@
 package ucab.dsw.servicio;
 import ucab.dsw.accesodatos.DaoEstudio;
 import ucab.dsw.accesodatos.DaoSolicitud;
+import ucab.dsw.accesodatos.DaoTipoUsuario;
 import ucab.dsw.dtos.EstudioDto;
 import ucab.dsw.dtos.SolicitudDto;
-import ucab.dsw.entidades.EstudioEnt;
-import ucab.dsw.entidades.SolicitudEnt;
-import ucab.dsw.entidades.SubcategoriaEnt;
-import ucab.dsw.entidades.Usuario;
+import ucab.dsw.dtos.TipoUsuarioDto;
+import ucab.dsw.entidades.*;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path( "/Estudio" )
 @Produces( MediaType.APPLICATION_JSON )
@@ -42,5 +39,62 @@ public class EstudioCrud extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @GET
+    @Path("/getEstudio")
+    public List<EstudioEnt> getEstudios() {
+
+        List<EstudioEnt> estudios = null;
+        try {
+            DaoEstudio dao = new DaoEstudio();
+            estudios = dao.findAll(EstudioEnt.class);
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        for (EstudioEnt obj : estudios) {
+            System.out.println(obj.getFechacreacion());
+        }
+        return estudios;
+    }
+
+    @PUT
+    @Path("/updateEstudio/{id}")
+    public EstudioDto updateEstudio(@PathParam("id") long id, EstudioDto estudioDto) {
+        EstudioDto resultado = new EstudioDto();
+        try {
+            DaoEstudio dao = new DaoEstudio();
+            EstudioEnt estudio = dao.find(id, EstudioEnt.class);
+            estudio.setFechacreacion(estudioDto.getFechacreacion());
+            estudio.set_estatus(estudioDto.get_estatus());
+            Usuario usuario = new Usuario(estudioDto.getUsuario().getId());
+            estudio.setUsuario(usuario);
+            SolicitudEnt solicitud = new SolicitudEnt(estudioDto.getSolicitud().getId());
+            estudio.setSolicitud(solicitud);
+            EstudioEnt resul = dao.update(estudio);
+            resultado.setId(resul.get_id());
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        return resultado;
+    }
+    @DELETE
+    @Path("/deleteEstudio/{id}")
+    public EstudioDto deleteEstudio(@PathParam("id") long id)
+    {
+        EstudioDto resultado = new EstudioDto();
+        try
+        {
+            DaoEstudio dao = new DaoEstudio();
+            EstudioEnt estudio = dao.find(id, EstudioEnt.class);
+            if(estudio != null) {
+                EstudioEnt resul = dao.delete(estudio);
+                resultado.setId(resul.get_id());
+            }
+        }
+        catch (Exception er){
+            String problema = er.getMessage();
+        }
+        return resultado;
     }
 }
