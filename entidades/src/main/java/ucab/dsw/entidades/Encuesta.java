@@ -25,7 +25,7 @@ public class Encuesta extends EntidadBase {
     private Estudio _estudio;
 
     @OneToMany( mappedBy = "_encuesta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<EjecucionEncuesta> _ejecucion;
+    private List<EjecucionEncuesta> _ejecuciones;
 
 
     public Encuesta(long id) {

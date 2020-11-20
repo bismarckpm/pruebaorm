@@ -95,7 +95,10 @@ public class Usuario extends EntidadBase
     private List<Encuesta> _encuestasAnalista;
 
     @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<EjecucionEncuesta> _ejecucion;
+    private List<EjecucionEncuesta> _ejecuciones;
+
+    @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Pregunta> _preguntas;
 
     public Usuario( long id )
     {

@@ -60,4 +60,7 @@ public class Opcion extends EntidadBase {
 
     }
 
+    @OneToMany( mappedBy = "_opcion", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<EjecucionEncuesta> _ejecuciones;
+
 }

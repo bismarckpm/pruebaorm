@@ -49,7 +49,7 @@ public class opcionORMWS_Test {
         ucab.dsw.servicio.opcionORMWS servicio = new ucab.dsw.servicio.opcionORMWS();
         OpcionDto opcionDto= new OpcionDto();
         opcionDto.setEstatus("A");
-        opcionDto.setDescripcion("opcion1");
+        opcionDto.setDescripcion("opcion2");
         PreguntaDto preguntaDto= new PreguntaDto(1);
 
         opcionDto.setPreguntaDto(preguntaDto);

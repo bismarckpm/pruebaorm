@@ -28,7 +28,7 @@ public class pruebaCRUDSolicitud {
         SubcategoriaDto subcategoriaDto=new SubcategoriaDto(2);
         solicitudDto.setSubcategoriaDto(subcategoriaDto);
 
-        UsuarioDto usuarioDto = new UsuarioDto(5);
+        UsuarioDto usuarioDto = new UsuarioDto(1);
         solicitudDto.setUsuarioDto(usuarioDto);
 
         SolicitudDto resultado = this.servicio.addSolicitud(solicitudDto);
@@ -47,25 +47,25 @@ public class pruebaCRUDSolicitud {
         SubcategoriaDto subcategoriaDto=new SubcategoriaDto(2);
         solicitudDto.setSubcategoriaDto(subcategoriaDto);
 
-        UsuarioDto usuarioDto = new UsuarioDto(10);
+        UsuarioDto usuarioDto = new UsuarioDto(2);
         solicitudDto.setUsuarioDto(usuarioDto);
 
 
-        SolicitudDto resultado = this.servicio.editSolicitud(3,solicitudDto);
+        SolicitudDto resultado = this.servicio.editSolicitud(2,solicitudDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
     @Test
     public void getSolicitudTest() throws Exception
     {
-        SolicitudDto resultado = this.servicio.getSolicitud(3);
+        SolicitudDto resultado = this.servicio.getSolicitud(1);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
     @Test
     public void deleteSolicitudTest() throws Exception
     {
-        SolicitudDto resultado = this.servicio.deleteSolicitud(3);
+        SolicitudDto resultado = this.servicio.deleteSolicitud(1);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 }

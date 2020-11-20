@@ -31,10 +31,10 @@ public class Pregunta extends EntidadBase {
     private java.util.Date _fecha;
 
     @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<EjecucionEncuesta> _ejecucion;
+    private List<EjecucionEncuesta> _ejecuciones;
 
     @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<Opcion> _opcion;
+    private List<Opcion> _opciones;
 
     public String get_pregunta() {
         return _pregunta;

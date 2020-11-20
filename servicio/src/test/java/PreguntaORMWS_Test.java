@@ -66,18 +66,17 @@ public class PreguntaORMWS_Test {
     {
 
         ucab.dsw.servicio.preguntasORMWS servicio = new ucab.dsw.servicio.preguntasORMWS();
-
         PreguntaDto preguntaDto= new PreguntaDto();
 
-        preguntaDto.setPregunta("¿ Que dia es hoy ?");
+        preguntaDto.setPregunta("¿ Que dia sera el evento ?");
         preguntaDto.setEstatus("A");
         DateFormat formato= new SimpleDateFormat("dd/MM/yyyy");
-        preguntaDto.setFechacreacion(formato.parse("20/11/2020"));
+        preguntaDto.setFechacreacion(formato.parse("20/12/2020"));
 
-        TipoPreguntaDto tipoPreguntaDto= new TipoPreguntaDto(1);
+        TipoPreguntaDto tipoPreguntaDto= new TipoPreguntaDto(2);
         preguntaDto.setTipoPreguntaDto(tipoPreguntaDto);
 
-        SubcategoriaDto subcategoria= new SubcategoriaDto(1);
+        SubcategoriaDto subcategoria= new SubcategoriaDto(2);
         preguntaDto.setSubCategoriaDto(subcategoria);
 
         UsuarioDto usuarioDto= new UsuarioDto(1);

@@ -24,15 +24,17 @@ public class ejecucionencuestaORMWS_Test {
         ucab.dsw.servicio.ejecucionencuestaORMWS servicio = new ucab.dsw.servicio.ejecucionencuestaORMWS();
         EjecucionencuestaDto ejecucionencuestaDto= new EjecucionencuestaDto();
         ejecucionencuestaDto.setEstatus("P");
-        ejecucionencuestaDto.setRespuesta("Hola");
+        ejecucionencuestaDto.setRespuesta("respuesta nueva");
 
         EncuestaDto encuestaDto= new EncuestaDto(1);
         PreguntaDto preguntaDto= new PreguntaDto(1);
         OpcionDto opcionDto= new OpcionDto(1);
+        UsuarioDto usuarioDto= new UsuarioDto(4);
 
         ejecucionencuestaDto.setOpcionDto(opcionDto);
         ejecucionencuestaDto.setEncuestaDto(encuestaDto);
         ejecucionencuestaDto.setPreguntaDto(preguntaDto);
+        ejecucionencuestaDto.setUsuarioDto(usuarioDto);
 
 
         EjecucionencuestaDto resultado= servicio.addejecucion(ejecucionencuestaDto);
@@ -63,15 +65,17 @@ public class ejecucionencuestaORMWS_Test {
         ucab.dsw.servicio.ejecucionencuestaORMWS servicio = new ucab.dsw.servicio.ejecucionencuestaORMWS();
         EjecucionencuestaDto ejecucionencuestaDto= new EjecucionencuestaDto();
         ejecucionencuestaDto.setEstatus("P");
-        ejecucionencuestaDto.setRespuesta("Hola");
+        ejecucionencuestaDto.setRespuesta("respuesta actualizada");
 
         EncuestaDto encuestaDto= new EncuestaDto(1);
         PreguntaDto preguntaDto= new PreguntaDto(1);
         OpcionDto opcionDto= new OpcionDto(1);
+        UsuarioDto usuarioDto= new UsuarioDto(4);
 
         ejecucionencuestaDto.setOpcionDto(opcionDto);
         ejecucionencuestaDto.setEncuestaDto(encuestaDto);
         ejecucionencuestaDto.setPreguntaDto(preguntaDto);
+        ejecucionencuestaDto.setUsuarioDto(usuarioDto);
 
 
         EjecucionencuestaDto resultado= servicio.actualizarejecucion(1,ejecucionencuestaDto);

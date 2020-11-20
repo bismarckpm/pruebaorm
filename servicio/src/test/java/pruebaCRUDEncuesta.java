@@ -23,10 +23,10 @@ public class pruebaCRUDEncuesta {
         DateFormat formato= new SimpleDateFormat("yyyy-MM-dd");
         encuestaDto.setFechacreacion(formato.parse("2020-12-25"));
 
-        UsuarioDto usuarioAnalistaDto = new UsuarioDto(5);
+        UsuarioDto usuarioAnalistaDto = new UsuarioDto(2);
         encuestaDto.setUsuarioAnalistaDto(usuarioAnalistaDto);
 
-        UsuarioDto usuarioCreadorDto = new UsuarioDto(10);
+        UsuarioDto usuarioCreadorDto = new UsuarioDto(1);
         encuestaDto.setUsuarioCreadorDto(usuarioCreadorDto);
 
         EstudioDto estudioDto=new EstudioDto(1);
@@ -46,16 +46,16 @@ public class pruebaCRUDEncuesta {
         DateFormat formato= new SimpleDateFormat("yyyy-MM-dd");
         encuestaDto.setFechacreacion(formato.parse("2020-11-25"));
 
-        UsuarioDto usuarioAnalistaDto = new UsuarioDto(6);
+        UsuarioDto usuarioAnalistaDto = new UsuarioDto(2);
         encuestaDto.setUsuarioAnalistaDto(usuarioAnalistaDto);
 
-        UsuarioDto usuarioCreadorDto = new UsuarioDto(11);
+        UsuarioDto usuarioCreadorDto = new UsuarioDto(1);
         encuestaDto.setUsuarioCreadorDto(usuarioCreadorDto);
 
-        EstudioDto estudioDto=new EstudioDto(1);
+        EstudioDto estudioDto=new EstudioDto(2);
         encuestaDto.setEstudioDto(estudioDto);
 
-        EncuestaDto resultado = this.servicio.editEncuesta(1,encuestaDto);
+        EncuestaDto resultado = this.servicio.editEncuesta(2,encuestaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 

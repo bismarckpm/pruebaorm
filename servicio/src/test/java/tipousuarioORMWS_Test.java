@@ -19,7 +19,7 @@ public class tipousuarioORMWS_Test {
         ucab.dsw.servicio.tipousuarioORMWS servicio= new ucab.dsw.servicio.tipousuarioORMWS();
 
         TipoUsuarioDto tipoUsuarioDto= new TipoUsuarioDto();
-        tipoUsuarioDto.setDescripcion("Admin");
+        tipoUsuarioDto.setDescripcion("Tipo usuario nuevo");
         tipoUsuarioDto.setEstatus("A");
 
         TipoUsuarioDto resultado= servicio.addTipoUsuario(tipoUsuarioDto);
@@ -41,10 +41,10 @@ public class tipousuarioORMWS_Test {
         ucab.dsw.servicio.tipousuarioORMWS servicio= new ucab.dsw.servicio.tipousuarioORMWS();
 
         TipoUsuarioDto tipoUsuarioDto= new TipoUsuarioDto();
-        tipoUsuarioDto.setDescripcion("Normal");
+        tipoUsuarioDto.setDescripcion("Tipo usuario modificado");
         tipoUsuarioDto.setEstatus("A");
 
-        TipoUsuarioDto resultado= servicio.updateTipoUsuario(1,tipoUsuarioDto);
+        TipoUsuarioDto resultado= servicio.updateTipoUsuario(3,tipoUsuarioDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 

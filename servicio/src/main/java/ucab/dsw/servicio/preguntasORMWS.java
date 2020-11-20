@@ -121,6 +121,7 @@ public class preguntasORMWS extends AplicacionBase{
         PreguntaDto resultado= new PreguntaDto();
         try{
             DaoPregunta dao= new DaoPregunta();
+
             Pregunta pregunta= new Pregunta();
 
             Class<Pregunta> type = Pregunta.class;
@@ -130,9 +131,15 @@ public class preguntasORMWS extends AplicacionBase{
             pregunta.set_fecha(preguntaDto.getFechacreacion());
             pregunta.set_estatus(preguntaDto.getEstatus());
 
+            TipoPregunta tipoPregunta= new TipoPregunta(preguntaDto.getTipoPreguntaDto().getId());
+            Subcategoria subcategoria= new Subcategoria(preguntaDto.getSubCategoriaDto().getId());
+            Usuario usuario= new Usuario(preguntaDto.getUsuarioDto().getId());
+
+            pregunta.set_subcategoria(subcategoria);
+            pregunta.set_tipopregunta(tipoPregunta);
+            pregunta.set_usuario(usuario);
+
             Pregunta resul= dao.update(pregunta);
-
-
 
             resultado.setId(resul.get_id());
 

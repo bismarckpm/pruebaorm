@@ -15,7 +15,7 @@ public class tipopreguntaORMWS_Test {
     public  void addTipoPreguntaTest() throws  Exception{
         ucab.dsw.servicio.tipopreguntaORMWS servicio= new ucab.dsw.servicio.tipopreguntaORMWS();
         TipoPreguntaDto preguntaDto= new TipoPreguntaDto();
-        preguntaDto.setDescripcion("Simple");
+        preguntaDto.setDescripcion("Desarrollo");
         preguntaDto.setEstatus("A");
         TipoPreguntaDto resultado = servicio.addTipoPregunta(preguntaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
@@ -41,8 +41,8 @@ public class tipopreguntaORMWS_Test {
     public  void updateTipoPreguntaTest() throws  Exception{
         ucab.dsw.servicio.tipopreguntaORMWS servicio= new ucab.dsw.servicio.tipopreguntaORMWS();
         TipoPreguntaDto preguntaDto= new TipoPreguntaDto();
-        preguntaDto.setId(1);
-        preguntaDto.setDescripcion("Simple");
+        preguntaDto.setId(2);
+        preguntaDto.setDescripcion("VyF");
         preguntaDto.setEstatus("A");
         TipoPreguntaDto resultado = servicio.updateTipoPregunta(preguntaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );

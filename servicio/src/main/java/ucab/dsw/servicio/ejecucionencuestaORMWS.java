@@ -128,6 +128,17 @@ public class ejecucionencuestaORMWS extends AplicacionBase{
 
             ejecucionEncuesta.set_respuesta(ejecucionencuestaDto.getRespuesta());
             ejecucionEncuesta.set_estatus(ejecucionencuestaDto.getEstatus());
+            Opcion opcion= new Opcion(ejecucionencuestaDto.getOpcionDto().getId());
+            Encuesta encuesta= new Encuesta(ejecucionencuestaDto.getEncuestaDto().getId());
+            Pregunta pregunta= new Pregunta(ejecucionencuestaDto.getPreguntaDto().getId());
+            Usuario usuario= new Usuario(ejecucionencuestaDto.getUsuarioDto().getId());
+
+            ejecucionEncuesta.set_opcion(opcion);
+            ejecucionEncuesta.set_encuesta(encuesta);
+            ejecucionEncuesta.set_pregunta(pregunta);
+            ejecucionEncuesta.set_usuario(usuario);
+
+
             EjecucionEncuesta resul= dao.update(ejecucionEncuesta);
             resultado.setId(resul.get_id());
         }

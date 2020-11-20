@@ -15,7 +15,7 @@ public class pruebaCRUDCategoria {
     public void addCategoriaTest() throws Exception{
 
         CategoriaDto categoriaDto = new CategoriaDto();
-        categoriaDto.setDescripcion("Lacteos");
+        categoriaDto.setDescripcion("Higiene");
         categoriaDto.setEstatus("A");
         CategoriaDto resultado = this.servicio.addCategoria(categoriaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
@@ -24,7 +24,7 @@ public class pruebaCRUDCategoria {
     @Test
     public void deleteCategoriaTest() throws Exception
     {
-        CategoriaDto resultado = this.servicio.deleteCategoria(2);
+        CategoriaDto resultado = this.servicio.deleteCategoria(1);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
@@ -32,16 +32,16 @@ public class pruebaCRUDCategoria {
     public void editCategoriaTest() throws Exception
     {
         CategoriaDto categoriaDto = new CategoriaDto();
-        categoriaDto.setDescripcion("Bebidas");
+        categoriaDto.setDescripcion("Tecnologia");
         categoriaDto.setEstatus("A");
-        CategoriaDto resultado = this.servicio.editCategoria(5,categoriaDto);
+        CategoriaDto resultado = this.servicio.editCategoria(2,categoriaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
     @Test
     public void getCategoriaTest() throws Exception
     {
-        CategoriaDto resultado = this.servicio.getCategoria(3);
+        CategoriaDto resultado = this.servicio.getCategoria(1);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 

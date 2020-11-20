@@ -15,9 +15,9 @@ public class pruebaCRUDSubcategoria {
     public void addSubcategoriaTest() throws Exception{
 
         SubcategoriaDto subcategoriaDto = new SubcategoriaDto();
-        subcategoriaDto.setDescripcion("Leches");
+        subcategoriaDto.setDescripcion("Yogurts");
         subcategoriaDto.setEstatus("A");
-        CategoriaDto categoriaDto=new CategoriaDto(3);
+        CategoriaDto categoriaDto=new CategoriaDto(1);
         subcategoriaDto.setCategoriaDto(categoriaDto);
         SubcategoriaDto resultado = this.servicio.addSubcategoria(subcategoriaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
@@ -27,9 +27,9 @@ public class pruebaCRUDSubcategoria {
     public void editSubcategoriaTest() throws Exception
     {
         SubcategoriaDto subcategoriaDto = new SubcategoriaDto();
-        subcategoriaDto.setDescripcion("Yogurts");
+        subcategoriaDto.setDescripcion("Energeticas");
         subcategoriaDto.setEstatus("A");
-        CategoriaDto categoriaDto=new CategoriaDto(5);
+        CategoriaDto categoriaDto=new CategoriaDto(2);
         subcategoriaDto.setCategoriaDto(categoriaDto);
         SubcategoriaDto resultado = this.servicio.editSubcategoria(2,subcategoriaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
@@ -38,14 +38,14 @@ public class pruebaCRUDSubcategoria {
     @Test
     public void getSubcategoriaTest() throws Exception
     {
-        SubcategoriaDto resultado = this.servicio.getSubcategoria(2);
+        SubcategoriaDto resultado = this.servicio.getSubcategoria(1);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
     @Test
     public void deleteSubcategoriaTest() throws Exception
     {
-        SubcategoriaDto resultado = this.servicio.deleteSubcategoria(2);
+        SubcategoriaDto resultado = this.servicio.deleteSubcategoria(1);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 }

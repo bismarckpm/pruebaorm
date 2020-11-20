@@ -23,9 +23,9 @@ public class pruebaCRUDEstudio{
 
         DateFormat formato= new SimpleDateFormat("yyyy-MM-dd");
         estudioDto.setFechacreacion(formato.parse("2020-12-25"));
-        UsuarioDto usuarioDto = new UsuarioDto(5);
+        UsuarioDto usuarioDto = new UsuarioDto(3);
         estudioDto.setUsuarioDto(usuarioDto);
-        SolicitudDto solicitudDto=new SolicitudDto(4);
+        SolicitudDto solicitudDto=new SolicitudDto(1);
         estudioDto.setSolicitudDto(solicitudDto);
         estudioDto.setEstatus("C");
         EstudioDto resultado = this.servicio.addEstudio(estudioDto);
@@ -39,11 +39,11 @@ public class pruebaCRUDEstudio{
         estudioDto.setEstatus("EP");
         DateFormat formato= new SimpleDateFormat("yyyy-MM-dd");
         estudioDto.setFechacreacion(formato.parse("2020-11-25"));
-        UsuarioDto usuarioDto = new UsuarioDto(10);
+        UsuarioDto usuarioDto = new UsuarioDto(3);
         estudioDto.setUsuarioDto(usuarioDto);
-        SolicitudDto solicitudDto=new SolicitudDto(4);
+        SolicitudDto solicitudDto=new SolicitudDto(2);
         estudioDto.setSolicitudDto(solicitudDto);
-        EstudioDto resultado = this.servicio.editEstudio(1,estudioDto);
+        EstudioDto resultado = this.servicio.editEstudio(2,estudioDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
