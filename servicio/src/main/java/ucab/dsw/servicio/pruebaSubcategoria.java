@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
 @Consumes( MediaType.APPLICATION_JSON )
 public class pruebaSubcategoria extends AplicacionBase {
     @PUT
-    @Path("/addSubcategoria")
+    @Path("/addcubcategoria")
     public SubcategoriaDto addSubcategoria(SubcategoriaDto subCategoriaDto) throws Exception {
         SubcategoriaDto resultado = new SubcategoriaDto();
         try {
@@ -39,7 +39,7 @@ public class pruebaSubcategoria extends AplicacionBase {
     }
 
     @PUT
-    @Path("/changeSubCategoria")
+    @Path("/changesubcategoria")
     public SubcategoriaDto changeSubcategoria(SubcategoriaDto subcategoriaDto) throws Exception {
         SubcategoriaDto resultado = new SubcategoriaDto();
         try {
@@ -59,7 +59,7 @@ public class pruebaSubcategoria extends AplicacionBase {
     }
 
     @PUT
-    @Path("/{id}")
+    @Path("/deletesubcategoria")
     public SubcategoriaDto deleteSubcategoria(long id) {
         SubcategoriaDto resultado = new SubcategoriaDto();
         try {
@@ -75,7 +75,7 @@ public class pruebaSubcategoria extends AplicacionBase {
 
 
     @PUT
-    @Path("/{id}")
+    @Path("/showsubcategoria")
     public SubcategoriaDto showSubcategoria(long id) {
         SubcategoriaDto resultado = new SubcategoriaDto();
         try {

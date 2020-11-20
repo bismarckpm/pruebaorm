@@ -51,7 +51,8 @@ public class pruebaORMWS extends AplicacionBase
         }
         return  resultado;
     }
-
+    @PUT
+    @Path( "/changeuser" )
     public UsuarioDto changeUser( UsuarioDto usuarioDto ) throws Exception
     {
         UsuarioDto resultado = new UsuarioDto();
@@ -76,7 +77,7 @@ public class pruebaORMWS extends AplicacionBase
     }
 
     @PUT
-    @Path( "/{id}" )
+    @Path( "/deleteuser" )
     public UsuarioDto deleteUser( long id )
     {
         UsuarioDto resultado = new UsuarioDto();
@@ -96,7 +97,7 @@ public class pruebaORMWS extends AplicacionBase
 
 
     @PUT
-    @Path( "/{id}" )
+    @Path( "/showuser" )
     public UsuarioDto showUser( long id )
     {
         UsuarioDto resultado = new UsuarioDto();

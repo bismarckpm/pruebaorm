@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import ucab.dsw.dtos.TipoUsuarioDto;
 import ucab.dsw.dtos.UsuarioDto;
+import ucab.dsw.dtos.CategoriaDto;
 import ucab.dsw.entidades.Usuario;
 
 
@@ -17,7 +18,7 @@ public class pruebaORMWS_Test
         UsuarioDto usuarioDto = new UsuarioDto();
         usuarioDto.setNombre( "Omar" );
         usuarioDto.setApellido( "Escalante" );
-        usuarioDto.setCorreoelectronico( "correodeomar@gmail.com" );
+        usuarioDto.setCorreoelectronico( "bismarckpm@gmail.com" );
         usuarioDto.setEstatus( "A" );
         TipoUsuarioDto tipoUsuario = new TipoUsuarioDto( 1);
         usuarioDto.setTipoUsuarioDto( tipoUsuario );

@@ -11,6 +11,9 @@
         <class>ucab.dsw.entidades.Pregunta</class>
         <class>ucab.dsw.entidades.Solicitud</class>
         <class>ucab.dsw.entidades.TipoPregunta</class>
+        <class>ucab.dsw.entidades.Estudio</class>
+        <class>ucab.dsw.entidades.EjecucionEncuesta</class>
+        <class>ucab.dsw.entidades.Encuesta</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

@@ -65,7 +65,7 @@ public class pruebaCategoria extends AplicacionBase
     }
 
     @PUT
-    @Path( "/{id}" )
+    @Path( "/deletecategoria" )
     public CategoriaDto deleteCategoria( long id )
     {
         CategoriaDto resultado = new CategoriaDto();
@@ -85,7 +85,7 @@ public class pruebaCategoria extends AplicacionBase
 
 
     @PUT
-    @Path( "/{id}" )
+    @Path( "/showcategoria" )
     public CategoriaDto showCategoria( long id )
     {
         CategoriaDto resultado = new CategoriaDto();
