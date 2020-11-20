@@ -9,11 +9,11 @@ public class CategoriaDTO extends DtoBase {
         this.estatus = estatus;
     }
 
-    public CategoriaDTO(String descripcion) {
-        this.descripcion = descripcion;
+    public CategoriaDTO() {
     }
 
-    public CategoriaDTO() {
+    public CategoriaDTO(long id) throws Exception {
+        super(id);
     }
 
     public String getDescripcion() {
