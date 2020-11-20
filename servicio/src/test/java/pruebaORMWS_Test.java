@@ -6,6 +6,8 @@ import ucab.dsw.dtos.TipoUsuarioDto;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.entidades.Usuario;
 
+import java.util.List;
+
 
 public class pruebaORMWS_Test
 {
@@ -25,6 +27,14 @@ public class pruebaORMWS_Test
     }
 
     @Test
+    public void getUsersTest()  throws  Exception
+    {
+        ucab.dsw.servicio.pruebaORMWS servicio = new ucab.dsw.servicio.pruebaORMWS();
+        List<Usuario> usuarios = servicio.getUsers();
+        Assert.assertFalse("Consulta Usuario",usuarios.isEmpty());
+    }
+
+    @Test
     public void updateUserTest() throws Exception {
         ucab.dsw.servicio.pruebaORMWS servicio = new ucab.dsw.servicio.pruebaORMWS();
         UsuarioDto usuarioDto = new UsuarioDto();
@@ -32,19 +42,16 @@ public class pruebaORMWS_Test
         usuarioDto.setApellido( "Spinetti" );
         usuarioDto.setCorreoelectronico( "greggspinetti@gmail.com" );
         usuarioDto.setEstatus( "A" );
-        TipoUsuarioDto tipoUsuario = new TipoUsuarioDto( 1);
-        usuarioDto.setTipoUsuarioDto( tipoUsuario );
-        UsuarioDto resultado = servicio.updateUsuario( usuarioDto );
-        Assert.assertNotEquals( resultado.getId(), 1 );
+        UsuarioDto resultado = servicio.updateUsuario(11,usuarioDto );
+        Assert.assertNotEquals( resultado.getId(), 1);
     }
 
     @Test
     public void deleteUsuarioTest() throws Exception{
 
         ucab.dsw.servicio.pruebaORMWS servicio = new ucab.dsw.servicio.pruebaORMWS();
-        UsuarioDto usuarioDto = new UsuarioDto(1);
-        UsuarioDto resultado = servicio.deleteUsuario(usuarioDto);
-        Assert.assertNotEquals( resultado.getId(), 1 );
+        UsuarioDto resultado = servicio.deleteUser(10);
+        Assert.assertNotEquals( resultado.getId(), 1);
 
     }
 
