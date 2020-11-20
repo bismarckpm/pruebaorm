@@ -90,6 +90,5 @@ public class SolicitudORM extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return resultado;
-
     }
 }

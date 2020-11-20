@@ -2,10 +2,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import ucab.dsw.dtos.EncuestaDto;
 import ucab.dsw.dtos.EstudioDto;
-import ucab.dsw.dtos.SolicitudDto;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.entidades.Encuesta;
-import ucab.dsw.entidades.Solicitud;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

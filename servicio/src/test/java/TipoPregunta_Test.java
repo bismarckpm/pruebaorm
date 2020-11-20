@@ -6,6 +6,8 @@ import ucab.dsw.dtos.TipoPreguntaDto;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.entidades.TipoPregunta;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.List;
 
 public class TipoPregunta_Test {

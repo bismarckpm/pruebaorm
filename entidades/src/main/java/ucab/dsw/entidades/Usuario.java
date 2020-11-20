@@ -94,6 +94,33 @@ public class Usuario extends EntidadBase
     @OneToMany( mappedBy = "_usuarioAnalista", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<Encuesta> _encuestasAAnalizar;
 
+    @OneToMany( mappedBy = "_usuarioEncuestado", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<EjecucionEncuesta> _ejecucionEncuestas;
+
+    public List<Encuesta> get_encuestasCreadas() {
+        return _encuestasCreadas;
+    }
+
+    public void set_encuestasCreadas(List<Encuesta> _encuestasCreadas) {
+        this._encuestasCreadas = _encuestasCreadas;
+    }
+
+    public List<Encuesta> get_encuestasAAnalizar() {
+        return _encuestasAAnalizar;
+    }
+
+    public void set_encuestasAAnalizar(List<Encuesta> _encuestasAAnalizar) {
+        this._encuestasAAnalizar = _encuestasAAnalizar;
+    }
+
+    public List<EjecucionEncuesta> get_ejecucionEncuestas() {
+        return _ejecucionEncuestas;
+    }
+
+    public void set_ejecucionEncuestas(List<EjecucionEncuesta> _ejecucionEncuestas) {
+        this._ejecucionEncuestas = _ejecucionEncuestas;
+    }
+
     public List<Solicitud> get_solicitudes() {
         return _solicitudes;
     }

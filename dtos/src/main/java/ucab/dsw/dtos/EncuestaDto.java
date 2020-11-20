@@ -14,6 +14,13 @@ public class EncuestaDto extends DtoBase{
 
     private UsuarioDto usuarioAnalistaDto;
 
+    public EncuestaDto(long id) throws Exception {
+        super(id);
+    }
+
+    public EncuestaDto() {
+    }
+
     public Date getFechaCreacion() {
         return fechaCreacion;
     }

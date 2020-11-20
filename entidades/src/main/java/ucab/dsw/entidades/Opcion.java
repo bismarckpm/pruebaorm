@@ -36,10 +36,25 @@ public class Opcion extends EntidadBase{
     @JoinColumn( name = "idTipoPregunta" )
     private TipoPregunta _tipopregunta;
 
+    @OneToMany( mappedBy = "_opcion", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<EjecucionEncuesta> _ejecucionEncuestas;
+
     public Opcion( long id ) { super( id ); }
 
     public Opcion(){
 
+    }
+
+    public void set_tipopregunta(TipoPregunta _tipopregunta) {
+        this._tipopregunta = _tipopregunta;
+    }
+
+    public List<EjecucionEncuesta> get_ejecucionEncuestas() {
+        return _ejecucionEncuestas;
+    }
+
+    public void set_ejecucionEncuestas(List<EjecucionEncuesta> _ejecucionEncuestas) {
+        this._ejecucionEncuestas = _ejecucionEncuestas;
     }
 
     //Falta anadir pregunta

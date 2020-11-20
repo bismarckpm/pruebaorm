@@ -2,6 +2,13 @@ package ucab.dsw.dtos;
 
 public class OpcionDto extends DtoBase{
 
+    public OpcionDto(long id) throws Exception {
+        super(id);
+    }
+
+    public OpcionDto() {
+    }
+
     public String getDescripcion()
     {
         return descripcion;

@@ -48,6 +48,9 @@ public class Pregunta extends EntidadBase{
     @Column( name = "estatus" )
     private String _estatus;
 
+    @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<EjecucionEncuesta> _ejecucionEncuestas;
+
     public TipoPregunta get_tipopregunta()
     {
         return _tipopregunta;
@@ -84,7 +87,23 @@ public class Pregunta extends EntidadBase{
     @JoinColumn( name = "idUsuario" )
     private Usuario _usuario;
 
-    public Pregunta( long id )
+    public void setFechacreacion(String fechacreacion) {
+        this.fechacreacion = fechacreacion;
+    }
+
+    public List<EjecucionEncuesta> get_ejecucionEncuestas() {
+        return _ejecucionEncuestas;
+    }
+
+    public void set_ejecucionEncuestas(List<EjecucionEncuesta> _ejecucionEncuestas) {
+        this._ejecucionEncuestas = _ejecucionEncuestas;
+    }
+
+    public Subcategoria get_subcategoria() {
+        return _subcategoria;
+    }
+
+    public Pregunta(long id )
     {
         super( id );
     }

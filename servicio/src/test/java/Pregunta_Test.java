@@ -1,11 +1,7 @@
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import ucab.dsw.dtos.*;
-import ucab.dsw.entidades.Categoria;
 import ucab.dsw.entidades.Pregunta;
-import ucab.dsw.servicio.CategoriaORMWS;
 
 import java.util.List;
 
@@ -31,7 +27,7 @@ public class Pregunta_Test {
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
     @Test
-    public void updateCategoria() throws Exception{
+    public void updatePregunta() throws Exception{
         ucab.dsw.servicio.PreguntaORMWS servicio = new ucab.dsw.servicio.PreguntaORMWS();
         PreguntaDto preguntaDto = new PreguntaDto();
         preguntaDto.setPregunta("Pregunta Actualizada");

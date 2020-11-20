@@ -2,6 +2,13 @@ package ucab.dsw.dtos;
 
 public class PreguntaDto extends DtoBase{
 
+    public PreguntaDto(long id) throws Exception {
+        super(id);
+    }
+
+    public PreguntaDto() {
+    }
+
     public String getPregunta() {
         return pregunta;
     }

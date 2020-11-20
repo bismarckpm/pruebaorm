@@ -16,6 +16,8 @@
         <class>ucab.dsw.entidades.TipoPregunta</class>
         <class>ucab.dsw.entidades.Opcion</class>
 
+        <class>ucab.dsw.entidades.EjecucionEncuesta</class>
+
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb?serverTimezone=UTC"/>
