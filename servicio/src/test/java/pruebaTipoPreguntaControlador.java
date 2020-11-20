@@ -4,11 +4,11 @@ import ucab.dsw.dtos.TipoPreguntaDto;
 
 public class pruebaTipoPreguntaControlador {
 
+    public long test_id = 9;
 
     @Test
-    public void createTipoPreguntaTest() throws Exception
+    public void acreateTipoPreguntaTest() throws Exception
     {
-
             ucab.dsw.servicio.TipoPreguntaControlador servicio = new ucab.dsw.servicio.TipoPreguntaControlador();
             TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto();
             tipoPreguntaDto.setDescripcion("prueba");
@@ -18,10 +18,10 @@ public class pruebaTipoPreguntaControlador {
     }
 
     @Test
-    public void updateTipoPreguntaTest() throws Exception
+    public void bupdateTipoPreguntaTest() throws Exception
     {
         ucab.dsw.servicio.TipoPreguntaControlador servicio = new ucab.dsw.servicio.TipoPreguntaControlador();
-        TipoPreguntaDto tipoPregDto = new TipoPreguntaDto(1);
+        TipoPreguntaDto tipoPregDto = new TipoPreguntaDto(test_id+1);
         tipoPregDto.setEstatus("A");
         tipoPregDto.setDescripcion("upd_desc");
         TipoPreguntaDto resultado = servicio.updateTipoPregunta(tipoPregDto);
@@ -29,18 +29,19 @@ public class pruebaTipoPreguntaControlador {
     }
 
     @Test
-    public void getTipoPreguntaTest() throws Exception
+    public void cgetTipoPreguntaTest() throws Exception
     {
+
         ucab.dsw.servicio.TipoPreguntaControlador servicio = new ucab.dsw.servicio.TipoPreguntaControlador();
-        TipoPreguntaDto resultado = servicio.obtenerTipoPregunta( 1);
-        Assert.assertEquals( resultado.getId(),1);
+        TipoPreguntaDto resultado = servicio.obtenerTipoPregunta(test_id+1);
+        Assert.assertEquals( resultado.getId(),test_id);
     }
 
     @Test
-    public void deleteTipoPreguntaTest() throws Exception
+    public void ddeleteTipoPreguntaTest() throws Exception
     {
         ucab.dsw.servicio.TipoPreguntaControlador servicio = new ucab.dsw.servicio.TipoPreguntaControlador();
-        TipoPreguntaDto resultado = servicio.deleteTipoPregunta((long) 1);
-        Assert.assertEquals( resultado.getId(), 1);
+        TipoPreguntaDto resultado = servicio.deleteTipoPregunta(test_id );
+        Assert.assertEquals( resultado.getId(), test_id );
     }
 }

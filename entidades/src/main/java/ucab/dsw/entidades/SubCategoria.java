@@ -1,35 +1,26 @@
 package ucab.dsw.entidades;
 
-import ucab.dsw.entidades.ComposedKeys.SolicitudId;
-import ucab.dsw.entidades.ComposedKeys.SubCategoriaId;
+
 import ucab.dsw.entidades.enums.EstadoEnum;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-@MappedSuperclass
+@Entity
+@Table( name = "subcategoria" )
 public class SubCategoria extends EntidadBase {
-    /*@Id
-    @Column( name = "idSubCategoria", length=11)
-    private long _idSubCategoria;
-
-    @Id
-    @Column( name = "idCategoria", length=11)
-    private long _idCategoria;*/
-
-
-    /*@EmbeddedId
-    private SubCategoriaId _id;*/
     @ManyToOne
-    @JoinColumn(name = "id_categoria")
-    private Categoria id_categoria;
+    @JoinColumn(name = "idCategoria")
+    private Categoria _idCategoria;
 
     public Categoria getId_categoria(){
-        return this.id_categoria;
+        return this._idCategoria;
     }
 
     public void setId_categoria(Categoria id_categoria) {
-        this.id_categoria = id_categoria;
+        this._idCategoria = id_categoria;
     }
 
     @Column(name="descripcion",length = 45)
@@ -57,6 +48,9 @@ public class SubCategoria extends EntidadBase {
     public void set_estatus(String _estatus) {
         this._estatus = _estatus;
     }
+
+    @OneToMany( mappedBy = "_idSubCategoria", fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+    private List<Solicitud> _Solicitudes = new ArrayList<>();
 
     public SubCategoria(long id) throws Exception{ super(id);}
 

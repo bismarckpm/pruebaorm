@@ -1,8 +1,8 @@
 package ucab.dsw.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table( name = "categoria" )
@@ -35,6 +35,9 @@ public class Categoria extends EntidadBase{
     {
         this._descripcion = _descripcion;
     }
+
+    @OneToMany( mappedBy = "_idCategoria", fetch = FetchType.LAZY, cascade = CascadeType.ALL )
+    private List<SubCategoria> _subCategorias = new ArrayList<>();
 
     public Categoria( long id )
     {

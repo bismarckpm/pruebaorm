@@ -12,15 +12,15 @@ public class SubCategoriaDto extends DtoBase {
         return cat_id;
     }
 
-    public void setDescripcion(String descripcion){
-        this.descripcion = descripcion;
+    public void setDescripcion(String _descripcion){
+        this.descripcion = _descripcion;
     }
     public String get_descripcion(){
         return descripcion;
     }
 
-    public void setEstatus(String estatus){
-        this.estatus = estatus;
+    public void setEstatus(String _estatus){
+        this.estatus = _estatus;
     }
     public String get_estatus(){
         return estatus;

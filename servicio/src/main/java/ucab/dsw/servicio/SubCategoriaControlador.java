@@ -25,8 +25,8 @@ public class SubCategoriaControlador extends AplicacionBase{
             DaoSubCategoria dao = new DaoSubCategoria();
             Categoria categoria = new Categoria(subCategoriaDto.get_catid().getId());
             SubCategoria subCategoria = new SubCategoria();
-            subCategoria.set_estatus(subCategoria.get_estatus());
-            subCategoria.set_descripcion(subCategoria.get_descripcion());
+            subCategoria.set_estatus(subCategoriaDto.get_estatus());
+            subCategoria.set_descripcion(subCategoriaDto.get_descripcion());
             subCategoria.setId_categoria(categoria);
             SubCategoria result = dao.insert(subCategoria );
             resultado.setId(result.get_id());
@@ -59,15 +59,17 @@ public class SubCategoriaControlador extends AplicacionBase{
     @Path( "/update/:tp_id" )
     public SubCategoriaDto updateSubCategoria(SubCategoriaDto subCategoriaDto){
         SubCategoriaDto resultado = new SubCategoriaDto();
+        String err = new String();
         try{
             DaoSubCategoria dao = new DaoSubCategoria();
             SubCategoria updSubCat = new SubCategoria(subCategoriaDto.getId());
             updSubCat.set_descripcion( subCategoriaDto.get_descripcion());
             updSubCat.set_estatus(subCategoriaDto.get_estatus());
+            updSubCat.setId_categoria(new Categoria(subCategoriaDto.get_catid().getId()));
             SubCategoria resul = dao.update(updSubCat);
             resultado.setId( resul.get_id());
         }catch (Exception e){
-            String problema = e.getMessage();
+            err = e.getMessage();
         }
         return resultado;
     }
@@ -76,13 +78,14 @@ public class SubCategoriaControlador extends AplicacionBase{
     @Path( "/delete/:tp_id" )
     public SubCategoriaDto deleteSubCategoria(long id){
         SubCategoriaDto resultado = new SubCategoriaDto();
+        String err = new String();
         try{
             DaoSubCategoria dao = new DaoSubCategoria();
             SubCategoria paraBorrar = dao.find( id, SubCategoria.class);
             SubCategoria resul = dao.delete(paraBorrar);
             resultado.setId(resul.get_id());
         }catch (Exception e){
-            String problema = e.getMessage();
+            err = e.getMessage();
         }
         return resultado;
     }
