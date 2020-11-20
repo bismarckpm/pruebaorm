@@ -8,7 +8,7 @@ import java.util.Objects;
 public class Opcion implements Serializable {
     private int id;
     private String descripcion;
-    private Object estatus;
+    private String estatus;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -36,11 +36,11 @@ public class Opcion implements Serializable {
 
     @Basic
     @Column(name = "estatus", nullable = false)
-    public Object getEstatus() {
+    public String getEstatus() {
         return estatus;
     }
 
-    public void setEstatus(Object estatus) {
+    public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
 

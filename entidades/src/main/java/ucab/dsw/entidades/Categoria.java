@@ -16,8 +16,36 @@ public class Categoria implements Serializable {
     private String descripcion;
     private String estatus;
 
+    public Categoria() {
+    }
+
+    public Categoria(int id, String descripcion, String estatus) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.estatus = estatus;
+    }
+
+    public Categoria(String descripcion, String estatus) {
+        this.descripcion = descripcion;
+        this.estatus = estatus;
+    }
+
+    public Categoria(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "id=" + id +
+                ", descripcion='" + descripcion + '\'' +
+                ", estatus='" + estatus + '\'' +
+                '}';
+    }
+
     @Id
     @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }

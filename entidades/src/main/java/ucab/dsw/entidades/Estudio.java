@@ -9,7 +9,7 @@ import java.util.Objects;
 public class Estudio implements Serializable {
     private int id;
     private Date fechacreacion;
-    private Object estatus;
+    private String estatus;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -33,7 +33,7 @@ public class Estudio implements Serializable {
 
     @Basic
     @Column(name = "estatus", nullable = false)
-    public Object getEstatus() {
+    public String getEstatus() {
         return estatus;
     }
 
@@ -45,7 +45,7 @@ public class Estudio implements Serializable {
     @ManyToOne
     private Solicitud solicitud;
 
-    public void setEstatus(Object estatus) {
+    public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
 

@@ -20,21 +20,22 @@ public class CategoriaDaoImpl implements CategoriaDao {
 
     @Override
     public Categoria find(Categoria categoria) {
-        return null;
+        return em.find(Categoria.class, categoria.getId());
     }
 
     @Override
     public void insertCategoria(Categoria categoria) {
-
+        em.persist(categoria);
+        em.flush();
     }
 
     @Override
     public void updateCategoria(Categoria categoria) {
-
+        em.merge(categoria);
     }
 
     @Override
     public void deleteCategoria(Categoria categoria) {
-
+        em.remove(em.merge(categoria));
     }
 }
