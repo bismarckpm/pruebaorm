@@ -2,16 +2,16 @@ package ucab.dsw.entidades;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
+@Table(name = "categoria")
 public class Categoria extends EntidadBase {
 
     @Column(name = "descripcion", length = 45)
     private String descripcion;
 
-    @OneToMany( mappedBy = "categoria")
-    private List<Subcategoria> subcategorias;
+    @OneToMany( mappedBy = "categorias")
+    private List<SubcategoriaEnt> subcategoriaEnts;
 
     public String getDescripcion() {
         return descripcion;
@@ -21,11 +21,11 @@ public class Categoria extends EntidadBase {
         this.descripcion = descripcion;
     }
 
-    public List<Subcategoria> getSubcategorias() {
-        return subcategorias;
+    public List<SubcategoriaEnt> getSubcategorias() {
+        return subcategoriaEnts;
     }
 
-    public void setSubcategorias(List<Subcategoria> subcategorias) {
-        this.subcategorias = subcategorias;
+    public void setSubcategorias(List<SubcategoriaEnt> subcategoriaEnts) {
+        this.subcategoriaEnts = subcategoriaEnts;
     }
 }

@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class Subcategoria extends EntidadBase {
+@Table(name = "subcategoria")
+public class SubcategoriaEnt extends EntidadBase {
 
     @Column(name = "descripcion", length = 45)
     private String descripcion;

@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@Table(name = "ejecucionencuesta")
 public class Ejecucionencuesta extends EntidadBase {
 
     @Column(name = "respuesta", length = 250)
