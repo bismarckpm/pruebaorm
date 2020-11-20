@@ -20,7 +20,7 @@ public class pruebaORMWS_Test
         usuarioDto.setApellido( "Ponce" );
         usuarioDto.setCorreoelectronico( "bismarckpm@gmail.com" );
         usuarioDto.setEstatus( "A" );
-        TipoUsuarioDto tipoUsuario = new TipoUsuarioDto( 1);
+        TipoUsuarioDto tipoUsuario = new TipoUsuarioDto( 6);
         usuarioDto.setTipoUsuarioDto( tipoUsuario );
         UsuarioDto resultado = servicio.addUser( usuarioDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
@@ -57,6 +57,5 @@ public class pruebaORMWS_Test
         UsuarioDto usuarioDto = new UsuarioDto(8);
         UsuarioDto resultado = servicio.findUser( usuarioDto.getId() );
         Assert.assertNotEquals( resultado.getId(), 0 );
-
     }
 }

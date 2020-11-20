@@ -65,7 +65,6 @@ public class pruebaORMWS extends AplicacionBase
             usuario.set_tipousuario( tipoUsuario );
             Usuario resul = dao.update( usuario );
             resultado.setId( resul.get_id() );
-
         }
         catch ( Exception ex )
         {
@@ -99,8 +98,7 @@ public class pruebaORMWS extends AplicacionBase
     public UsuarioDto findUser( long id )
     {
         UsuarioDto resultado = new UsuarioDto();
-        try
-        {
+        try {
             DaoUsuario dao = new DaoUsuario();
             Usuario resul = dao.find( id,Usuario.class );
             resultado.setId( resul.get_id() );

@@ -47,9 +47,9 @@ public class prueba_categoria_Test
     public void findCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.prueba_Categoria servicio = new ucab.dsw.servicio.prueba_Categoria();
-        categoriaDto  CategoriaDto= new categoriaDto( 6);
+        categoriaDto  CategoriaDto= new categoriaDto( 5);
         categoriaDto resultado = servicio.findCategoria( CategoriaDto.getId() );
-        Assert.assertEquals( resultado.getDescripcion(), "hola");
+        Assert.assertEquals( resultado.getDescripcion(), "Batman");
 
     }
 

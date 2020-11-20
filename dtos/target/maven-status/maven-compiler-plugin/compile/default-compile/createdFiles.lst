@@ -1,3 +1,9 @@
+ucab\dsw\dtos\SolicitudDto.class
+ucab\dsw\dtos\PreguntaDto.class
 ucab\dsw\dtos\DtoBase.class
-ucab\dsw\dtos\UsuarioDto.class
+ucab\dsw\dtos\SubCategoriaDto.class
 ucab\dsw\dtos\TipoUsuarioDto.class
+ucab\dsw\dtos\TipoPreguntaDto.class
+ucab\dsw\dtos\OpcionDto.class
+ucab\dsw\dtos\UsuarioDto.class
+ucab\dsw\dtos\categoriaDto.class
