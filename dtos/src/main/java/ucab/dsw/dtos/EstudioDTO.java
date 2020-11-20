@@ -2,23 +2,30 @@ package ucab.dsw.dtos;
 
 import java.util.Date;
 
-public class EstudioDTO extends DtoBase {
-    private Date fechaCreacion;
+public class EstudioDTO {
+    private String fechaCreacion;
+    private int idUsuario;
+    private int idSolicitud;
     private UsuarioDto usuarioDto;
     private SolicitudDTO solicitudDTO;
     private String estatus;
 
-    public EstudioDTO(long id) throws Exception {
-        super(id);
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public Date getFechaCreacion() {
-        return fechaCreacion;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
+    public int getIdSolicitud() {
+        return idSolicitud;
     }
+
+    public void setIdSolicitud(int idSolicitud) {
+        this.idSolicitud = idSolicitud;
+    }
+
 
     public UsuarioDto getUsuarioDto() {
         return usuarioDto;
@@ -42,5 +49,13 @@ public class EstudioDTO extends DtoBase {
 
     public void setEstatus(String estatus) {
         this.estatus = estatus;
+    }
+
+    public String getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(String fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 }

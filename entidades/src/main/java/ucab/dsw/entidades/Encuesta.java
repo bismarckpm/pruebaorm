@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table(name = "encuesta")
+@NamedQueries({
+        @NamedQuery(name = "Encuesta.findAll", query = "SELECT e.id, e.fechacreacion, e.estatus FROM Encuesta e ORDER BY e.id")
+})
 public class Encuesta implements Serializable {
     public static final long serialVersionUID = 1L;
 

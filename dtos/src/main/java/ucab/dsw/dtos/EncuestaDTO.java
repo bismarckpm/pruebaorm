@@ -1,16 +1,29 @@
 package ucab.dsw.dtos;
 
-import java.util.Date;
-
-public class EncuestaDTO extends DtoBase {
+public class EncuestaDTO {
+    private int id;
+    private int idEstudio;
+    private int idUsuarioAnalista;
+    private int idUsuarioCreador;
     private UsuarioDto usuarioCreador;
     private UsuarioDto usuarioAnalista;
     private EstudioDTO estudioDTO;
-    private Date fechaCreacion;
+    private String fechaCreacion;
     private String estatus;
 
-    public EncuestaDTO(long id) throws Exception {
-        super(id);
+    public EncuestaDTO() {
+    }
+
+    public EncuestaDTO(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public UsuarioDto getUsuarioCreador() {
@@ -37,11 +50,11 @@ public class EncuestaDTO extends DtoBase {
         this.estudioDTO = estudioDTO;
     }
 
-    public Date getFechaCreacion() {
+    public String getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
@@ -51,5 +64,29 @@ public class EncuestaDTO extends DtoBase {
 
     public void setEstatus(String estatus) {
         this.estatus = estatus;
+    }
+
+    public int getIdEstudio() {
+        return idEstudio;
+    }
+
+    public void setIdEstudio(int idEstudio) {
+        this.idEstudio = idEstudio;
+    }
+
+    public int getIdUsuarioAnalista() {
+        return idUsuarioAnalista;
+    }
+
+    public void setIdUsuarioAnalista(int idUsuarioAnalista) {
+        this.idUsuarioAnalista = idUsuarioAnalista;
+    }
+
+    public int getIdUsuarioCreador() {
+        return idUsuarioCreador;
+    }
+
+    public void setIdUsuarioCreador(int idUsuarioCreador) {
+        this.idUsuarioCreador = idUsuarioCreador;
     }
 }

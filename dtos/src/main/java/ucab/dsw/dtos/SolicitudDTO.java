@@ -2,15 +2,37 @@ package ucab.dsw.dtos;
 
 import java.util.Date;
 
-public class SolicitudDTO extends DtoBase {
+public class SolicitudDTO {
     private UsuarioDto usuarioDto;
     private SubcategoriaDTO subcategoriaDTO;
+    private int idSubcategoria;
+    private int idUsuario;
     private String nombre;
-    private Date fecha;
+    private String fecha;
     private String estatus;
 
-    public SolicitudDTO(long id) throws Exception {
-        super(id);
+    public int getIdSubcategoria() {
+        return idSubcategoria;
+    }
+
+    public void setIdSubcategoria(int idSubcategoria) {
+        this.idSubcategoria = idSubcategoria;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     public UsuarioDto getUsuarioDto() {
@@ -35,14 +57,6 @@ public class SolicitudDTO extends DtoBase {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public String getEstatus() {

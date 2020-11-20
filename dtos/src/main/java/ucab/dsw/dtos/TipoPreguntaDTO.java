@@ -1,12 +1,8 @@
 package ucab.dsw.dtos;
 
-public class TipoPreguntaDTO extends DtoBase {
+public class TipoPreguntaDTO {
     private String descripcion;
     private String estatus;
-
-    public TipoPreguntaDTO(long id) throws Exception {
-        super(id);
-    }
 
     public String getDescripcion() {
         return descripcion;

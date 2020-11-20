@@ -5,6 +5,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Table(name = "opcion")
+@NamedQueries({
+        @NamedQuery(name = "Opcion.findAll", query = "SELECT o FROM Opcion o ORDER BY o.id")
+})
 public class Opcion implements Serializable {
     public static final long serialVersionUID = 1L;
 
@@ -47,6 +51,14 @@ public class Opcion implements Serializable {
 
     public void setEstatus(String estatus) {
         this.estatus = estatus;
+    }
+
+    public Pregunta getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(Pregunta pregunta) {
+        this.pregunta = pregunta;
     }
 
     public Opcion() {

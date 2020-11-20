@@ -1,12 +1,17 @@
 package ucab.dsw.dtos;
 
-public class OpcionDTO extends DtoBase {
+public class OpcionDTO {
     private String descripcion;
     private String estatus;
     private PreguntaDTO preguntaDTO;
+    private int idPregunta;
 
-    public OpcionDTO(long id) throws Exception {
-        super(id);
+    public int getIdPregunta() {
+        return idPregunta;
+    }
+
+    public void setIdPregunta(int idPregunta) {
+        this.idPregunta = idPregunta;
     }
 
     public String getDescripcion() {

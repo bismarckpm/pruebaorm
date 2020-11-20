@@ -5,6 +5,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Table(name = "solicitud")
+@NamedQueries({
+        @NamedQuery(name = "Solicitud.findAll", query = "SELECT s FROM Solicitud s ORDER BY s.id")
+})
 public class Solicitud implements Serializable {
     public static final long serialVersionUID = 1L;
 
@@ -59,25 +63,32 @@ public class Solicitud implements Serializable {
 
     @JoinColumn(name = "idUsuario", referencedColumnName = "id")
     @ManyToOne
-    private Solicitud idUsuario;
+    private Usuario usuario;
 
     @JoinColumn(name = "idSubcategoria", referencedColumnName = "id")
     @ManyToOne
     private Subcategoria subcategoria;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Solicitud solicitud = (Solicitud) o;
-        return id == solicitud.id &&
-                Objects.equals(nombre, solicitud.nombre) &&
-                Objects.equals(fecha, solicitud.fecha) &&
-                Objects.equals(estatus, solicitud.estatus);
+    public Solicitud() {
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, nombre, fecha, estatus);
+    public Solicitud(int id) {
+        this.id = id;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Subcategoria getSubcategoria() {
+        return subcategoria;
+    }
+
+    public void setSubcategoria(Subcategoria subcategoria) {
+        this.subcategoria = subcategoria;
     }
 }

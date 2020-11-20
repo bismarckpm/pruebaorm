@@ -2,16 +2,27 @@ package ucab.dsw.dtos;
 
 import java.util.Date;
 
-public class PreguntaDTO extends DtoBase {
+public class PreguntaDTO {
     private String pregunta;
-    private Date fechaCreacion;
+    private String fechaCreacion;
     private String estatus;
     private TipoPreguntaDTO tipoPreguntaDTO;
-    private PreguntaDTO preguntaDTO;
+    private SubcategoriaDTO subcategoriaDTO;
     private UsuarioDto usuarioDto;
+    private int idTipoPregunta;
+    private int idSubcategoria;
+    private int idUsuario;
 
-    public PreguntaDTO(long id) throws Exception {
-        super(id);
+    public int getIdTipoPregunta() {
+        return idTipoPregunta;
+    }
+
+    public int getIdSubcategoria() {
+        return idSubcategoria;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
     public String getPregunta() {
@@ -22,11 +33,11 @@ public class PreguntaDTO extends DtoBase {
         this.pregunta = pregunta;
     }
 
-    public Date getFechaCreacion() {
+    public String getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
@@ -44,14 +55,6 @@ public class PreguntaDTO extends DtoBase {
 
     public void setTipoPreguntaDTO(TipoPreguntaDTO tipoPreguntaDTO) {
         this.tipoPreguntaDTO = tipoPreguntaDTO;
-    }
-
-    public PreguntaDTO getPreguntaDTO() {
-        return preguntaDTO;
-    }
-
-    public void setPreguntaDTO(PreguntaDTO preguntaDTO) {
-        this.preguntaDTO = preguntaDTO;
     }
 
     public UsuarioDto getUsuarioDto() {

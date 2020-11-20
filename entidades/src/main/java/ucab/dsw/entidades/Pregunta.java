@@ -6,6 +6,10 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
+@Table(name = "pregunta")
+@NamedQueries({
+        @NamedQuery(name = "Pregunta.findAll", query = "SELECT p FROM Pregunta p ORDER BY p.id")
+})
 public class Pregunta implements Serializable {
     public static final long serialVersionUID = 1L;
 
@@ -75,5 +79,29 @@ public class Pregunta implements Serializable {
 
     public Pregunta(int id) {
         this.id = id;
+    }
+
+    public Tipopregunta getTipopregunta() {
+        return tipopregunta;
+    }
+
+    public void setTipopregunta(Tipopregunta tipopregunta) {
+        this.tipopregunta = tipopregunta;
+    }
+
+    public Subcategoria getSubcategoria() {
+        return subcategoria;
+    }
+
+    public void setSubcategoria(Subcategoria subcategoria) {
+        this.subcategoria = subcategoria;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

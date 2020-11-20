@@ -6,6 +6,10 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
+@Table(name = "estudio")
+@NamedQueries({
+        @NamedQuery(name = "Estudio.findAll", query = "select e from Estudio e order by e.id")
+})
 public class Estudio implements Serializable {
     public static final long serialVersionUID = 1L;
 
@@ -54,18 +58,26 @@ public class Estudio implements Serializable {
         this.estatus = estatus;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Estudio estudio = (Estudio) o;
-        return id == estudio.id &&
-                Objects.equals(fechacreacion, estudio.fechacreacion) &&
-                Objects.equals(estatus, estudio.estatus);
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, fechacreacion, estatus);
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Solicitud getSolicitud() {
+        return solicitud;
+    }
+
+    public void setSolicitud(Solicitud solicitud) {
+        this.solicitud = solicitud;
+    }
+
+    public Estudio() {
+    }
+
+    public Estudio(int id) {
+        this.id = id;
     }
 }

@@ -1,7 +1,6 @@
 package ucab.dsw.servicio;
 
 import interfaces.SubcategoriaDao;
-import ucab.dsw.dtos.CategoriaDTO;
 import ucab.dsw.dtos.SubcategoriaDTO;
 import ucab.dsw.entidades.Categoria;
 import ucab.dsw.entidades.Subcategoria;

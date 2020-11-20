@@ -5,6 +5,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Table(name = "tipopregunta")
+@NamedQueries({
+        @NamedQuery(name = "Tipopregunta.findAll", query = "SELECT tp FROM Tipopregunta tp ORDER BY tp.id")
+})
 public class Tipopregunta implements Serializable {
     public static final long serialVersionUID = 1L;
 
@@ -45,18 +49,11 @@ public class Tipopregunta implements Serializable {
         this.estatus = estatus;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Tipopregunta that = (Tipopregunta) o;
-        return id == that.id &&
-                Objects.equals(descripcion, that.descripcion) &&
-                Objects.equals(estatus, that.estatus);
+    public Tipopregunta() {
+
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, descripcion, estatus);
+    public Tipopregunta(int id) {
+        this.id = id;
     }
 }
