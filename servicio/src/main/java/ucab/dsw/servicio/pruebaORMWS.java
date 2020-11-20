@@ -3,17 +3,9 @@ import ucab.dsw.accesodatos.DaoUsuario;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.entidades.TipoUsuario;
 import ucab.dsw.entidades.Usuario;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.Context;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 
 @Path( "/prueba" )
@@ -22,7 +14,7 @@ import javax.ws.rs.core.MediaType;
 public class pruebaORMWS extends AplicacionBase
 {
     @PUT
-    @Path( "/adduser" )
+    @Path( "/addUser" )
     public UsuarioDto addUser( UsuarioDto usuarioDto )
     {
         UsuarioDto resultado = new UsuarioDto();
@@ -47,9 +39,53 @@ public class pruebaORMWS extends AplicacionBase
     }
 
     @GET
-    @Path( "/consulta" )
-    public String consulta()
+    @Path("/getUsers")
+    public List<Usuario> getUsers() {
+
+        List<Usuario> usuarios = null;
+        try {
+            DaoUsuario dao = new DaoUsuario();
+            usuarios = dao.findAll(Usuario.class);
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        return usuarios;
+    }
+
+    @PUT
+    @Path( "/updateUser/{id}" )
+    public UsuarioDto updateUsuario(@PathParam("id") long id, UsuarioDto usuarioDto)
     {
-        return "Epa";
+        UsuarioDto resultado = new UsuarioDto();
+        try {
+            DaoUsuario dao = new DaoUsuario();
+            Usuario usuario = dao.find(id, Usuario.class);
+            usuario.set_nombre(usuarioDto.getNombre());
+            usuario.set_apellido(usuarioDto.getApellido());
+            usuario.set_correoelectronico(usuarioDto.getCorreoelectronico());
+            Usuario resul = dao.update(usuario);
+            resultado.setId(resul.get_id());
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        return resultado;
+    }
+
+    @DELETE
+    @Path( "/deleteUser/{id}" )
+    public UsuarioDto deleteUser(@PathParam("id") long id)
+    {
+        UsuarioDto resultado = new UsuarioDto();
+        try
+        {
+            DaoUsuario dao = new DaoUsuario();
+            Usuario usuario = dao.find(id, Usuario.class);
+            Usuario resul = dao.delete(usuario);
+            resultado.setId(resul.get_id());
+        }
+        catch (Exception ex){
+            String problema = ex.getMessage();
+        }
+        return resultado;
     }
 }
