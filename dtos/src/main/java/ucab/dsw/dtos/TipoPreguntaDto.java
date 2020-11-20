@@ -7,6 +7,7 @@ public class TipoPreguntaDto extends DtoBase {
     }
     public TipoPreguntaDto( long id ) throws Exception
     { super( id ); }
+    
     private String descripcion;
 
     public String getDescripcion()

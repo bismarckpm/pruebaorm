@@ -81,8 +81,18 @@ public class Usuario extends EntidadBase
     @ManyToOne
     @JoinColumn( name = "idTipoUsuario" )
     private TipoUsuario _tipousuario;
+    
+    @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Solicitud> _solicitudes;
 
+    public List<Solicitud> getSolicitudes() {
+        return _solicitudes;
+    }
 
+    public void setSolicitudes(List<Solicitud> _solicitudes) {
+        this._solicitudes = _solicitudes;
+    }
+    
     public Usuario( long id )
     {
         super( id );

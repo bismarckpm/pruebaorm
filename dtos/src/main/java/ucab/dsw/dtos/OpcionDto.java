@@ -9,6 +9,13 @@ public class OpcionDto extends DtoBase{
     private String estatus;
 //    private PreguntaDto preguntaDto;
 
+    public OpcionDto(long id) throws Exception {
+        super(id);
+    }
+
+    public OpcionDto() {
+    }
+
     public String getDescripcion() {
         return descripcion;
     }

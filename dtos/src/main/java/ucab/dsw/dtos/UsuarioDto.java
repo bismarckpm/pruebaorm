@@ -71,4 +71,12 @@ public class UsuarioDto extends DtoBase
     }
 
     private String estatus;
+
+    public UsuarioDto(long id) throws Exception {
+        super(id);
+    }
+
+    public UsuarioDto() {
+    }
+    
 }

@@ -3,23 +3,14 @@ import ucab.dsw.accesodatos.DaoUsuario;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.entidades.TipoUsuario;
 import ucab.dsw.entidades.Usuario;
-
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.Context;
+
 import javax.ws.rs.core.MediaType;
-import ucab.dsw.accesodatos.DaoOpcion;
-import ucab.dsw.accesodatos.DaoTipoPregunta;
-import ucab.dsw.dtos.OpcionDto;
-import ucab.dsw.dtos.TipoPreguntaDto;
-import ucab.dsw.entidades.Opcion;
-import ucab.dsw.entidades.TipoPregunta;
+
 
 
 @Path( "/prueba" )

@@ -11,6 +11,13 @@ public class PreguntaDto extends DtoBase {
     private UsuarioDto idusuario;
     private TipoPreguntaDto tipopregunta;
 
+    public PreguntaDto(long id) throws Exception {
+        super(id);
+    }
+
+    public PreguntaDto() {
+    }
+
     public String getPregunta() { return pregunta; }
     public void setPregunta(String pregunta) { this.pregunta = pregunta; }
 
