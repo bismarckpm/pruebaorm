@@ -25,6 +25,9 @@ public class Solicitud extends EntidadBase{
     @JoinColumn(name="idSubCategoria")
     private Subcategoria _subcategoria;
 
+    public Solicitud(long id) {
+    }
+
     @Override
     public String get_estatus()
     {

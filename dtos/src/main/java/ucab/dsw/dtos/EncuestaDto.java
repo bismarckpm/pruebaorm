@@ -12,7 +12,8 @@ public class EncuestaDto extends DtoBase{
 
     private Date fechacreacion;
     private String estatus;
-    private UsuarioDto usuarioDto;
+    private UsuarioDto usuarioCreadorDto;
+    private UsuarioDto usuarioAnalistaDto;
     private EstudioDto estudioDto;
 
 
@@ -36,11 +37,20 @@ public class EncuestaDto extends DtoBase{
         this.estatus = estatus;
     }
 
-    public  UsuarioDto getUsuarioDto() { return  usuarioDto;}
+    public UsuarioDto getUsuarioCreadorDto() {
+        return usuarioCreadorDto;
+    }
 
-    public void setUsuarioDto( UsuarioDto usuarioDto )
-    {
-        this.usuarioDto = usuarioDto;
+    public void setUsuarioCreadorDto(UsuarioDto usuarioCreadorDto) {
+        this.usuarioCreadorDto = usuarioCreadorDto;
+    }
+
+    public UsuarioDto getUsuarioAnalistaDto() {
+        return usuarioAnalistaDto;
+    }
+
+    public void setUsuarioAnalistaDto(UsuarioDto usuarioAnalistaDto) {
+        this.usuarioAnalistaDto = usuarioAnalistaDto;
     }
 
     public EstudioDto getEstudioDto() { return estudioDto; }

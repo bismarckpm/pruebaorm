@@ -15,7 +15,7 @@ public class PreguntaDto extends DtoBase {
     private String estatus;
     private UsuarioDto usuarioDto;
     private TipoPreguntaDto tipoPreguntaDto;
-    //private SubCategoriaDto subCategoriaDto;
+    private SubcategoriaDto subCategoriaDto;
 
 
     public String getPregunta()
@@ -63,15 +63,11 @@ public class PreguntaDto extends DtoBase {
         this.tipoPreguntaDto = tipoPreguntaDto;
     }
 
-    /*
-    public SubCategoriaDto getSubCategoriaDto()
-    {
+    public SubcategoriaDto getSubCategoriaDto() {
         return subCategoriaDto;
     }
 
-    public void setSubCategoriaDto( SubCategoriaDto subCategoriaDto )
-    {
+    public void setSubCategoriaDto(SubcategoriaDto subCategoriaDto) {
         this.subCategoriaDto = subCategoriaDto;
     }
-     */
 }
