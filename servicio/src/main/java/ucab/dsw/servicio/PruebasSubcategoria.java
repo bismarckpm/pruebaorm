@@ -2,6 +2,7 @@ package ucab.dsw.servicio;
 
 import ucab.dsw.accesodatos.DaoCategoria;
 import ucab.dsw.dtos.CategoriaDto;
+import ucab.dsw.dtos.SolicitudDto;
 import ucab.dsw.entidades.categoria;
 import ucab.dsw.accesodatos.DaoSubCategoria;
 import ucab.dsw.dtos.SubCategoriaDto;
@@ -48,13 +49,13 @@ public class PruebasSubcategoria extends AplicacionBase{
         try
         {
             DaoSubCategoria dao = new DaoSubCategoria();
-            subCategoria subCategoria = new subCategoria(SUBcategoriaDto.getId());
-            categoria C=new categoria(dao.find(subCategoria.get_id(),subCategoria.class).get_id());
-            subCategoria.set_descripcion(SUBcategoriaDto.getDescripcion());
-            subCategoria.set_estatus(SUBcategoriaDto.getEstatus());
-            subCategoria.set_idcategoria(C);
-            subCategoria resul = dao.delete( subCategoria );
-            resultado.setId( resul.get_id() );
+            subCategoria SUBC=new subCategoria(SUBcategoriaDto.getId());
+            subCategoria SUBCEliminar=dao.find(SUBC.get_id(),subCategoria.class);
+            SUBC.set_descripcion(SUBCEliminar.get_descripcion());
+            SUBC.set_estatus("I");
+            SUBC.set_idcategoria(SUBCEliminar.get_idcategoria());
+            SUBC.set_solicitud(SUBCEliminar.get_solicitud());
+            subCategoria resul = dao.update( SUBC );
         }
         catch ( Exception ex )
         {
@@ -62,43 +63,25 @@ public class PruebasSubcategoria extends AplicacionBase{
         }
     }
 
-    @GET
-    @Path( "/leercsubategoria" )
-    public SubCategoriaDto leerSubCategoria(SubCategoriaDto subcategoriaDto ) {
-        SubCategoriaDto resultado = new SubCategoriaDto();
-        try {
-            DaoSubCategoria dao = new DaoSubCategoria();
-            subCategoria SUBCategoria = new subCategoria(subcategoriaDto.getId());
-            subCategoria resul = dao.find(SUBCategoria.get_id(), subCategoria.class);
-            resultado.setEstatus(resul.get_estatus());
-            resultado.setDescripcion(resul.get_descripcion());
-            resultado.setId(resul.get_id());
-            CategoriaDto A = new CategoriaDto(resul.get_idcategoria().get_id());
-            resultado.setCategoriaDto(A);
-        } catch (Exception ex) {
-            String problema = ex.getMessage();
-        }
-        return resultado;
-    }
-
-/*
     @POST
-    @Path( "/actualizarcategoria" )
-    public void actualizarCategoria(CategoriaDto categoriaDto )
+    @Path( "/actualizarsubcategoria" )
+    public void actualizarSubCategoria(SubCategoriaDto SUBcategoriaDto )
     {
-        CategoriaDto resultado = new CategoriaDto();
+        SubCategoriaDto resultado = new SubCategoriaDto();
         try
         {
-            DaoCategoria dao = new DaoCategoria();
-            categoria Categoria = new categoria(categoriaDto.getId());
-            categoria categoriaAactualizar= dao.find(Categoria.get_id(),categoria.class);
-            if(categoriaDto.getDescripcion()!=null){
-                Categoria.setDescripcion(categoriaDto.getDescripcion());
-            }else {Categoria.setDescripcion(categoriaAactualizar.getDescripcion());}
-            if(categoriaDto.getEstatus()!=null){
-                Categoria.set_estatus(categoriaDto.getEstatus());
-            }else {Categoria.set_estatus(categoriaAactualizar.get_estatus());}
-            categoria resul = dao.update( Categoria );
+            DaoSubCategoria dao = new DaoSubCategoria();
+            subCategoria SUBC = new subCategoria(SUBcategoriaDto.getId());
+            subCategoria subcategoriaAactualizar= dao.find(SUBC.get_id(),subCategoria.class);
+            if(SUBcategoriaDto.getDescripcion()!=null){
+                SUBC.set_descripcion(SUBcategoriaDto.getDescripcion());
+            }else {SUBC.set_descripcion(subcategoriaAactualizar.get_descripcion());}
+            if(SUBcategoriaDto.getEstatus()!=null){
+                SUBC.set_estatus(SUBcategoriaDto.getEstatus());
+            }else {SUBC.set_estatus(subcategoriaAactualizar.get_estatus());}
+            SUBC.set_idcategoria(subcategoriaAactualizar.get_idcategoria());
+            SUBC.set_solicitud(subcategoriaAactualizar.get_solicitud());
+            subCategoria resul = dao.update( SUBC );
             resultado.setId( resul.get_id() );
         }
         catch ( Exception ex )
@@ -108,17 +91,21 @@ public class PruebasSubcategoria extends AplicacionBase{
     }
 
     @GET
-    @Path( "/leercategoria" )
-    public CategoriaDto leerCategoria(CategoriaDto categoriaDto )
+    @Path( "/leersubcategoria" )
+    public SubCategoriaDto leerCategoria(SubCategoriaDto SUBcategoria )
     {
-        CategoriaDto resultado = new CategoriaDto();
+        SubCategoriaDto resultado = new SubCategoriaDto();
         try
         {
-            DaoCategoria dao = new DaoCategoria();
-            categoria Categoria = new categoria(categoriaDto.getId());
-            categoria resul= dao.find(Categoria.get_id(),categoria.class);
+            DaoSubCategoria dao = new DaoSubCategoria();
+            subCategoria SUBC = new subCategoria(SUBcategoria.getId());
+            subCategoria resul= dao.find(SUBC.get_id(),subCategoria.class);
+            CategoriaDto CDTO =new CategoriaDto(resul.get_idcategoria().get_id());
+            CDTO.setDescripcion(resul.get_idcategoria().getDescripcion());
+            CDTO.setEstatus(resul.get_idcategoria().get_estatus());
             resultado.setEstatus(resul.get_estatus());
-            resultado.setDescripcion(resul.getDescripcion());
+            resultado.setDescripcion(resul.get_estatus());
+            resultado.setCategoriaDto(CDTO);
             resultado.setId(resul.get_id());
         }
         catch ( Exception ex )
@@ -127,9 +114,4 @@ public class PruebasSubcategoria extends AplicacionBase{
         }
         return resultado;
     }
-
-*/
-
-
-
 }

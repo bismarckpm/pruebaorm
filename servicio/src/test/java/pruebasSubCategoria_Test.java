@@ -25,36 +25,34 @@ public class pruebasSubCategoria_Test {
     public void deleateSubCategoriaTest() throws Exception
     {
         ucab.dsw.servicio.PruebasSubcategoria servicio = new ucab.dsw.servicio.PruebasSubcategoria();
-        SubCategoriaDto subcategoriaDto = new SubCategoriaDto();
-        subcategoriaDto.setEstatus("A");
-        subcategoriaDto.setDescripcion("Auto");
-        subcategoriaDto.setId(1);
-        servicio.eliminarSubCategoria(subcategoriaDto);
-    }
-/*
-    @Test
-    public void updateCategoriaTest() throws Exception
-    {
-        ucab.dsw.servicio.PruebasCategoria servicio = new ucab.dsw.servicio.PruebasCategoria();
-        CategoriaDto categoriaDto = new CategoriaDto();
-        categoriaDto.setDescripcion( "Amarillos" );
-        categoriaDto.setId(1);
-        servicio.actualizarCategoria( categoriaDto );
+        SubCategoriaDto SBCDto = new SubCategoriaDto();
+        SBCDto.setId(1);
+        servicio.eliminarSubCategoria( SBCDto );
     }
 
     @Test
-    public void leerCategoriaTest() throws Exception
+    public void updateSubCategoriaTest() throws Exception
     {
-        ucab.dsw.servicio.PruebasCategoria servicio = new ucab.dsw.servicio.PruebasCategoria();
-        CategoriaDto categoriaDto = new CategoriaDto();
-        categoriaDto.setId(4);
-        CategoriaDto resultado = servicio.leerCategoria( categoriaDto );
-        System.out.println("Datos de la categoria:\n");
+        ucab.dsw.servicio.PruebasSubcategoria servicio = new ucab.dsw.servicio.PruebasSubcategoria();
+        SubCategoriaDto SUBC = new SubCategoriaDto();
+        SUBC.setDescripcion( "Rojos" );
+        SUBC.setEstatus( "A" );
+        SUBC.setId(1);
+        servicio.actualizarSubCategoria( SUBC );
+    }
+
+    @Test
+    public void leerSubCategoriaTest() throws Exception
+    {
+        ucab.dsw.servicio.PruebasSubcategoria servicio = new ucab.dsw.servicio.PruebasSubcategoria();
+        SubCategoriaDto SUBC = new SubCategoriaDto();
+        SUBC.setId(1);
+        SubCategoriaDto resultado = servicio.leerCategoria( SUBC );
+        System.out.println("Datos de la subcategoria:\n");
         System.out.println("Id="+resultado.getId()+"\n");
         System.out.println("Descripcion="+resultado.getDescripcion()+"\n");
         System.out.println("Estatus="+resultado.getEstatus()+"\n");
+        System.out.println("Categoria="+resultado.getCategoriaDto()+"\n");
     }
 
-
-*/
 }

@@ -27,4 +27,35 @@ public class pruebaEncuesta_Test {
         EncuestaDto resultado = servicio.addEncuesta(encuestaDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
+
+    @Test
+    public void deleateEncuestaTest() throws Exception
+    {
+        ucab.dsw.servicio.pruebaEncuesta servicio = new ucab.dsw.servicio.pruebaEncuesta();
+        EncuestaDto Edto = new EncuestaDto();
+        Edto.setId(1);
+        servicio.eliminarEncuesta( Edto );
+    }
+
+    @Test
+    public void updateEncuestaTest() throws Exception
+    {
+        Date fechaTest=new Date(115,5,23);
+        ucab.dsw.servicio.pruebaEncuesta servicio = new ucab.dsw.servicio.pruebaEncuesta();
+        EncuestaDto Edto = new EncuestaDto();
+        Edto.setFechaCreacion(fechaTest);
+        Edto.setEstatus("C");
+        Edto.setId(2);
+        servicio.actualizarEncuesta( Edto );
+    }
+
+    @Test
+    public void leerEncuestaTest() throws Exception
+    {
+        ucab.dsw.servicio.pruebaEncuesta servicio = new ucab.dsw.servicio.pruebaEncuesta();
+        EncuestaDto ENC = new EncuestaDto();
+        ENC.setId(1);
+        servicio.leerEncuesta( ENC );
+
+    }
 }

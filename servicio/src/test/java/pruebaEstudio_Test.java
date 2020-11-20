@@ -24,4 +24,33 @@ public class pruebaEstudio_Test {
         EstudioDto resultado = servicio.addEstudio(estudioDto);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
+
+    @Test
+    public void deleateEstudioTest() throws Exception
+    {
+        ucab.dsw.servicio.pruebaEstudio servicio = new ucab.dsw.servicio.pruebaEstudio();
+        EstudioDto Edto = new EstudioDto();
+        Edto.setId(3);
+       servicio.eliminarEstudio( Edto );
+    }
+
+    @Test
+    public void updateEstudioTest() throws Exception
+    {
+        ucab.dsw.servicio.pruebaEstudio servicio = new ucab.dsw.servicio.pruebaEstudio();
+        EstudioDto ESTdto = new EstudioDto();
+        ESTdto.setEstatus("F");
+        ESTdto.setId(2);
+        servicio.actualizarEstudio( ESTdto );
+    }
+
+    @Test
+    public void leerEestudioTest() throws Exception
+    {
+        ucab.dsw.servicio.pruebaEstudio servicio = new ucab.dsw.servicio.pruebaEstudio();
+        EstudioDto ENC = new EstudioDto();
+        ENC.setId(1);
+        servicio.leerCategoria( ENC );
+
+    }
 }

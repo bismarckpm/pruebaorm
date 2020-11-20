@@ -25,7 +25,7 @@ public class PruebasCategoria_Test {
         CategoriaDto categoriaDto = new CategoriaDto();
         categoriaDto.setDescripcion( "Muy alto" );
         categoriaDto.setEstatus( "A" );
-        categoriaDto.setId(5);//Solo elimina aquellos datos que no tengan una subcategoria
+        categoriaDto.setId(6);//Solo elimina aquellos datos que no tengan una subcategoria
         servicio.eliminarCategoria( categoriaDto );
     }
 

@@ -25,4 +25,33 @@ public class pruebasSolicitud_Test {
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 
+    @Test
+    public void deleateSolicitudTest() throws Exception
+    {
+        ucab.dsw.servicio.pruebaSolicitud servicio = new ucab.dsw.servicio.pruebaSolicitud();
+        SolicitudDto Sdto = new SolicitudDto();
+        Sdto.setId(3);
+        servicio.eliminarSolicitud( Sdto );
+    }
+
+    @Test
+    public void updateSolicitudTest() throws Exception
+    {
+        ucab.dsw.servicio.pruebaSolicitud servicio = new ucab.dsw.servicio.pruebaSolicitud();
+        SolicitudDto Sdto = new SolicitudDto();
+        Sdto.setEstatu("A");
+        Sdto.setFecha("30/4/2019");
+        servicio.actualizarolicitud( Sdto );
+    }
+
+    @Test
+    public void leerSolicitudTest() throws Exception
+    {
+        ucab.dsw.servicio.pruebaSolicitud servicio = new ucab.dsw.servicio.pruebaSolicitud();
+        SolicitudDto Sdto = new SolicitudDto();
+        Sdto.setId(1);
+        servicio.leerSolicitud( Sdto );
+
+    }
+
 }

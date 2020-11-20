@@ -1,3 +1,5 @@
-ucab\dsw\entidades\EntidadBase.class
 ucab\dsw\entidades\Usuario.class
 ucab\dsw\entidades\TipoUsuario.class
+ucab\dsw\entidades\EntidadBase.class
+ucab\dsw\entidades\categoria.class
+ucab\dsw\entidades\subCategoria.class
