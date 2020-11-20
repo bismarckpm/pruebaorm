@@ -31,7 +31,7 @@ public class EstudioDto extends DtoBase{
         return fechaCreacion;
     }
 
-    public void setFechaCreacion( String _descripcion )
+    public void setFechaCreacion( Date fechaCreacion )
     {
         this.fechaCreacion = fechaCreacion;
     }
