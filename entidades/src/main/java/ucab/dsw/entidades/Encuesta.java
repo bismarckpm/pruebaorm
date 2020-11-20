@@ -17,18 +17,6 @@ public class Encuesta extends  EntidadBase{
         this._fechacreacion = _fechacreacion;
     }
 
-    @Column(name = "estatus")
-    private String _estatus;
-
-    @Override
-    public String get_estatus() {
-        return super.get_estatus();
-    }
-    @Override
-    public void set_estatus(String _estatus) {
-        super.set_estatus(_estatus);
-    }
-
 
     //ManyToOne
     @ManyToOne
@@ -64,7 +52,7 @@ public class Encuesta extends  EntidadBase{
         this._estudio = _estudio;
     }
 
-    /* EjecucionEncuesta
+
     @OneToMany( mappedBy = "_encuesta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<EjecucionEncuesta> _ejecucionencuesta;
 
@@ -77,7 +65,7 @@ public class Encuesta extends  EntidadBase{
     {
         this._ejecucionencuesta = _ejecucionencuesta;
     }
-    */
+
 
 
     public Encuesta(long id )

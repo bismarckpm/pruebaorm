@@ -9,7 +9,7 @@ import java.util.List;
 public class Subcategoria extends EntidadBase{
 
     @Column(name ="descripcion")
-    private String descripcion;
+    private String _descripcion;
 
     @ManyToOne
     @JoinColumn(name="idCategoria")
@@ -41,12 +41,12 @@ public class Subcategoria extends EntidadBase{
         this._solicitud = _solicitud;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String get_descripcion() {
+        return _descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void set_descripcion(String descripcion) {
+        this._descripcion = descripcion;
     }
 
     public Categoria get_categoria() {

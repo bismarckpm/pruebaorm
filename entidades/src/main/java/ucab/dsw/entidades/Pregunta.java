@@ -82,7 +82,7 @@ public class Pregunta extends EntidadBase {
         this._usuario = _usuario;
     }
 
-    /* Con Opcion
+
     @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<Opcion> _opcion;
 
@@ -95,9 +95,7 @@ public class Pregunta extends EntidadBase {
     {
         this._opcion = _opcion;
     }
-    */
 
-    /* Con ejecucionencuesta
      @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
      private List<EjecucionEncuesta> _ejecucionencuesta;
 
@@ -110,7 +108,7 @@ public class Pregunta extends EntidadBase {
      {
      this._ejecucionencuesta = _ejecucionencuesta;
      }
-     */
+
 
 
 

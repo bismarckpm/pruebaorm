@@ -13,39 +13,37 @@ public class EstudioDto extends DtoBase{
     private Date fechacreacion;
     private String estatus;
     private UsuarioDto usuarioDto;
-    //private SolicitudDto solicitudDto;
+    private SolicitudDto solicitudDto;
 
-    public Date getFechacreacion()
-    {
+    public Date getFechacreacion() {
         return fechacreacion;
     }
 
-    public void setFechacreacion( Date fechacreacion )
-    {
+    public void setFechacreacion(Date fechacreacion) {
         this.fechacreacion = fechacreacion;
     }
 
-    public String getEstatus()
-    {
+    public String getEstatus() {
         return estatus;
     }
 
-    public void setEstatus( String estatus )
-    {
+    public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
 
-    public  UsuarioDto getUsuarioDto() { return  usuarioDto;}
+    public UsuarioDto getUsuarioDto() {
+        return usuarioDto;
+    }
 
-    public void setUsuarioDto( UsuarioDto usuarioDto )
-    {
+    public void setUsuarioDto(UsuarioDto usuarioDto) {
         this.usuarioDto = usuarioDto;
     }
 
- /* public  SolicitudDto getSolicitudDto() { return  solicitudDto;}
+    public SolicitudDto getSolicitudDto() {
+        return solicitudDto;
+    }
 
-    public void setSolicitudDto( SolicitudDto solicitudDto )
-    {
+    public void setSolicitudDto(SolicitudDto solicitudDto) {
         this.solicitudDto = solicitudDto;
-    } */
+    }
 }
