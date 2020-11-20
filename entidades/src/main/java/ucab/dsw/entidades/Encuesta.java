@@ -8,6 +8,7 @@ import java.util.Date;
 public class Encuesta extends EntidadBase {
 
     @Column(name = "fechacreacion")
+    @Temporal(value = TemporalType.DATE)
     private Date _fechaCreacion;
 
     @Column(name = "estatus")

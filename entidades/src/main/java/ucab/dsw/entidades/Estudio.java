@@ -9,6 +9,7 @@ import java.util.List;
 public class Estudio extends EntidadBase{
 
     @Column(name = "fechacreacion")
+    @Temporal(value = TemporalType.DATE)
     private Date _fechaCrecion;
 
     @Column(name = "estatus")

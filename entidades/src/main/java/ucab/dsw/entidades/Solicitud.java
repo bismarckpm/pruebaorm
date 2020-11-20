@@ -13,6 +13,7 @@ public class Solicitud extends EntidadBase {
     private String _nombre;
 
     @Column(name = "fecha")
+    @Temporal(value = TemporalType.DATE)
     private Date _fecha;
 
     @Column(name = "estatus")

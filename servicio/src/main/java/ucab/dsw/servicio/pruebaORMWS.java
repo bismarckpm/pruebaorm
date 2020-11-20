@@ -69,15 +69,11 @@ public class pruebaORMWS extends AplicacionBase {
         try {
             DaoUsuario dao = new DaoUsuario();
             Usuario usuario = dao.find(id, Usuario.class);
-
-            if (usuario != null) {
-                usuario.set_nombre(usuarioDto.getNombre());
-                usuario.set_apellido(usuarioDto.getApellido());
-                usuario.set_correoelectronico(usuarioDto.getCorreoelectronico());
-                Usuario resul = dao.update(usuario);
-                resultado.setId(resul.get_id());
-            }
-
+            usuario.set_nombre(usuarioDto.getNombre());
+            usuario.set_apellido(usuarioDto.getApellido());
+            usuario.set_correoelectronico(usuarioDto.getCorreoelectronico());
+            Usuario resul = dao.update(usuario);
+            resultado.setId(resul.get_id());
         } catch (Exception ex) {
             String problema = ex.getMessage();
         }
@@ -93,12 +89,8 @@ public class pruebaORMWS extends AplicacionBase {
         {
             DaoUsuario dao = new DaoUsuario();
             Usuario usuario = dao.find(id, Usuario.class);
-
-            if(usuario != null)
-            {
-                Usuario resul = dao.delete(usuario);
-                resultado.setId(resul.get_id());
-            }
+            Usuario resul = dao.delete(usuario);
+            resultado.setId(resul.get_id());
         }
         catch (Exception ex){
             String problema = ex.getMessage();

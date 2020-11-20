@@ -17,8 +17,6 @@ public class Subcategoria  extends EntidadBase{
     @JoinColumn(name = "idCategoria", nullable = false)
     private Categoria _categoria;
 
-    @OneToMany( mappedBy = "_subcategoria", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<Solicitud> _solicitudes;
 
     public Subcategoria() { }
 
@@ -52,11 +50,4 @@ public class Subcategoria  extends EntidadBase{
         this._categoria = _categoria;
     }
 
-    public List<Solicitud> get_solicitudes() {
-        return _solicitudes;
-    }
-
-    public void set_solicitudes(List<Solicitud> _solicitudes) {
-        this._solicitudes = _solicitudes;
-    }
 }
