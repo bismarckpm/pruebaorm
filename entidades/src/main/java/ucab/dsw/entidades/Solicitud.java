@@ -3,6 +3,15 @@ package ucab.dsw.entidades;
 
 import javax.persistence.*;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name="solicitud")
@@ -70,7 +79,25 @@ public class Solicitud extends EntidadBase{
     }
 
     //Crear relación con Tabla Estudio
-    //@OneToMany( mappedBy = "_solicitud", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    //private List<Estudio> _estudios;
+    @OneToMany( mappedBy = "_solicitud", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Estudio> _estudio;
+
+    public List<Estudio> get_estudio() {
+        return _estudio;
+    }
+
+    public void set_estudio(List<Estudio> _estudio) {
+        this._estudio = _estudio;
+    }
+
+    public Solicitud(long id )
+    {
+        super( id );
+    }
+
+    public Solicitud()
+    {
+
+    }
 
 }

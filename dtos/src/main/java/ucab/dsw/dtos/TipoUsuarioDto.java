@@ -37,4 +37,16 @@ public class TipoUsuarioDto extends DtoBase
     }
 
     private String estatus;
+
+    private UsuarioDto usuario;
+
+    public UsuarioDto getUsuario()
+    {
+        return usuario;
+    }
+
+    public void setUsuario( UsuarioDto usuario )
+    {
+        this.usuario = usuario;
+    }
 }

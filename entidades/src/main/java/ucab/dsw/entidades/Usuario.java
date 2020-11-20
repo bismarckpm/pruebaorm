@@ -83,15 +83,28 @@ public class Usuario extends EntidadBase
     private TipoUsuario _tipousuario;
 
     @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<Solicitud> _solicitud;
+    private List<EjecucionEncuesta> _ejecucionencuesta;
 
-    public List<Solicitud> get_solicitud() {
-        return _solicitud;
+    public List<EjecucionEncuesta> get_ejecucionencuesta()
+    {
+        return _ejecucionencuesta;
     }
 
-    public void set_solicitud(List<Solicitud> _solicitud) {
-        this._solicitud = _solicitud;
+    public void set_ejecucionencuesta( List<EjecucionEncuesta> _ejecucionencuesta )
+    {
+        this._ejecucionencuesta = _ejecucionencuesta;
     }
+
+   // @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+   // private List<Solicitud> _solicitud;
+
+   // public List<Solicitud> get_solicitud() {
+   //     return _solicitud;
+   // }
+
+   // public void set_solicitud(List<Solicitud> _solicitud) {
+   //     this._solicitud = _solicitud;
+   // }
 
     public Usuario(long id )
     {

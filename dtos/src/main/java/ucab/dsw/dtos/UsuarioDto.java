@@ -2,6 +2,12 @@ package ucab.dsw.dtos;
 
 public class UsuarioDto extends DtoBase
 {
+    public UsuarioDto() {}
+
+    public UsuarioDto(long id) throws Exception{
+        super(id);
+    }
+
     private String nombre;
 
     public String getNombre()
@@ -71,4 +77,18 @@ public class UsuarioDto extends DtoBase
     }
 
     private String estatus;
+
+    private EjecucionEncuestaDto ejecucionEncuestaDto;
+
+    public EjecucionEncuestaDto getEjecucionEncuestaDto()
+    {
+        return ejecucionEncuestaDto;
+    }
+
+    public void setEjecucionEncuestaDto( EjecucionEncuestaDto EjecucionEncuestaDto )
+    {
+        this.ejecucionEncuestaDto = ejecucionEncuestaDto;
+    }
+
+
 }
