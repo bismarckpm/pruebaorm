@@ -78,7 +78,7 @@ public class EjecucionEncuestaDto extends DtoBase{
         this.usuarioEncuestado = usuarioEncuestado;
     }
 
-    public OpcionDto getPpcion()
+    public OpcionDto getOpcion()
     {
         return opcion;
     }

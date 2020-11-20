@@ -3,6 +3,7 @@ import ucab.dsw.accesodatos.DaoEstudio;
 import ucab.dsw.dtos.EstudioDto;
 import ucab.dsw.entidades.Encuesta;
 import ucab.dsw.entidades.Estudio;
+import ucab.dsw.entidades.Solicitud;
 import ucab.dsw.entidades.Usuario;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,7 +32,7 @@ public class estudioORMWS {
             estudio.set_estatus( estudioDto.getEstatus() );
             Usuario usuario = new Usuario(estudioDto.getUsuario().getId());
             estudio.set_usuario( usuario );
-            Usuario solicitud = new Usuario(estudioDto.getSolicitud().getId());
+            Solicitud solicitud = new Usuario(estudioDto.getSolicitud().getId());
             estudio.set_solicitud( solicitud );
             Estudio resul = dao.insert( estudio );
             resultado.setId( resul.get_id() );
@@ -83,7 +84,7 @@ public class estudioORMWS {
             estudio.set_estatus( estudioDto.getEstatus() );
             Usuario usuario = new Usuario(estudioDto.getUsuario().getId());
             estudio.set_usuario( usuario );
-            Usuario solicitud = new Usuario(estudioDto.getSolicitud().getId());
+            Solicitud solicitud = new Usuario(estudioDto.getSolicitud().getId());
             estudio.set_solicitud( solicitud );
             Estudio resul = dao.update (estudio );
             resultado.setId(resul.get_id());

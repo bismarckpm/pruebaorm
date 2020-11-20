@@ -2,6 +2,11 @@ package ucab.dsw.servicio;
 import ucab.dsw.accesodatos.DaoEjecucionEncuesta;
 import ucab.dsw.dtos.EjecucionEncuestaDto;
 import ucab.dsw.entidades.EjecucionEncuesta;
+import ucab.dsw.entidades.Estudio;
+import ucab.dsw.entidades.Usuario;
+import ucab.dsw.entidades.Encuesta;
+import ucab.dsw.entidades.Pregunta;
+import ucab.dsw.entidades.Opcion;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.faces.push.Push;
@@ -25,8 +30,16 @@ public class ejecucionEncuestaORMWS {
         {
             DaoEjecucionEncuesta dao = new DaoEjecucionEncuesta();
             EjecucionEncuesta ejecucionEncuesta = new EjecucionEncuesta();
-            ejecucionEncuesta.set_descripcion( ejecucionEncuestaDto.getDescripcion() );
-            ejecucionEncuesta.set_estatus( ejecucionEncuestaDto.getEstatus() );
+            ejecucionEncuesta.set_respuesta( ejecucionEncuestaDto.getRespuesta() );
+            ejecucionEncuesta.set_estatus( ejecucionEncuestaDto.getEstatus());
+            Encuesta encuesta = new Encuesta(ejecucionEncuestaDto.getEncuesta().getId());
+            ejecucionEncuesta.set_encuesta( encuesta );
+            Pregunta pregunta = new Pregunta(ejecucionEncuestaDto.getPregunta().getId());
+            ejecucionEncuesta.set_pregunta( pregunta );
+            Usuario usuarioEncuestado = new Usuario(ejecucionEncuestaDto.get_usuarioEncuestado().getId());
+            ejecucionEncuesta.set_usuarioencuestado( usuarioEncuestado );
+            Opcion opcion = new Opcion(ejecucionEncuestaDto.getOpcion().getId());
+            ejecucionEncuesta.set_opcion( opcion );
             EjecucionEncuesta resul = dao.insert( ejecucionEncuesta );
             resultado.setId( resul.get_id() );
         }
@@ -49,9 +62,17 @@ public class ejecucionEncuestaORMWS {
             for(EjecucionEncuesta ejecucionEncuesta : ejecucionEncuestas) {
                 System.out.print(ejecucionEncuesta.get_id());
                 System.out.print(", ");
-                System.out.print(ejecucionEncuesta.get_descripcion());
+                System.out.print(ejecucionEncuesta.get_pregunta());
                 System.out.print(", ");
                 System.out.print(ejecucionEncuesta.get_estatus());
+                System.out.print(", ");
+                System.out.print(ejecucionEncuesta.get_encuesta());
+                System.out.print(", ");
+                System.out.print(ejecucionEncuesta.get_pregunta());
+                System.out.print(", ");
+                System.out.print(ejecucionEncuesta.get_usuarioencuestado());
+                System.out.print(", ");
+                System.out.print(ejecucionEncuesta.get_opcion());
                 System.out.println();
             }
         }
@@ -71,8 +92,16 @@ public class ejecucionEncuestaORMWS {
         {
             DaoEjecucionEncuesta dao = new DaoEjecucionEncuesta();
             EjecucionEncuesta ejecucionEncuesta = new EjecucionEncuesta(ejecucionEncuestaDto.getId());
-            ejecucionEncuesta.set_descripcion( ejecucionEncuestaDto.getDescripcion());
-            ejecucionEncuesta.set_estatus (ejecucionEncuestaDto.getEstatus());
+            ejecucionEncuesta.set_respuesta( ejecucionEncuestaDto.getRespuesta() );
+            ejecucionEncuesta.set_estatus( ejecucionEncuestaDto.getEstatus());
+            Encuesta encuesta = new Encuesta(ejecucionEncuestaDto.getEncuesta().getId());
+            ejecucionEncuesta.set_encuesta( encuesta );
+            Pregunta pregunta = new Pregunta(ejecucionEncuestaDto.getPregunta().getId());
+            ejecucionEncuesta.set_pregunta( pregunta );
+            Usuario usuarioEncuestado = new Usuario(ejecucionEncuestaDto.get_usuarioEncuestado().getId());
+            ejecucionEncuesta.set_usuarioencuestado( usuarioEncuestado );
+            Opcion opcion = new Opcion(ejecucionEncuestaDto.getOpcion().getId());
+            ejecucionEncuesta.set_opcion( opcion );
             EjecucionEncuesta resul = dao.update (ejecucionEncuesta );
             resultado.setId(resul.get_id());
 
