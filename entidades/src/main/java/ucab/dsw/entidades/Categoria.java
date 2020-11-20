@@ -22,6 +22,10 @@ public class Categoria extends EntidadBase{
     @Column( name = "estatus" )
     private String _estatus;
 
+    /*@OneToMany( mappedBy = "_categoria", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<SubCategoria> _categorias;*/
+
+
     public Categoria( long id )
     {
         super( id );
@@ -53,5 +57,15 @@ public class Categoria extends EntidadBase{
     {
         this._estatus = _estatus;
     }
+
+    /*public List<SubCategoria> get_categorias()
+    {
+        return _categorias;
+    }
+
+    public void get_categorias( List<Usuario> _usuarios )
+    {
+        this._categorias = _categorias;
+    }*/
 
 }

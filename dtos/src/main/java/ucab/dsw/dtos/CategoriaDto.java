@@ -12,6 +12,14 @@ public class CategoriaDto extends DtoBase{
 
     private String estatus;
 
+    public CategoriaDto()
+    {
+    }
+
+    public CategoriaDto( long id ) throws Exception
+    {
+        super( id );
+    }
 
     public String getDescripcion()
     {
@@ -33,4 +41,5 @@ public class CategoriaDto extends DtoBase{
     {
         this.estatus = estatus;
     }
+
 }
