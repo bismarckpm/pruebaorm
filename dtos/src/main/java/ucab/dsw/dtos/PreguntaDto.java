@@ -17,49 +17,43 @@ public class PreguntaDto extends DtoBase {
     private TipoPreguntaDto tipoPreguntaDto;
     private SubcategoriaDto subCategoriaDto;
 
-
-    public String getPregunta()
-    {
+    public String getPregunta() {
         return pregunta;
     }
 
-    public void setPregunta( String pregunta )
-    {
+    public void setPregunta(String pregunta) {
         this.pregunta = pregunta;
     }
 
-    public Date getFechacreacion() { return fechacreacion; }
+    public Date getFechacreacion() {
+        return fechacreacion;
+    }
 
-    public void setFechacreacion(Date fechacreacion) {this.fechacreacion = fechacreacion; }
+    public void setFechacreacion(Date fechacreacion) {
+        this.fechacreacion = fechacreacion;
+    }
 
-    public String getEstatus()
-    {
+    public String getEstatus() {
         return estatus;
     }
 
-    public void setEstatus( String estatus )
-    {
+    public void setEstatus(String estatus) {
         this.estatus = estatus;
     }
 
-
-    public UsuarioDto getUsuarioDto()
-    {
+    public UsuarioDto getUsuarioDto() {
         return usuarioDto;
     }
 
-    public void setUsuarioDto( UsuarioDto usuarioDto )
-    {
+    public void setUsuarioDto(UsuarioDto usuarioDto) {
         this.usuarioDto = usuarioDto;
     }
 
-    public TipoPreguntaDto getTipoPreguntaDto()
-    {
+    public TipoPreguntaDto getTipoPreguntaDto() {
         return tipoPreguntaDto;
     }
 
-    public void setTipoPreguntaDto( TipoPreguntaDto TipoPreguntaDto )
-    {
+    public void setTipoPreguntaDto(TipoPreguntaDto tipoPreguntaDto) {
         this.tipoPreguntaDto = tipoPreguntaDto;
     }
 

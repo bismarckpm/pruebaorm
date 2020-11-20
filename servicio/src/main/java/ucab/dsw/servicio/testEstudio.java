@@ -37,6 +37,11 @@ public class testEstudio extends AplicacionBase{
             Solicitud solicitud = new Solicitud(estudioDto.getSolicitudDto().getId());
             estudio.set_solicitud(solicitud);
 
+            System.out.println(estudio.get_id());
+            System.out.println(estudio.get_fechacreacion());
+            System.out.println(estudio.get_usuario());
+            System.out.println(estudio.get_solicitud());
+
             Estudio resul = dao.insert( estudio );
             resultado.setId( resul.get_id() );
         }
@@ -55,13 +60,17 @@ public class testEstudio extends AplicacionBase{
         try
         {
             DaoEstudio dao = new DaoEstudio();
-            Estudio estudio = new Estudio();
+            Estudio estudio = dao.find(id,Estudio.class);
             estudio.set_fechacreacion(estudioDto.getFechacreacion());
             estudio.set_estatus(estudioDto.getEstatus());
             Usuario usuario = new Usuario(estudioDto.getUsuarioDto().getId());
             estudio.set_usuario(usuario);
             Solicitud solicitud = new Solicitud(estudioDto.getSolicitudDto().getId());
             estudio.set_solicitud(solicitud);
+            System.out.println(estudio.get_id());
+            System.out.println(estudio.get_fechacreacion());
+            System.out.println(estudio.get_usuario());
+            System.out.println(estudio.get_solicitud());
             Estudio resul = dao.update( estudio );
             resultado.setId( resul.get_id() );
         }
@@ -101,6 +110,11 @@ public class testEstudio extends AplicacionBase{
         {
             DaoEstudio dao = new DaoEstudio();
             Estudio estudio = dao.find(id,Estudio.class);
+            System.out.println("Resultados :");
+            System.out.println(estudio.get_id());
+            System.out.println(estudio.get_fechacreacion());
+            System.out.println(estudio.get_usuario());
+            System.out.println(estudio.get_solicitud());
             resultado.setId( estudio.get_id() );
         }
         catch ( Exception ex )

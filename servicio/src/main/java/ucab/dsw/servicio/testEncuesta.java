@@ -33,7 +33,7 @@ public class testEncuesta extends  AplicacionBase {
             Usuario usuariocreador = new Usuario(encuestaDto.getUsuarioCreadorDto().getId());
             encuesta.set_usuariocreador(usuariocreador);
             Usuario usuarioanalista = new Usuario(encuestaDto.getUsuarioAnalistaDto().getId());
-            encuesta.set_usuariocreador(usuarioanalista);
+            encuesta.set_usuarioanalista(usuarioanalista);
             Estudio estudio = new Estudio(encuestaDto.getEstudioDto().getId());
             encuesta.set_estudio(estudio);
             Encuesta resul = dao.insert(encuesta);
@@ -55,14 +55,17 @@ public class testEncuesta extends  AplicacionBase {
         try
         {
             DaoEncuesta dao = new DaoEncuesta();
-            Encuesta encuesta = new Encuesta(encuestaDto.getId());
+            Encuesta encuesta = dao.find(id,Encuesta.class);
 
             encuesta.set_fechacreacion(encuestaDto.getFechacreacion());
             encuesta.set_estatus(encuestaDto.getEstatus());
+
             Usuario usuariocreador = new Usuario(encuestaDto.getUsuarioCreadorDto().getId());
             encuesta.set_usuariocreador(usuariocreador);
+
             Usuario usuarioanalista = new Usuario(encuestaDto.getUsuarioAnalistaDto().getId());
-            encuesta.set_usuariocreador(usuarioanalista);
+            encuesta.set_usuarioanalista(usuarioanalista);
+
             Estudio estudio = new Estudio(encuestaDto.getEstudioDto().getId());
             encuesta.set_estudio(estudio);
             Encuesta resul = dao.update( encuesta );

@@ -50,7 +50,8 @@ public class testPregunta extends AplicacionBase {
         try
         {
             DaoPregunta dao = new DaoPregunta();
-            Pregunta pregunta = new Pregunta();
+            Pregunta pregunta =  dao.find(id,Pregunta.class);
+
             pregunta.set_pregunta(preguntaDto.getPregunta());
             pregunta.set_fechacreacion(preguntaDto.getFechacreacion());
             pregunta.set_estatus(preguntaDto.getEstatus());
@@ -60,6 +61,7 @@ public class testPregunta extends AplicacionBase {
             pregunta.set_subcategoria( subcategoria );
             Usuario usuario = new Usuario(preguntaDto.getUsuarioDto().getId());
             pregunta.set_usuario(usuario);
+
             Pregunta resul = dao.update(pregunta);
             resultado.setId(resul.get_id());
         }

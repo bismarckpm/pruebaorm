@@ -28,6 +28,10 @@ public class Solicitud extends EntidadBase{
     public Solicitud(long id) {
     }
 
+    public Solicitud() {
+
+    }
+
     @Override
     public String get_estatus()
     {

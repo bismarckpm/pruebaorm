@@ -44,4 +44,36 @@ public class EjecucionEncuesta extends EntidadBase{
     @ManyToOne
     @JoinColumn(name = "idOpcion")
     private Opcion _opcion;
+
+    public Encuesta get_encuesta() {
+        return _encuesta;
+    }
+
+    public void set_encuesta(Encuesta _encuesta) {
+        this._encuesta = _encuesta;
+    }
+
+    public Pregunta get_pregunta() {
+        return _pregunta;
+    }
+
+    public void set_pregunta(Pregunta _pregunta) {
+        this._pregunta = _pregunta;
+    }
+
+    public Usuario get_usuario() {
+        return _usuario;
+    }
+
+    public void set_usuario(Usuario _usuario) {
+        this._usuario = _usuario;
+    }
+
+    public Opcion get_opcion() {
+        return _opcion;
+    }
+
+    public void set_opcion(Opcion _opcion) {
+        this._opcion = _opcion;
+    }
 }

@@ -19,9 +19,9 @@ public class testEncuesta_Test {
         EncuestaDto encuestaDto = new EncuestaDto();
         encuestaDto.setFechacreacion( date );
         encuestaDto.setEstatus("E");
-        UsuarioDto usuarioDtoCreador = new UsuarioDto(16);
+        UsuarioDto usuarioDtoCreador = new UsuarioDto(21);
         encuestaDto.setUsuarioCreadorDto(usuarioDtoCreador);
-        UsuarioDto usuarioDtoAnalista = new UsuarioDto(17);
+        UsuarioDto usuarioDtoAnalista = new UsuarioDto(20);
         encuestaDto.setUsuarioAnalistaDto(usuarioDtoAnalista);
         EstudioDto estudioDto = new EstudioDto(1);
         encuestaDto.setEstudioDto(estudioDto);
@@ -34,16 +34,20 @@ public class testEncuesta_Test {
     {
         Date date = new Date();
         ucab.dsw.servicio.testEncuesta servicio = new ucab.dsw.servicio.testEncuesta();
-        EncuestaDto encuestaDto = new EncuestaDto(1);
+        EncuestaDto encuestaDto = new EncuestaDto(10);
+
         encuestaDto.setFechacreacion( date );
-        encuestaDto.setEstatus("A");
+        encuestaDto.setEstatus("C");
+
         UsuarioDto usuarioDtoCreador = new UsuarioDto(17);
         encuestaDto.setUsuarioCreadorDto(usuarioDtoCreador);
-        UsuarioDto usuarioDtoAnalista = new UsuarioDto(18);
+
+        UsuarioDto usuarioDtoAnalista = new UsuarioDto(15);
         encuestaDto.setUsuarioAnalistaDto(usuarioDtoAnalista);
+
         EstudioDto estudioDto = new EstudioDto(1);
         encuestaDto.setEstudioDto(estudioDto);
-        EncuestaDto resultado = servicio.changeEncuesta(1, encuestaDto );
+        EncuestaDto resultado = servicio.changeEncuesta(10, encuestaDto );
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 
@@ -51,7 +55,7 @@ public class testEncuesta_Test {
     public void deleteEncuesta() throws Exception
     {
         ucab.dsw.servicio.testEncuesta servicio = new ucab.dsw.servicio.testEncuesta();
-        EncuestaDto encuestaDto = new EncuestaDto(2);
+        EncuestaDto encuestaDto = new EncuestaDto(11);
         EncuestaDto resultado = servicio.deleteEncuesta(encuestaDto.getId());
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
@@ -62,6 +66,7 @@ public class testEncuesta_Test {
         ucab.dsw.servicio.testEncuesta servicio = new ucab.dsw.servicio.testEncuesta();
         EncuestaDto encuestaDto = new EncuestaDto(2);
         EncuestaDto resultado = servicio.getEncuesta(encuestaDto.getId());
+
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 

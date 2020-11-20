@@ -15,20 +15,20 @@ import java.util.Date;
 public class testPregunta_Test {
 
     @Test
-    public void addUserTest() throws Exception
+    public void addPreguntaTest() throws Exception
     {
         Date date = new Date();
         ucab.dsw.servicio.testPregunta servicio = new ucab.dsw.servicio.testPregunta();
         PreguntaDto preguntaDto = new PreguntaDto();
 
-        preguntaDto.setPregunta("test1");
+        preguntaDto.setPregunta("test3");
         preguntaDto.setFechacreacion(date);
-        preguntaDto.setEstatus("A");
+        preguntaDto.setEstatus("I");
         TipoPreguntaDto tipoPregunta = new TipoPreguntaDto(1);
         preguntaDto.setTipoPreguntaDto(tipoPregunta);
         SubcategoriaDto subcategoriaDto = new SubcategoriaDto(1);
         preguntaDto.setSubCategoriaDto(subcategoriaDto);
-        UsuarioDto usuarioDto = new UsuarioDto(17);
+        UsuarioDto usuarioDto = new UsuarioDto(18);
         preguntaDto.setUsuarioDto(usuarioDto);
 
         PreguntaDto resultado = servicio.addPregunta(preguntaDto);
@@ -40,7 +40,7 @@ public class testPregunta_Test {
     {
         Date date = new Date();
         ucab.dsw.servicio.testPregunta servicio = new ucab.dsw.servicio.testPregunta();
-        PreguntaDto preguntaDto = new PreguntaDto(1);
+        PreguntaDto preguntaDto = new PreguntaDto(3);
 
         preguntaDto.setPregunta("testUpdate");
         preguntaDto.setFechacreacion(date);
@@ -52,7 +52,7 @@ public class testPregunta_Test {
         UsuarioDto usuarioDto = new UsuarioDto(17);
         preguntaDto.setUsuarioDto(usuarioDto);
 
-        PreguntaDto resultado = servicio.updatePregunta(1,preguntaDto);
+        PreguntaDto resultado = servicio.updatePregunta(3,preguntaDto);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 
@@ -61,7 +61,7 @@ public class testPregunta_Test {
     public void deletePreguntaTest() throws Exception
     {
         ucab.dsw.servicio.testPregunta servicio = new ucab.dsw.servicio.testPregunta();
-        PreguntaDto resultado = servicio.deletePregunta(2);
+        PreguntaDto resultado = servicio.deletePregunta(3);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 

@@ -34,6 +34,14 @@ public class Opcion extends EntidadBase{
     @JoinColumn(name = "idPregunta")
     private Pregunta _pregunta;
 
+    public Pregunta get_pregunta() {
+        return _pregunta;
+    }
+
+    public void set_pregunta(Pregunta _pregunta) {
+        this._pregunta = _pregunta;
+    }
+
     //OneToMany
     @OneToMany( mappedBy = "_opcion", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<EjecucionEncuesta> _ejecucionencuesta;
