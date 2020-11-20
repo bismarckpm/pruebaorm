@@ -5,15 +5,11 @@ import ucab.dsw.entidades.TipoUsuario;
 import ucab.dsw.entidades.Usuario;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 
 @Path( "/prueba" )
@@ -51,5 +47,59 @@ public class pruebaORMWS extends AplicacionBase
     public String consulta()
     {
         return "Epa";
+    }
+    @GET
+    @Path("/getUsers")
+    public List<Usuario> getUsers() {
+
+        List<Usuario> usuarios = null;
+        try {
+            DaoUsuario dao = new DaoUsuario();
+            usuarios = dao.findAll(Usuario.class);
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        for (Usuario obj : usuarios) {
+            System.out.println(obj.get_nombre());
+        }
+        return usuarios;
+    }
+
+    @PUT
+    @Path("/updateUsuario/{id}")
+    public UsuarioDto updateUsuario(@PathParam("id") long id, UsuarioDto usuarioDto) {
+        UsuarioDto resultado = new UsuarioDto();
+        try {
+            DaoUsuario dao = new DaoUsuario();
+            Usuario usuario = dao.find(id, Usuario.class);
+            usuario.set_nombre(usuarioDto.getNombre());
+            usuario.set_apellido(usuarioDto.getApellido());
+            usuario.set_correoelectronico(usuarioDto.getCorreoelectronico());
+            Usuario resul = dao.update(usuario);
+            resultado.setId(resul.get_id());
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        return resultado;
+    }
+
+    @DELETE
+    @Path("/deleteUsuario/{id}")
+    public UsuarioDto deleteUsuario(@PathParam("id") long id)
+    {
+        UsuarioDto resultado = new UsuarioDto();
+        try
+        {
+            DaoUsuario dao = new DaoUsuario();
+            Usuario usuario = dao.find(id, Usuario.class);
+            if(usuario != null) {
+                Usuario resul = dao.delete(usuario);
+                resultado.setId(resul.get_id());
+            }
+        }
+        catch (Exception er){
+            String problema = er.getMessage();
+        }
+        return resultado;
     }
 }
