@@ -8,13 +8,11 @@ import java.util.Objects;
 public class Opcion implements Serializable {
     public static final long serialVersionUID = 1L;
 
-    private int id;
-    private String descripcion;
-    private String estatus;
-
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     public int getId() {
         return id;
     }
@@ -29,6 +27,8 @@ public class Opcion implements Serializable {
 
     @Basic
     @Column(name = "descripcion", nullable = false, length = 45)
+    private String descripcion;
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -39,6 +39,8 @@ public class Opcion implements Serializable {
 
     @Basic
     @Column(name = "estatus", nullable = false)
+    private String estatus;
+
     public String getEstatus() {
         return estatus;
     }
@@ -47,18 +49,10 @@ public class Opcion implements Serializable {
         this.estatus = estatus;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Opcion opcion = (Opcion) o;
-        return id == opcion.id &&
-                Objects.equals(descripcion, opcion.descripcion) &&
-                Objects.equals(estatus, opcion.estatus);
+    public Opcion() {
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, descripcion, estatus);
+    public Opcion(int id) {
+        this.id = id;
     }
 }

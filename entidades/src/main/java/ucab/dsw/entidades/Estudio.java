@@ -9,13 +9,11 @@ import java.util.Objects;
 public class Estudio implements Serializable {
     public static final long serialVersionUID = 1L;
 
-    private int id;
-    private Date fechacreacion;
-    private String estatus;
-
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     public int getId() {
         return id;
     }
@@ -26,6 +24,8 @@ public class Estudio implements Serializable {
 
     @Basic
     @Column(name = "fechacreacion", nullable = false)
+    private Date fechacreacion;
+
     public Date getFechacreacion() {
         return fechacreacion;
     }
@@ -36,6 +36,8 @@ public class Estudio implements Serializable {
 
     @Basic
     @Column(name = "estatus", nullable = false)
+    private String estatus;
+
     public String getEstatus() {
         return estatus;
     }

@@ -1,6 +1,11 @@
 package ucab.dsw.dtos;
 
-public class EjecucionEncuestaDTO extends DtoBase {
+public class EjecucionEncuestaDTO {
+    private int id;
+    private int idEncuesta;
+    private int idPregunta;
+    private int idUsuario;
+    private int idOpcion;
     private EncuestaDTO encuestaDTO;
     private PreguntaDTO preguntaDTO;
     private UsuarioDto usuarioDto;
@@ -8,8 +13,12 @@ public class EjecucionEncuestaDTO extends DtoBase {
     private String respuesta;
     private String estatus;
 
-    public EjecucionEncuestaDTO(long id) throws Exception {
-        super(id);
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public EncuestaDTO getEncuestaDTO() {
@@ -58,5 +67,50 @@ public class EjecucionEncuestaDTO extends DtoBase {
 
     public void setEstatus(String estatus) {
         this.estatus = estatus;
+    }
+
+    public int getIdEncuesta() {
+        return idEncuesta;
+    }
+
+    public void setIdEncuesta(int idEncuesta) {
+        this.idEncuesta = idEncuesta;
+    }
+
+    public int getIdPregunta() {
+        return idPregunta;
+    }
+
+    public void setIdPregunta(int idPregunta) {
+        this.idPregunta = idPregunta;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
+    }
+
+    public int getIdOpcion() {
+        return idOpcion;
+    }
+
+    public void setIdOpcion(int idOpcion) {
+        this.idOpcion = idOpcion;
+    }
+
+    @Override
+    public String toString() {
+        return "EjecucionEncuestaDTO{" +
+                "id=" + id +
+                ", idEncuesta=" + idEncuesta +
+                ", idPregunta=" + idPregunta +
+                ", idUsuario=" + idUsuario +
+                ", idOpcion=" + idOpcion +
+                ", respuesta='" + respuesta + '\'' +
+                ", estatus='" + estatus + '\'' +
+                '}';
     }
 }

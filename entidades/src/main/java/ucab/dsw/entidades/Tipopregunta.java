@@ -8,13 +8,11 @@ import java.util.Objects;
 public class Tipopregunta implements Serializable {
     public static final long serialVersionUID = 1L;
 
-    private int id;
-    private String descripcion;
-    private String estatus;
-
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     public int getId() {
         return id;
     }
@@ -25,6 +23,8 @@ public class Tipopregunta implements Serializable {
 
     @Basic
     @Column(name = "descripcion", nullable = false, length = 45)
+    private String descripcion;
+
     public String getDescripcion() {
         return descripcion;
     }
@@ -35,6 +35,8 @@ public class Tipopregunta implements Serializable {
 
     @Basic
     @Column(name = "estatus", nullable = false)
+    private String estatus;
+
     public String getEstatus() {
         return estatus;
     }

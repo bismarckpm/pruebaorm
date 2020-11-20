@@ -3,19 +3,18 @@ package ucab.dsw.entidades;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
 public class Encuesta implements Serializable {
     public static final long serialVersionUID = 1L;
 
-    private int id;
-    private Date fechacreacion;
-    private String estatus;
-
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     public int getId() {
         return id;
     }
@@ -26,6 +25,8 @@ public class Encuesta implements Serializable {
 
     @Basic
     @Column(name = "fechacreacion", nullable = false)
+    private Date fechacreacion;
+
     public Date getFechacreacion() {
         return fechacreacion;
     }
@@ -36,6 +37,8 @@ public class Encuesta implements Serializable {
 
     @Basic
     @Column(name = "estatus", nullable = false)
+    private String estatus;
+
     public String getEstatus() {
         return estatus;
     }
@@ -48,26 +51,52 @@ public class Encuesta implements Serializable {
     @ManyToOne
     private Usuario usuarioCreador;
 
+    public Usuario getUsuarioCreador() {
+        return usuarioCreador;
+    }
+
+    public void setUsuarioCreador(Usuario usuarioCreador) {
+        this.usuarioCreador = usuarioCreador;
+    }
+
     @JoinColumn(name = "idUsuario_Analista", referencedColumnName = "id")
     @ManyToOne
     private Usuario usuarioAnalista;
+
+    public Usuario getUsuarioAnalista() {
+        return usuarioAnalista;
+    }
+
+    public void setUsuarioAnalista(Usuario usuarioAnalista) {
+        this.usuarioAnalista = usuarioAnalista;
+    }
 
     @JoinColumn(name = "idEstudio", referencedColumnName = "id")
     @ManyToOne
     private Estudio estudio;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Encuesta encuesta = (Encuesta) o;
-        return id == encuesta.id &&
-                Objects.equals(fechacreacion, encuesta.fechacreacion) &&
-                Objects.equals(estatus, encuesta.estatus);
+    public Estudio getEstudio() {
+        return estudio;
+    }
+
+    public void setEstudio(Estudio estudio) {
+        this.estudio = estudio;
+    }
+
+    public Encuesta(){
+
+    }
+
+    public Encuesta(int id) {
+        this.id = id;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id, fechacreacion, estatus);
+    public String toString() {
+        return "Encuesta{" +
+                "id=" + id +
+                ", fechacreacion=" + fechacreacion +
+                ", estatus='" + estatus + '\'' +
+                '}';
     }
 }

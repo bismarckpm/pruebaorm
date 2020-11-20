@@ -8,14 +8,11 @@ import java.util.Objects;
 public class Solicitud implements Serializable {
     public static final long serialVersionUID = 1L;
 
-    private int id;
-    private String nombre;
-    private String fecha;
-    private String estatus;
-
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     public int getId() {
         return id;
     }
@@ -26,6 +23,8 @@ public class Solicitud implements Serializable {
 
     @Basic
     @Column(name = "nombre", nullable = false, length = 45)
+    private String nombre;
+
     public String getNombre() {
         return nombre;
     }
@@ -36,6 +35,8 @@ public class Solicitud implements Serializable {
 
     @Basic
     @Column(name = "fecha", nullable = false, length = 45)
+    private String fecha;
+
     public String getFecha() {
         return fecha;
     }
@@ -46,6 +47,8 @@ public class Solicitud implements Serializable {
 
     @Basic
     @Column(name = "estatus", nullable = false)
+    private String estatus;
+
     public String getEstatus() {
         return estatus;
     }

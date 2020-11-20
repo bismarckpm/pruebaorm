@@ -5,16 +5,19 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
+@Table(name = "ejecucionencuesta")
+@NamedQueries({
+        @NamedQuery(name = "Ejecucionencuesta.findAll", query = "SELECT ee FROM Ejecucionencuesta ee ORDER BY ee.id"),
+        @NamedQuery(name = "Ejecucionencuesta.findBySurvey", query = "SELECT ee FROM Ejecucionencuesta ee WHERE ee.encuesta =:idEncuesta")
+})
 public class Ejecucionencuesta implements Serializable {
     public static final long serialVersionUID = 1L;
-
-    private int id;
-    private String respuesta;
-    private String estatus;
 
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     public int getId() {
         return id;
     }
@@ -25,6 +28,8 @@ public class Ejecucionencuesta implements Serializable {
 
     @Basic
     @Column(name = "respuesta", nullable = true, length = 250)
+    private String respuesta;
+
     public String getRespuesta() {
         return respuesta;
     }
@@ -41,12 +46,18 @@ public class Ejecucionencuesta implements Serializable {
     @ManyToOne
     private Usuario usuario;
 
+    @JoinColumn(name = "idOpcion", referencedColumnName = "id")
+    @ManyToOne
+    private Opcion opcion;
+
     public void setRespuesta(String respuesta) {
         this.respuesta = respuesta;
     }
 
     @Basic
     @Column(name = "estatus", nullable = true)
+    private String estatus;
+
     public String getEstatus() {
         return estatus;
     }
@@ -55,18 +66,51 @@ public class Ejecucionencuesta implements Serializable {
         this.estatus = estatus;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Ejecucionencuesta that = (Ejecucionencuesta) o;
-        return id == that.id &&
-                Objects.equals(respuesta, that.respuesta) &&
-                Objects.equals(estatus, that.estatus);
+    public Encuesta getEncuesta() {
+        return encuesta;
+    }
+
+    public void setEncuesta(Encuesta encuesta) {
+        this.encuesta = encuesta;
+    }
+
+    public Pregunta getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(Pregunta pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Opcion getOpcion() {
+        return opcion;
+    }
+
+    public void setOpcion(Opcion opcion) {
+        this.opcion = opcion;
+    }
+
+    public Ejecucionencuesta() {
+    }
+
+    public Ejecucionencuesta(int id) {
+        this.id = id;
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(id, respuesta, estatus);
+    public String toString() {
+        return "Ejecucionencuesta{" +
+                "id=" + id +
+                ", respuesta='" + respuesta + '\'' +
+                ", estatus='" + estatus + '\'' +
+                '}';
     }
 }

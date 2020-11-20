@@ -9,14 +9,11 @@ import java.util.Objects;
 public class Pregunta implements Serializable {
     public static final long serialVersionUID = 1L;
 
-    private int id;
-    private String pregunta;
-    private Date fechacreacion;
-    private String estatus;
-
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
     public int getId() {
         return id;
     }
@@ -27,6 +24,8 @@ public class Pregunta implements Serializable {
 
     @Basic
     @Column(name = "pregunta", nullable = false, length = 345)
+    private String pregunta;
+
     public String getPregunta() {
         return pregunta;
     }
@@ -37,6 +36,8 @@ public class Pregunta implements Serializable {
 
     @Basic
     @Column(name = "fechacreacion", nullable = false)
+    private Date fechacreacion;
+
     public Date getFechacreacion() {
         return fechacreacion;
     }
@@ -47,6 +48,8 @@ public class Pregunta implements Serializable {
 
     @Basic
     @Column(name = "estatus", nullable = false)
+    private String estatus;
+
     public String getEstatus() {
         return estatus;
     }
@@ -67,19 +70,10 @@ public class Pregunta implements Serializable {
     @ManyToOne
     private Usuario usuario;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Pregunta pregunta1 = (Pregunta) o;
-        return id == pregunta1.id &&
-                Objects.equals(pregunta, pregunta1.pregunta) &&
-                Objects.equals(fechacreacion, pregunta1.fechacreacion) &&
-                Objects.equals(estatus, pregunta1.estatus);
+    public Pregunta() {
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, pregunta, fechacreacion, estatus);
+    public Pregunta(int id) {
+        this.id = id;
     }
 }
