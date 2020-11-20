@@ -1,7 +1,9 @@
 package ucab.dsw.servicio;
 import ucab.dsw.accesodatos.DaoEstudio;
 import ucab.dsw.dtos.EstudioDto;
+import ucab.dsw.entidades.Encuesta;
 import ucab.dsw.entidades.Estudio;
+import ucab.dsw.entidades.Usuario;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.faces.push.Push;
@@ -25,8 +27,12 @@ public class estudioORMWS {
         {
             DaoEstudio dao = new DaoEstudio();
             Estudio estudio = new Estudio();
-            estudio.set_descripcion( estudioDto.getDescripcion() );
+            estudio.set_fechaCreacion( estudioDto.getFechaCreacion() );
             estudio.set_estatus( estudioDto.getEstatus() );
+            Usuario usuario = new Usuario(estudioDto.getUsuario().getId());
+            estudio.set_usuario( usuario );
+            Usuario solicitud = new Usuario(estudioDto.getSolicitud().getId());
+            estudio.set_solicitud( solicitud );
             Estudio resul = dao.insert( estudio );
             resultado.setId( resul.get_id() );
         }
@@ -47,11 +53,13 @@ public class estudioORMWS {
             estudios = dao.findAll(Estudio.class);
             System.out.println("Estudios: ");
             for(Estudio estudio : estudios) {
-                System.out.print(estudio.get_id());
-                System.out.print(", ");
-                System.out.print(estudio.get_descripcion());
+                System.out.print(estudio.get_fechaCreacion());
                 System.out.print(", ");
                 System.out.print(estudio.get_estatus());
+                System.out.print(", ");
+                System.out.print(estudio.get_usuario());
+                System.out.print(", ");
+                System.out.print(estudio.get_solicitud());
                 System.out.println();
             }
         }
@@ -71,8 +79,12 @@ public class estudioORMWS {
         {
             DaoEstudio dao = new DaoEstudio();
             Estudio estudio = new Estudio(estudioDto.getId());
-            estudio.set_descripcion( estudioDto.getDescripcion());
-            estudio.set_estatus (estudioDto.getEstatus());
+            estudio.set_fechaCreacion( estudioDto.getFechaCreacion() );
+            estudio.set_estatus( estudioDto.getEstatus() );
+            Usuario usuario = new Usuario(estudioDto.getUsuario().getId());
+            estudio.set_usuario( usuario );
+            Usuario solicitud = new Usuario(estudioDto.getSolicitud().getId());
+            estudio.set_solicitud( solicitud );
             Estudio resul = dao.update (estudio );
             resultado.setId(resul.get_id());
 
