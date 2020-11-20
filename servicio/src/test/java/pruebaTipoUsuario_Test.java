@@ -29,7 +29,7 @@ public class pruebaTipoUsuario_Test {
         TipoUsuarioDto tipoUsuarioDto = new TipoUsuarioDto();
         tipoUsuarioDto.setDescripcion("Cliente");
         tipoUsuarioDto.setEstatus("A");
-        TipoUsuarioDto resultado = servicio.updateTipoUsuario(1,tipoUsuarioDto);
+        TipoUsuarioDto resultado = servicio.updateTipoUsuario(15,tipoUsuarioDto);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 
