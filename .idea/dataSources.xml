@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/taller?serverTimezone=UTC</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="modeloencuesta@localhost" uuid="8062f00a-c631-43f2-8cae-f7556a57fa49">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/modeloencuesta?serverTimezone=UTC</jdbc-url>
+    </data-source>
   </component>
 </project>
