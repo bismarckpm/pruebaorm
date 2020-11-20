@@ -20,7 +20,7 @@ public class pruebaCategoria_Test {
     public void addCategoriaTest() throws Exception{
 
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
-        CategoriaDto categoriaDto = new CategoriaDto( 1);
+        CategoriaDto categoriaDto = new CategoriaDto( );
         categoriaDto.setDescripcion( "Deportivo" );
         categoriaDto.setEstatus( "A" );
         CategoriaDto resultado = servicio.addCategoria( categoriaDto );
@@ -46,7 +46,7 @@ public class pruebaCategoria_Test {
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
         CategoriaDto categoriaDto = new CategoriaDto(1);
         CategoriaDto resultado = servicio.deleteCategoria(categoriaDto);
-        Assert.assertNotEquals( resultado.getId(), 1 );
+        Assert.assertNotEquals( resultado.getId(), 0 );
 
     }
 }

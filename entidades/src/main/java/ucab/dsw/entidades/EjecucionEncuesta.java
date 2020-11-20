@@ -21,9 +21,9 @@ public class EjecucionEncuesta extends EntidadBase{
     @JoinColumn( name = "idEncuesta" )
     private Encuesta _encuesta;
 
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn( name = "idPregunta" )
-    private Pregunta _pregunta;
+    private Pregunta _pregunta; */
 
     @ManyToOne
     @JoinColumn( name = "idUsuario_Encuestado" )
@@ -82,7 +82,7 @@ public class EjecucionEncuesta extends EntidadBase{
         this._encuesta = _encuesta;
     }
 
-    public Pregunta get_pregunta()
+/*    public Pregunta get_pregunta()
     {
         return _pregunta;
     }
@@ -92,6 +92,7 @@ public class EjecucionEncuesta extends EntidadBase{
         this._pregunta = _pregunta;
     }
 
+ */
     public Usuario get_usuarioencuestado()
     {
         return _usuarioencuestado;

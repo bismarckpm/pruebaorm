@@ -31,7 +31,7 @@ public class Encuesta extends EntidadBase{
     private Estudio _estudio;
 
 
-    @Column( name = "fechaCreacion" )
+    @Column( name = "fechacreacion" )
     private Date _fechaCreacion;
 
     @Column( name = "estatus" )
