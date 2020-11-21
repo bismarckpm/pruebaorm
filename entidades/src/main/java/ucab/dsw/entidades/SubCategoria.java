@@ -15,7 +15,7 @@ public class SubCategoria extends EntidadBase {
 
     @ManyToOne
     @JoinColumn( name = "idCategoria" )
-    private categoria _categoria;
+    private Categoria _categoria;
 
     @Column( name = "descripcion" )
     private String _descripcion;
@@ -38,9 +38,9 @@ public class SubCategoria extends EntidadBase {
         this._estatus = _estatus;
     }
 
-    public categoria get_categoria() { return _categoria; }
+    public Categoria get_categoria() { return _categoria; }
 
-    public void set_categoria(categoria _categoria) { this._categoria = _categoria; }
+    public void set_categoria(Categoria _categoria) { this._categoria = _categoria; }
 
 
 
