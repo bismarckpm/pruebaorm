@@ -28,18 +28,18 @@ public class opcionDto extends DtoBase
 
     private String estatus;
 
-    public tipopreguntaDto gettipopreguntaDto()
+    public TipoPreguntaDto gettipopreguntaDto()
     {
         return tipopreguntaDto;
     }
 
-    public void settipopreguntaDto( tipopreguntaDto tipopreguntaDto )
+    public void settipopreguntaDto( TipoPreguntaDto tipopreguntaDto )
     {
         this.tipopreguntaDto = tipopreguntaDto;
     }
 
 
-    private tipopreguntaDto tipopreguntaDto;
+    private TipoPreguntaDto tipopreguntaDto;
 
 
 

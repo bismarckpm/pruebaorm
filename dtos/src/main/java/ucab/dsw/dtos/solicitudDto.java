@@ -40,14 +40,14 @@ public class solicitudDto extends DtoBase
 
     private UsuarioDto UsuarioDto;
 
-    private SubcategoriaDto SubcategoriaDto;
+    private SubCategoriaDto SubcategoriaDto;
 
-    public SubcategoriaDto getSubcategoriaDtoDto()
+    public SubCategoriaDto getSubcategoriaDtoDto()
     {
         return SubcategoriaDto;
     }
 
-    public void SubcategoriaDtoDtoDto( SubcategoriaDto SubcategoriaDto )
+    public void SubcategoriaDtoDtoDto( SubCategoriaDto SubcategoriaDto )
     {
         this.SubcategoriaDto = SubcategoriaDto;
     }
