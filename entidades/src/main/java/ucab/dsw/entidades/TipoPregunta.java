@@ -7,39 +7,38 @@ import java.util.List;
 @Table( name = "tipopregunta" )
 public class TipoPregunta extends EntidadBase{
 
-    @Column( name = "descripcion" )
-    private String _descripcion;
+    @Column( name = "descripcion", nullable = false )
+    private String descripcion;
 
     public String get_descripcion()
     {
-        return _descripcion;
+        return descripcion;
     }
 
-    public void set_descripcion( String _descripcion )
+    public void set_descripcion( String descripcion )
     {
-        this._descripcion = _descripcion;
+        this.descripcion = descripcion;
     }
 
     public List<Pregunta> get_preguntas()
     {
-        return _preguntas;
+        return preguntas;
     }
 
-    public void set_preguntas( List<Pregunta> _preguntas )
+    public void set_preguntas( List<Pregunta> preguntas )
     {
-        this._preguntas = _preguntas;
+        this.preguntas = preguntas;
     }
 
-    @OneToMany( mappedBy = "_tipopregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<Pregunta> _preguntas;
+    @OneToMany( mappedBy = "tipopregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Pregunta> preguntas;
 
     public TipoPregunta(){
 
     }
 
-    public TipoPregunta( long id )
-    {
-        super( id );
+    public TipoPregunta( long id ) {
+        super(id);
     }
 
 }

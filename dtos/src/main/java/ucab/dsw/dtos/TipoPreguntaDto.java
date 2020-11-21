@@ -24,4 +24,11 @@ public class TipoPreguntaDto extends DtoBase {
     {
         this.estatus = estatus;
     }
+
+    public TipoPreguntaDto() {
+    }
+
+    public TipoPreguntaDto( long id ) throws Exception {
+        super( id );
+    }
 }
