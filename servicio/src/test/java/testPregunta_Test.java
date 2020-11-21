@@ -28,7 +28,7 @@ public class testPregunta_Test {
         preguntaDto.setTipoPreguntaDto(tipoPregunta);
         SubcategoriaDto subcategoriaDto = new SubcategoriaDto(1);
         preguntaDto.setSubCategoriaDto(subcategoriaDto);
-        UsuarioDto usuarioDto = new UsuarioDto(18);
+        UsuarioDto usuarioDto = new UsuarioDto(1);
         preguntaDto.setUsuarioDto(usuarioDto);
 
         PreguntaDto resultado = servicio.addPregunta(preguntaDto);
@@ -49,7 +49,7 @@ public class testPregunta_Test {
         preguntaDto.setTipoPreguntaDto(tipoPregunta);
         SubcategoriaDto subcategoriaDto = new SubcategoriaDto(1);
         preguntaDto.setSubCategoriaDto(subcategoriaDto);
-        UsuarioDto usuarioDto = new UsuarioDto(17);
+        UsuarioDto usuarioDto = new UsuarioDto(1);
         preguntaDto.setUsuarioDto(usuarioDto);
 
         PreguntaDto resultado = servicio.updatePregunta(1,preguntaDto);
@@ -61,7 +61,7 @@ public class testPregunta_Test {
     public void deletePreguntaTest() throws Exception
     {
         ucab.dsw.servicio.testPregunta servicio = new ucab.dsw.servicio.testPregunta();
-        PreguntaDto resultado = servicio.deletePregunta(2);
+        PreguntaDto resultado = servicio.deletePregunta(1);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 
@@ -69,7 +69,7 @@ public class testPregunta_Test {
     public void getPreguntaTest() throws Exception
     {
         ucab.dsw.servicio.testPregunta servicio = new ucab.dsw.servicio.testPregunta();
-        PreguntaDto resultado = servicio.findPregunta(1);
+        PreguntaDto resultado = servicio.findPregunta(2);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 

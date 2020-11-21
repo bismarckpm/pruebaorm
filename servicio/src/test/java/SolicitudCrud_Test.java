@@ -45,14 +45,14 @@ public class SolicitudCrud_Test {
         solicitudDto.setUsuario(usuario);
         solicitudDto.setSubcategoria(subcategoria);
 
-        SolicitudDto resultado = servicio.updateSolicitud(1,solicitudDto);
+        SolicitudDto resultado = servicio.updateSolicitud(2,solicitudDto);
         Assert.assertNotEquals(resultado.getId(),0);
     }
 
     @Test
     public void deleteSolicitudTest() throws Exception{
         SolicitudCrud servicio = new SolicitudCrud();
-        SolicitudDto resultado = servicio.deleteSolicitud(1);
+        SolicitudDto resultado = servicio.deleteSolicitud(2);
         Assert.assertNotEquals(resultado.getId(),0);
     }
 

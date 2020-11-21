@@ -33,14 +33,14 @@ public class CategoriaCrud_Test {
         CategoriaDto categoriaDto = new CategoriaDto();
         categoriaDto.setDescripcion("Descripción Actualizada");
         categoriaDto.setEstatus("I");
-        CategoriaDto resultado = servicio.updateCategory(2,categoriaDto);
+        CategoriaDto resultado = servicio.updateCategory(1,categoriaDto);
         Assert.assertNotEquals(resultado.getId(),0);
     }
 
     @Test
     public void deleteCategoryTest() throws Exception{
         CategoriaCrud servicio = new CategoriaCrud();
-        CategoriaDto resultado = servicio.deleteCategory(2);
+        CategoriaDto resultado = servicio.deleteCategory(3);
         Assert.assertNotEquals(resultado.getId(),0);
     }
 

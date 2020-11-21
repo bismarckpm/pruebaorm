@@ -12,11 +12,11 @@ public class testEjecucionEncuesta_Test {
         EjecucionEncuestaDto ejecucionEncuestaDto = new EjecucionEncuestaDto();
         EncuestaDto encuesta = new EncuestaDto( 1 );
         ejecucionEncuestaDto.setEncuestaDto(encuesta);
-        PreguntaDto pregunta = new PreguntaDto( 1 );
+        PreguntaDto pregunta = new PreguntaDto( 2 );
         ejecucionEncuestaDto.setPreguntaDto( pregunta );
         UsuarioDto usuario = new UsuarioDto( 1 );
         ejecucionEncuestaDto.setUsuarioDto( usuario );
-        OpcionDto opcion = new OpcionDto( 1 );
+        OpcionDto opcion = new OpcionDto( 2 );
         ejecucionEncuestaDto.setOpcionDto( opcion );
         ejecucionEncuestaDto.setRespuesta( "ejec1" );
         ejecucionEncuestaDto.setEstatus( "P" );
@@ -31,11 +31,11 @@ public class testEjecucionEncuesta_Test {
         EjecucionEncuestaDto ejecucionEncuestaDto = new EjecucionEncuestaDto(2);
         EncuestaDto encuesta = new EncuestaDto( 1 );
         ejecucionEncuestaDto.setEncuestaDto(encuesta);
-        PreguntaDto pregunta = new PreguntaDto( 1 );
+        PreguntaDto pregunta = new PreguntaDto( 2 );
         ejecucionEncuestaDto.setPreguntaDto(pregunta);
         UsuarioDto usuario = new UsuarioDto( 1 );
         ejecucionEncuestaDto.setUsuarioDto( usuario );
-        OpcionDto opcion = new OpcionDto( 1 );
+        OpcionDto opcion = new OpcionDto( 2 );
         ejecucionEncuestaDto.setOpcionDto( opcion );
         ejecucionEncuestaDto.setRespuesta( "opcion chuki" );
         ejecucionEncuestaDto.setEstatus( "C" );

@@ -45,7 +45,7 @@ public class pruebaORMWS_Test
     @Test
     public void deleteUserTests() throws Exception{
         pruebaORMWS servicio = new pruebaORMWS();
-        UsuarioDto resultado = servicio.deleteUser(9);
+        UsuarioDto resultado = servicio.deleteUser(11);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 

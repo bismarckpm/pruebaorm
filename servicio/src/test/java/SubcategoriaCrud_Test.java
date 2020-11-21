@@ -40,7 +40,7 @@ public class SubcategoriaCrud_Test {
     @Test
     public void deleteSubCategoryTest() throws Exception{
         SubcategoriaCrud servicio = new SubcategoriaCrud();
-        SubcategoriaDto resultado = servicio.deleteSubCategory(1);
+        SubcategoriaDto resultado = servicio.deleteSubCategory(4);
         Assert.assertNotEquals(resultado.getId(),0);
     }
 

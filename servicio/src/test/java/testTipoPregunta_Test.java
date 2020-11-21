@@ -31,7 +31,7 @@ public class testTipoPregunta_Test {
     public void deleteTipoPregunta() throws Exception
     {
         ucab.dsw.servicio.testTipoPregunta servicio = new ucab.dsw.servicio.testTipoPregunta();
-        TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto(11);
+        TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto(2);
         TipoPreguntaDto resultado = servicio.deleteTipoPregunta(tipoPreguntaDto.getId());
         Assert.assertNotEquals( resultado.getId(), 0);
     }
