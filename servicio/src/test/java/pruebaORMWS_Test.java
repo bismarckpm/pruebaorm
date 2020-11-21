@@ -42,7 +42,7 @@ public class pruebaORMWS_Test
         usuarioDto.setApellido( "Spinetti" );
         usuarioDto.setCorreoelectronico( "greggspinetti@gmail.com" );
         usuarioDto.setEstatus( "A" );
-        UsuarioDto resultado = servicio.updateUsuario(8,usuarioDto );
+        UsuarioDto resultado = servicio.updateUsuario(15,usuarioDto );
         Assert.assertNotEquals( resultado.getId(), 0);
     }
 
@@ -50,7 +50,7 @@ public class pruebaORMWS_Test
     public void deleteUsuarioTest() throws Exception{
 
         ucab.dsw.servicio.pruebaORMWS servicio = new ucab.dsw.servicio.pruebaORMWS();
-        UsuarioDto resultado = servicio.deleteUser(8);
+        UsuarioDto resultado = servicio.deleteUser(17);
         Assert.assertNotEquals( resultado.getId(), 0);
 
     }
