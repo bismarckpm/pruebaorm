@@ -2,8 +2,6 @@ package ucab.dsw.dtos;
 
 public class SolicitudDto extends DtoBase{
 
-    public SolicitudDto(){}
-    public SolicitudDto(long id) throws Exception {super(id);}
     private String nombre;
 
     private String estatus;

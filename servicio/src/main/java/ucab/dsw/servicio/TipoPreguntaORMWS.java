@@ -23,7 +23,7 @@ public class TipoPreguntaORMWS {
             TipoPregunta tipoPregunta = new TipoPregunta();
 
             tipoPregunta.setDescripcion(tipoPreguntaDto.getDescripcion());
-            tipoPregunta.setEstatus(tipoPreguntaDto.getEstatus());
+            tipoPregunta.set_estatus(tipoPreguntaDto.getEstatus());
 
             TipoPregunta result = dao.insert(tipoPregunta);
 

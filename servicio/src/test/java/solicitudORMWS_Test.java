@@ -23,7 +23,7 @@ public class solicitudORMWS_Test {
         solicitudDto.setEstatus( "A" );
         solicitudDto.setFecha( "12/12/2020");
         SubCategoriaDto subCategoria = new SubCategoriaDto( 1);
-        UsuarioDto usuario = new UsuarioDto( 12);
+        UsuarioDto usuario = new UsuarioDto( 1);
         solicitudDto.setUsuarioDto( usuario );
         solicitudDto.setSubCategoriaDto( subCategoria );
         SolicitudDto resultado = servicio.addSolicitud( solicitudDto );

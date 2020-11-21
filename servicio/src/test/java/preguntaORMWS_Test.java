@@ -23,7 +23,7 @@ public class preguntaORMWS_Test {
         preguntaDto.setEstatus( "A" );
         preguntaDto.setFechacreacion( new SimpleDateFormat("dd/MM/yyyy").parse("12/12/2020"));
         SubCategoriaDto subCategoria = new SubCategoriaDto( 1);
-        UsuarioDto usuario = new UsuarioDto( 12);
+        UsuarioDto usuario = new UsuarioDto( 1);
         TipoPreguntaDto tipoPregunta = new TipoPreguntaDto( 1);
         preguntaDto.setUsuarioDto( usuario );
         preguntaDto.setSubCategoriaDto( subCategoria );
