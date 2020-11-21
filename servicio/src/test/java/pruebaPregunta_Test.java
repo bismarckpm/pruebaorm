@@ -6,6 +6,7 @@ import ucab.dsw.dtos.TipoPreguntaDto;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.entidades.Pregunta;
 
+import java.util.Date;
 import java.util.List;
 
 public class pruebaPregunta_Test{
@@ -15,7 +16,8 @@ public class pruebaPregunta_Test{
         ucab.dsw.servicio.pruebaPregunta servicio = new ucab.dsw.servicio.pruebaPregunta();
         PreguntaDto preguntaDto = new PreguntaDto();
         preguntaDto.setPregunta( "¿Con cuántas personas convive?" );
-        preguntaDto.setFechacreacion( "20/11/2020" );
+        java.util.Date utilDate = new java.util.Date();
+        preguntaDto.setFechacreacion(utilDate);
         preguntaDto.setEstatus( "A" );
         TipoPreguntaDto tipoPregunta = new TipoPreguntaDto( 1);
         preguntaDto.setTipoPreguntaDto( tipoPregunta );
@@ -31,8 +33,9 @@ public class pruebaPregunta_Test{
         ucab.dsw.servicio.pruebaPregunta servicio = new ucab.dsw.servicio.pruebaPregunta();
         PreguntaDto preguntaDto = new PreguntaDto();
         preguntaDto.setPregunta("¿Cantidad de televisores en su casa?");
-        preguntaDto.setFechacreacion("21/11/2020");
-        preguntaDto.setEstatus("A");
+        java.util.Date utilDate = new java.util.Date();
+        preguntaDto.setFechacreacion(utilDate);
+        preguntaDto.setEstatus("B");
         PreguntaDto resultado = servicio.updatePregunta(1,preguntaDto);
         Assert.assertNotEquals(resultado.getId(),0);
     }

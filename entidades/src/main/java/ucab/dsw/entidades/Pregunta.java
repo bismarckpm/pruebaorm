@@ -1,5 +1,6 @@
 package ucab.dsw.entidades;
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 
@@ -9,7 +10,7 @@ public class Pregunta extends EntidadBase{
     private String pregunta;
 
     @Column( name = "fechacreacion")
-    private String fechaCreacion;
+    private Date fechaCreacion;
 
     @Column( name = "estatus")
     private String estatus;
@@ -40,7 +41,7 @@ public class Pregunta extends EntidadBase{
         return pregunta;
     }
 
-    public String get_fecha() {
+    public Date get_fecha() {
         return fechaCreacion;
     }
 
@@ -73,7 +74,7 @@ public class Pregunta extends EntidadBase{
         this.estatus = estatus;
     }
 
-    public void setFechaCreacion(String fechaCreacion) {
+    public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 

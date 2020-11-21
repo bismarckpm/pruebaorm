@@ -1,5 +1,7 @@
 package ucab.dsw.dtos;
 
+import java.util.Date;
+
 public class PreguntaDto extends DtoBase{
 
     public PreguntaDto(long id) throws Exception {
@@ -17,11 +19,11 @@ public class PreguntaDto extends DtoBase{
         this.pregunta = pregunta;
     }
 
-    public String getFechacreacion() {
+    public Date getFechacreacion() {
         return fechacreacion;
     }
 
-    public void setFechacreacion(String fechacreacion) {
+    public void setFechacreacion(Date fechacreacion) {
         this.fechacreacion = fechacreacion;
     }
 
@@ -56,7 +58,7 @@ public class PreguntaDto extends DtoBase{
     public void setUsuarioDto(UsuarioDto usuarioDto) { this.usuarioDto = usuarioDto; }
 
     private String estatus;
-    private String fechacreacion;
+    private Date fechacreacion;
     private String pregunta;
     private TipoPreguntaDto tipoPreguntaDto;
     private SubCategoriaDto subCategoriaDto;
