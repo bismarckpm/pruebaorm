@@ -21,7 +21,6 @@ import java.util.List;
 
 public class pruebaCategoria extends AplicacionBase{
 
-
     @PUT
     @Path( "/addcategoria" )
     public CategoriaDto addCategoria(CategoriaDto categoriaDto )
