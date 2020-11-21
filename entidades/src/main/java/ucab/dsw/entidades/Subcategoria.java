@@ -6,6 +6,7 @@
 package ucab.dsw.entidades;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 /**
@@ -41,6 +42,16 @@ public class Subcategoria extends EntidadBase{
         this._Categoria = _Categoria;
     }
 
+    @OneToMany( mappedBy = "_subcategoria", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Solicitud> _solicitudes;
+
+    public List<Solicitud> get_solicitudes() {
+        return _solicitudes;
+    }
+
+    public void set_solicitudes(List<Solicitud> _solicitudes) {
+        this._solicitudes = _solicitudes;
+    }
 
     public Subcategoria ( long id )
     {

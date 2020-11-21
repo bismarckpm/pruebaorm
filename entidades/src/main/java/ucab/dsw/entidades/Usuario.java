@@ -82,6 +82,49 @@ public class Usuario extends EntidadBase
     @JoinColumn( name = "idTipoUsuario" )
     private TipoUsuario _tipousuario;
 
+    @OneToMany( mappedBy = "_usuario", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Estudio> _estudios;
+
+    public List<Estudio> get_estudios() {
+        return _estudios;
+    }
+
+    public void set_estudios(List<Estudio> _estudios) {
+        this._estudios = _estudios;
+    }
+
+    @OneToMany( mappedBy = "_usuarioCreador", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Encuesta> _encuestasCreador;
+
+    @OneToMany( mappedBy = "_usuarioAnalista", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Encuesta> _encuestasAnalista;
+
+    public List<Encuesta> get_encuestasCreador() {
+        return _encuestasCreador;
+    }
+
+    public void set_encuestasCreador(List<Encuesta> _encuestasCreador) {
+        this._encuestasCreador = _encuestasCreador;
+    }
+
+    public List<Encuesta> get_encuestasAnalista() {
+        return _encuestasAnalista;
+    }
+
+    public void set_encuestasAnalista(List<Encuesta> _encuestasAnalista) {
+        this._encuestasAnalista = _encuestasAnalista;
+    }
+
+    @OneToMany( mappedBy = "_usuarioEncuestado", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<EjecucionEncuesta> _ejecucionEncuestas;
+
+    public List<EjecucionEncuesta> get_ejecucionEncuestas() {
+        return _ejecucionEncuestas;
+    }
+
+    public void set_ejecucionEncuestas(List<EjecucionEncuesta> _ejecucionEncuestas) {
+        this._ejecucionEncuestas = _ejecucionEncuestas;
+    }
 
     public Usuario( long id )
     {

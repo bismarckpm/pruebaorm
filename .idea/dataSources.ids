@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="mydb@localhost" product="" version="" jdbc-version="" driver-name="" driver-version="" uuid="0fa55aee-a290-4515-ac3f-0296da081988">
+    <synchronize>true</synchronize>
+    <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+    <jdbc-url>jdbc:mysql://localhost:3306/mydb</jdbc-url>
+    <driver-properties>
+      <property name="serverTimezone" value="UTC"/>
+    </driver-properties>
+    <libraries/>
+  </data-source>
+</component>

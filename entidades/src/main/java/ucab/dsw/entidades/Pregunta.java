@@ -1,13 +1,8 @@
 package ucab.dsw.entidades;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 
 @Entity
@@ -48,6 +43,12 @@ public class Pregunta extends EntidadBase {
     @ManyToOne
     @JoinColumn( name = "idTipoPregunta" )
     private TipoPregunta _tipopregunta;
+
+    @OneToMany( mappedBy = "_idPregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Opcion> _opciones;
+
+    @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<EjecucionEncuesta> _ejecucionEncuestas;
 
     public Pregunta( long id ) { super( id ); }
     public Pregunta(){ }
