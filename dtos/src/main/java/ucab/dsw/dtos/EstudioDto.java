@@ -47,4 +47,11 @@ public class EstudioDto extends DtoBase{
     public void setSolicitud(SolicitudDto solicitud) {
         this.solicitud = solicitud;
     }
+
+    public EstudioDto(long id) throws Exception {
+        super(id);
+    }
+
+    public EstudioDto() {
+    }
 }

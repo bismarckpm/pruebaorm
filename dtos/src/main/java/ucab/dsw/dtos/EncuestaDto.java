@@ -56,4 +56,11 @@ public class EncuestaDto extends DtoBase {
     public void setEstudio(EstudioDto estudio) {
         this.estudio = estudio;
     }
+
+    public EncuestaDto(long id) throws Exception {
+        super(id);
+    }
+
+    public EncuestaDto() {
+    }
 }

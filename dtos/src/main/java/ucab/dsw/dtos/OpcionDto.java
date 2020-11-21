@@ -33,5 +33,10 @@ public class OpcionDto extends DtoBase{
         this.preguntaDto = preguntaDto;
     }
 
-    
+    public OpcionDto(long id) throws Exception {
+        super(id);
+    }
+
+    public OpcionDto() {
+    }
 }

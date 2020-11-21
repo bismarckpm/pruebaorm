@@ -18,7 +18,7 @@ public class pruebaORMWS_Test
         UsuarioDto usuarioDto = new UsuarioDto();
         usuarioDto.setNombre( "Omar" );
         usuarioDto.setApellido( "Escalante" );
-        usuarioDto.setCorreoelectronico( "bismarckpm@gmail.com" );
+        usuarioDto.setCorreoelectronico( "odavid10@gmail.com" );
         usuarioDto.setEstatus( "A" );
         TipoUsuarioDto tipoUsuario = new TipoUsuarioDto( 1);
         usuarioDto.setTipoUsuarioDto( tipoUsuario );

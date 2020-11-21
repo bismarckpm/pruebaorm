@@ -48,9 +48,8 @@ public class pruebaCategoriaTest
         ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
         CategoriaDto  CategoriaDto= new CategoriaDto( 6);
         CategoriaDto resultado = servicio.showCategoria( CategoriaDto.getId() );
-        Assert.assertEquals( resultado.getDescripcion(), "Bismarck");
+        Assert.assertEquals( resultado.getId(), "Bismarck");
 
     }
-
 
 }

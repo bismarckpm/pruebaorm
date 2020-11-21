@@ -29,4 +29,10 @@ public class PreguntaDto extends DtoBase {
     public TipoPreguntaDto getTipopregunta() { return tipopregunta; }
     public void setTipopregunta(TipoPreguntaDto tipopregunta) { this.tipopregunta = tipopregunta; }
 
+    public PreguntaDto(long id) throws Exception {
+        super(id);
+    }
+
+    public PreguntaDto() {
+    }
 }

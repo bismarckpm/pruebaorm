@@ -54,4 +54,11 @@ public class SolicitudDto extends DtoBase{
     public void setSubcategoria(SubcategoriaDto subcategoria) {
         this.subcategoria = subcategoria;
     }
+
+    public SolicitudDto(long id) throws Exception {
+        super(id);
+    }
+
+    public SolicitudDto() {
+    }
 }
