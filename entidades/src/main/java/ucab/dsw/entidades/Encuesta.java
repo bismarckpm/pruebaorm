@@ -52,7 +52,7 @@ public class Encuesta extends EntidadBase{
         return _fechaCreacion;
     }
 
-    public void set_fechaCreacion( Date _descripcion )
+    public void set_fechaCreacion( Date _fechaCreacion )
     {
         this._fechaCreacion = _fechaCreacion;
     }

@@ -6,10 +6,18 @@
         <class>ucab.dsw.entidades.TipoUsuario</class>
         <class>ucab.dsw.entidades.Usuario</class>
         <class>ucab.dsw.entidades.Categoria</class>
+        <class>ucab.dsw.entidades.Encuesta</class>
+        <class>ucab.dsw.entidades.EjecucionEncuesta</class>
+        <class>ucab.dsw.entidades.Estudio</class>
+     <!--   <class>ucab.dsw.entidades.Pregunta</class> -->
+        <class>ucab.dsw.entidades.Solicitud</class>
+        <class>ucab.dsw.entidades.Opcion</class>
+     <!--   <class>ucab.dsw.entidades.TipoPregunta</class>  -->
+        <class>ucab.dsw.entidades.SubCategoria</class>
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/modeloencuesta?serverTimezone=UTC"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/taller?serverTimezone=UTC"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.password" value="admin"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
