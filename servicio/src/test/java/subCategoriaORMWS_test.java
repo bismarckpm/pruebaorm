@@ -22,4 +22,20 @@ public class subCategoriaORMWS_test {
         Assert.assertNotEquals( resultado.getId(), 0  );
 
     }
+
+    @Test
+    public void deleteSubCategoriaTest() throws Exception{
+        ucab.dsw.servicio.SubCategoriaORMWS servicio = new ucab.dsw.servicio.SubCategoriaORMWS();
+
+        SubCategoriaDto resultado = servicio.delete(1);
+        Assert.assertEquals( resultado.getId(), 0  );
+    }
+
+    @Test
+    public void getSubCategoriaTest() throws Exception{
+        ucab.dsw.servicio.SubCategoriaORMWS servicio = new ucab.dsw.servicio.SubCategoriaORMWS();
+
+        SubCategoriaDto resultado = servicio.getFirstOne(1);
+        Assert.assertNotEquals( resultado.getId(), 0  );
+    }
 }
