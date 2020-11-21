@@ -1,3 +1,13 @@
-ucab\dsw\entidades\EntidadBase.class
+ucab\dsw\entidades\Opcion.class
 ucab\dsw\entidades\Usuario.class
+ucab\dsw\entidades\SubCategoria.class
 ucab\dsw\entidades\TipoUsuario.class
+ucab\dsw\entidades\EntidadBase.class
+ucab\dsw\entidades\EjecutaEncuesta.class
+ucab\dsw\entidades\Estudio.class
+ucab\dsw\entidades\Solicitud.class
+ucab\dsw\entidades\Categoria.class
+ucab\dsw\entidades\enums\EstadoEnum.class
+ucab\dsw\entidades\TipoPregunta.class
+ucab\dsw\entidades\Encuesta.class
+ucab\dsw\entidades\Pregunta.class

@@ -4,15 +4,12 @@ public class TipoUsuarioDto extends DtoBase
 {
 
 
-    public TipoUsuarioDto()
-    {
+    public TipoUsuarioDto(long id) throws Exception {
+        super(id);
     }
 
-    public TipoUsuarioDto( long id ) throws Exception
-    {
-        super( id );
+    public TipoUsuarioDto() {
     }
-
 
     private String descripcion;
 
