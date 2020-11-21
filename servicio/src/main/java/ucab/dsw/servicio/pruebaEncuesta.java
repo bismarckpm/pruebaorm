@@ -9,6 +9,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 public class pruebaEncuesta extends AplicacionBase{
 
@@ -37,6 +38,29 @@ public class pruebaEncuesta extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @GET
+    @Path ("/listencuesta")
+    public List<Encuesta> listEncuesta( )
+    {
+        List<Encuesta> encuestas= null;
+        try
+        {
+            DaoEncuesta dao = new DaoEncuesta();
+            encuestas = dao.findAll(Encuesta.class);
+            for (Encuesta encuesta: encuestas) {
+                System.out.println("Usuario Creador:" + encuesta.get_usuarioC());
+                System.out.println("Usuario Analista:"+ encuesta.get_usuarioA());
+                System.out.println("Estudio:"+encuesta.get_estudio() );
+                System.out.println("Fecha:"+encuesta.get_estatus() );
+            }
+        }
+        catch ( Exception ex )
+        {
+            String problema = ex.getMessage();
+        }
+        return  encuestas;
     }
 
     @PUT

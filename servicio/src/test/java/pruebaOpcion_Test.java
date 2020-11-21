@@ -13,6 +13,7 @@ import ucab.dsw.entidades.*;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
+import java.util.List;
 
 public class pruebaOpcion_Test {
 
@@ -28,6 +29,13 @@ public class pruebaOpcion_Test {
         OpcionDto resultado = servicio.addOpcion( opcionDto );
         Assert.assertNotEquals( resultado.getId(), 1 );
 
+    }
+
+    @Test
+    public void getOpcionTest() throws Exception{
+        ucab.dsw.servicio.pruebaOpcion servicio = new ucab.dsw.servicio.pruebaOpcion();
+        List<Opcion> opciones = servicio.getOpcion();
+        Assert.assertFalse("Consulta Opcion", opciones.isEmpty());
     }
 
     @Test

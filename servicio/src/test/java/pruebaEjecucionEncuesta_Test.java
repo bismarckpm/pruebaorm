@@ -8,6 +8,7 @@ import ucab.dsw.entidades.*;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
+import java.util.List;
 
 
 public class pruebaEjecucionEncuesta_Test {
@@ -24,11 +25,19 @@ public class pruebaEjecucionEncuesta_Test {
         ejecucionEncuestaDto.setOpcion(opcion);
         UsuarioDto usuario = new UsuarioDto(1);
         ejecucionEncuestaDto.setUsuarioEncuestado(usuario);
-        //PreguntaDto pregunta = new PreguntaDto(1)
-        //ejecucionEncuestaDto.setPregunta(pregunta);
+        PreguntaDto pregunta = new PreguntaDto(1);
+        ejecucionEncuestaDto.setPregunta(pregunta);
         EjecucionEncuestaDto resultado = servicio.addEjecucionEncuesta( ejecucionEncuestaDto );
         Assert.assertNotEquals( resultado.getId(), 0 );
 
+    }
+
+
+    @Test
+    public void getEjecuionEncuestaTest() throws Exception{
+        ucab.dsw.servicio.pruebaEjecucionEncuesta servicio = new ucab.dsw.servicio.pruebaEjecucionEncuesta();
+        List<EjecucionEncuesta> ejecucionEncuestas = servicio.listEjecucionEncuesta();
+        Assert.assertFalse("Consulta EjecucionEncuesta", ejecucionEncuestas.isEmpty());
     }
 
     @Test

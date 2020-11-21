@@ -1,6 +1,7 @@
 package ucab.dsw.servicio;
 import ucab.dsw.accesodatos.DaoCategoria;
 import ucab.dsw.accesodatos.DaoSubCategoria;
+import ucab.dsw.accesodatos.DaoTipoUsuario;
 import ucab.dsw.accesodatos.DaoUsuario;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.dtos.CategoriaDto;
@@ -15,6 +16,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 
 @Path( "/prueba" )
@@ -43,6 +45,19 @@ public class pruebaSubCategoria extends AplicacionBase
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @Path("/getSubCategoria")
+    public List<SubCategoria> getSubCategoria() {
+
+        List<SubCategoria> subCategorias = null;
+        try {
+            DaoSubCategoria dao = new DaoSubCategoria();
+            subCategorias = dao.findAll(SubCategoria.class);
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        return subCategorias;
     }
 
     @PUT

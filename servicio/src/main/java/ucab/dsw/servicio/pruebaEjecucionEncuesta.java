@@ -9,6 +9,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 public class pruebaEjecucionEncuesta extends AplicacionBase{
 
@@ -35,6 +36,31 @@ public class pruebaEjecucionEncuesta extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @GET
+    @Path ("/listejecucionencuesta")
+    public List<EjecucionEncuesta> listEjecucionEncuesta( )
+    {
+        List<EjecucionEncuesta> ejecuciones= null;
+        try
+        {
+            DaoEjecucionEncuesta dao = new DaoEjecucionEncuesta();
+            ejecuciones = dao.findAll(EjecucionEncuesta.class);
+            for (EjecucionEncuesta ejecucionEncuesta: ejecuciones) {
+                System.out.println("Id:" + ejecucionEncuesta.get_id());
+                System.out.println("Encuesta:"+ejecucionEncuesta.get_encuesta());
+                //   System.out.println("Pregunta:"+ejecucionEncuesta.get_pregunta() );
+                System.out.println("Usuario:"+ejecucionEncuesta.get_usuarioencuestado() );
+                System.out.println("Opcion:"+ejecucionEncuesta.get_opcion() );
+                System.out.println("Estatus:"+ejecucionEncuesta.get_estatus() );
+            }
+        }
+        catch ( Exception ex )
+        {
+            String problema = ex.getMessage();
+        }
+        return ejecuciones;
     }
 
     @PUT

@@ -13,6 +13,7 @@ import ucab.dsw.entidades.*;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
+import java.util.List;
 
 public class pruebaSolicitud_Test {
 
@@ -31,6 +32,13 @@ public class pruebaSolicitud_Test {
         SolicitudDto resultado = servicio.addSolicitud( solicitudDto );
         Assert.assertNotEquals( resultado.getId(), 1 );
 
+    }
+
+    @Test
+    public void getSolicitud() throws Exception{
+        ucab.dsw.servicio.pruebaSolicitud servicio = new ucab.dsw.servicio.pruebaSolicitud();
+        List<Solicitud> solicitudes = servicio.getSolicitud();
+        Assert.assertFalse("Consulta Solicitud", solicitudes.isEmpty());
     }
 
     @Test

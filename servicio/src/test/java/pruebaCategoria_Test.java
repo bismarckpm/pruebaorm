@@ -13,6 +13,7 @@ import ucab.dsw.entidades.*;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
+import java.util.List;
 
 
 public class pruebaCategoria_Test {
@@ -26,6 +27,13 @@ public class pruebaCategoria_Test {
         CategoriaDto resultado = servicio.addCategoria( categoriaDto );
         Assert.assertNotEquals( resultado.getId(), 0 );
 
+    }
+
+    @Test
+    public void getCategoriaTest() throws Exception{
+        ucab.dsw.servicio.pruebaCategoria servicio = new ucab.dsw.servicio.pruebaCategoria();
+        List<Categoria> categorias = servicio.listCategoria();
+        Assert.assertFalse("Consulta Categoria",categorias.isEmpty());
     }
 
     @Test

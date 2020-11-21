@@ -9,6 +9,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 public class pruebaEstudio extends AplicacionBase{
 
@@ -34,6 +35,19 @@ public class pruebaEstudio extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @Path("/getEstudio")
+    public List<Estudio> getEstudio() {
+
+        List<Estudio> estudios = null;
+        try {
+            DaoEstudio dao = new DaoEstudio();
+            estudios = dao.findAll(Estudio.class);
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        return estudios;
     }
 
     @PUT

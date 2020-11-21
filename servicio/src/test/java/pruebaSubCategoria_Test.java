@@ -7,7 +7,11 @@ import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.dtos.CategoriaDto;
 import ucab.dsw.dtos.SubCategoriaDto;
 import ucab.dsw.entidades.Categoria;
+import ucab.dsw.entidades.Solicitud;
+import ucab.dsw.entidades.SubCategoria;
 import ucab.dsw.entidades.Usuario;
+
+import java.util.List;
 
 
 public class pruebaSubCategoria_Test
@@ -25,6 +29,13 @@ public class pruebaSubCategoria_Test
         SubCategoriaDto resultado = servicio.addSubCategoria( subcategoriaDto );
         Assert.assertNotEquals( resultado.getId(), 1 );
 
+    }
+
+    @Test
+    public void getSubCategoria() throws Exception{
+        ucab.dsw.servicio.pruebaSubCategoria servicio = new ucab.dsw.servicio.pruebaSubCategoria();
+        List<SubCategoria> subCategorias = servicio.getSubCategoria();
+        Assert.assertFalse("Consulta Solicitud", subCategorias.isEmpty());
     }
 
     @Test

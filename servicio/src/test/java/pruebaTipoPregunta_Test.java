@@ -12,7 +12,7 @@ public class pruebaTipoPregunta_Test {
         tipoPreguntaDto.setDescripcion( "Desarrollo");
         tipoPreguntaDto.setEstatus("A");
         TipoPreguntaDto resultado = servicio.addTipoPregunta( tipoPreguntaDto );
-        Assert.assertNotEquals( resultado.getId(), 0 );
+        Assert.assertNotEquals( resultado.getId(), 0);
     }
 
     @Test

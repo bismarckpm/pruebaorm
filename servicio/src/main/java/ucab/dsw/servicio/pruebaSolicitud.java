@@ -1,9 +1,6 @@
 package ucab.dsw.servicio;
 
-import ucab.dsw.accesodatos.DaoCategoria;
-import ucab.dsw.accesodatos.DaoSolicitud;
-import ucab.dsw.accesodatos.DaoSubCategoria;
-import ucab.dsw.accesodatos.DaoUsuario;
+import ucab.dsw.accesodatos.*;
 import ucab.dsw.dtos.SolicitudDto;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.dtos.CategoriaDto;
@@ -15,6 +12,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 
 @Path( "/prueba" )
@@ -47,6 +45,19 @@ public class pruebaSolicitud extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @Path("/getSolicitud")
+    public List<Solicitud> getSolicitud() {
+
+        List<Solicitud> solicitudes = null;
+        try {
+            DaoSolicitud dao = new DaoSolicitud();
+            solicitudes = dao.findAll(Solicitud.class);
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        return solicitudes;
     }
 
     @PUT

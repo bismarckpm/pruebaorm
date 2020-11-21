@@ -8,6 +8,7 @@ import ucab.dsw.entidades.*;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
+import java.util.List;
 
 
 public class pruebaEncuesta_Test {
@@ -28,6 +29,14 @@ public class pruebaEncuesta_Test {
         EncuestaDto resultado = servicio.addEncuesta( encuestaDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
 
+    }
+
+
+    @Test
+    public void getEncuestaTest() throws Exception{
+        ucab.dsw.servicio.pruebaEncuesta servicio = new ucab.dsw.servicio.pruebaEncuesta();
+        List<Encuesta> encuestas = servicio.listEncuesta();
+        Assert.assertFalse("Consulta Encuesta", encuestas.isEmpty());
     }
 
     @Test

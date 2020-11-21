@@ -17,6 +17,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 public class pruebaCategoria extends AplicacionBase{
 
@@ -39,6 +40,28 @@ public class pruebaCategoria extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @GET
+    @Path ("/listcategoria")
+    public List<Categoria> listCategoria( )
+    {
+        List<Categoria> categorias= null;
+        try
+        {
+            DaoCategoria dao = new DaoCategoria();
+            categorias = dao.findAll(Categoria.class);
+            for (Categoria categoria: categorias) {
+                System.out.println("Id:" + categoria.get_id());
+                System.out.println("Descipcion:"+categoria.get_descripcion());
+                System.out.println("Estatus:"+categoria.get_estatus() );
+            }
+        }
+        catch ( Exception ex )
+        {
+            String problema = ex.getMessage();
+        }
+        return  categorias;
     }
 
     @PUT

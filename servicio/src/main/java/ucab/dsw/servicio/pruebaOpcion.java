@@ -9,6 +9,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 
 @Path( "/prueba" )
@@ -38,6 +39,19 @@ public class pruebaOpcion extends AplicacionBase{
             String problema = ex.getMessage();
         }
         return  resultado;
+    }
+
+    @Path("/getOpcion")
+    public List<Opcion> getOpcion() {
+
+        List<Opcion> opciones = null;
+        try {
+            DaoOpcion dao = new DaoOpcion();
+            opciones = dao.findAll(Opcion.class);
+        } catch (Exception ex) {
+            String problema = ex.getMessage();
+        }
+        return opciones;
     }
 
     @PUT
