@@ -57,7 +57,7 @@ public class EstudioORM_Test {
         SolicitudDto solicitudDto = new SolicitudDto(1);
         estudioDto.setSolicitud(solicitudDto);
 
-        EstudioDto resultado = servicio.updateEstudio(1,estudioDto);
+        EstudioDto resultado = servicio.updateEstudio(2,estudioDto);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 
@@ -65,7 +65,7 @@ public class EstudioORM_Test {
     public void deleteEstudioTest() throws Exception
     {
         ucab.dsw.servicio.EstudioORM servicio = new ucab.dsw.servicio.EstudioORM();
-        EstudioDto resultado = servicio.deleteEstudio(1);
+        EstudioDto resultado = servicio.deleteEstudio(3);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 }

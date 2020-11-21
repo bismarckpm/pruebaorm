@@ -58,7 +58,7 @@ public class EjecucionEncuestaORMS_Test {
         OpcionDto opcionDto = new OpcionDto(1);
         ejecucionEncuestaDto.setOpcionDto((opcionDto));
 
-        EjecucionEncuestaDto resultado = servicio.updateEjecucion(1, ejecucionEncuestaDto);
+        EjecucionEncuestaDto resultado = servicio.updateEjecucion(3, ejecucionEncuestaDto);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 
@@ -66,7 +66,7 @@ public class EjecucionEncuestaORMS_Test {
     public void deleteEjecucionTest() throws Exception
     {
         ucab.dsw.servicio.EjecucionEncuestaORMWS servicio = new ucab.dsw.servicio.EjecucionEncuestaORMWS();
-        EjecucionEncuestaDto resultado = servicio.deleteEjecucion(2);
+        EjecucionEncuestaDto resultado = servicio.deleteEjecucion(3);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 

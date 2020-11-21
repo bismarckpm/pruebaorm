@@ -65,7 +65,7 @@ public class SolicitudORM_Test {
     public void deleteSolicitudTest() throws Exception
     {
         ucab.dsw.servicio.SolicitudORM servicio = new ucab.dsw.servicio.SolicitudORM();
-        SolicitudDto resultado = servicio.deleteSolicitud(2);
+        SolicitudDto resultado = servicio.deleteSolicitud(4);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 }

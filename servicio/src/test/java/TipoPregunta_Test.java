@@ -34,7 +34,7 @@ public class TipoPregunta_Test {
         ucab.dsw.servicio.TipoPreguntaORMWS servicio = new ucab.dsw.servicio.TipoPreguntaORMWS();
         TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto();
         tipoPreguntaDto.setDescripcion("Descripcion updateada");
-        TipoPreguntaDto resultado = servicio.updateTipoPregunta(1, tipoPreguntaDto);
+        TipoPreguntaDto resultado = servicio.updateTipoPregunta(2, tipoPreguntaDto);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 
@@ -42,7 +42,7 @@ public class TipoPregunta_Test {
     public void deleteTipoPregunta() throws Exception
     {
         ucab.dsw.servicio.TipoPreguntaORMWS servicio = new ucab.dsw.servicio.TipoPreguntaORMWS();
-        TipoPreguntaDto resultado = servicio.deleteTipoPregutna(1);
+        TipoPreguntaDto resultado = servicio.deleteTipoPregutna(2);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 

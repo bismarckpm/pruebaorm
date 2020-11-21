@@ -46,7 +46,7 @@ public class SubcategoriaORM_Test {
     public void deleteSubcategoryTest() throws Exception
     {
         ucab.dsw.servicio.SubcategoriaORM servicio = new ucab.dsw.servicio.SubcategoriaORM();
-        SubcategoriaDto resultado = servicio.deleteSubcategory(2);
+        SubcategoriaDto resultado = servicio.deleteSubcategory(4);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 }

@@ -32,7 +32,7 @@ public class CategoriaORM_Test {
         CategoriaDto categoriaDto = new CategoriaDto();
         categoriaDto.setDescripcion("Actualizacion de prueba unitaria");
         categoriaDto.setEstatus("A");
-        CategoriaDto resultado = servicio.updateCategory(1, categoriaDto);
+        CategoriaDto resultado = servicio.updateCategory(2, categoriaDto);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 
@@ -40,7 +40,7 @@ public class CategoriaORM_Test {
     public void deleteCategoryTest() throws Exception
     {
         ucab.dsw.servicio.CategoriaORM servicio = new ucab.dsw.servicio.CategoriaORM();
-        CategoriaDto resultado = servicio.deleteCategory(1);
+        CategoriaDto resultado = servicio.deleteCategory(2);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 

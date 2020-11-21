@@ -15,13 +15,13 @@ public class Pregunta_Test {
         preguntaDto.setFechacreacion( "2020/11/20" );
         preguntaDto.setEstatus( "A" );
         /*Tipo pregunta*/
-        TipoPreguntaDto tipoPregunta = new TipoPreguntaDto( 2);
+        TipoPreguntaDto tipoPregunta = new TipoPreguntaDto( 1);
         preguntaDto.setTipoPreguntaDto( tipoPregunta );
         /*Subcategoria*/
         SubcategoriaDto subcategoriaDto = new SubcategoriaDto( 1);
         preguntaDto.setSubcategoriaDto( subcategoriaDto );
         /*Usuario*/
-        UsuarioDto usuarioDto = new UsuarioDto(8);
+        UsuarioDto usuarioDto = new UsuarioDto(21);
         preguntaDto.setUsuarioDto( usuarioDto );
         PreguntaDto resultado = servicio.addPregunta( preguntaDto );
         Assert.assertNotEquals( resultado.getId(), 0 );

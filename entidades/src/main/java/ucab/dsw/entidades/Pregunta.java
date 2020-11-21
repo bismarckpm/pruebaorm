@@ -87,6 +87,9 @@ public class Pregunta extends EntidadBase{
     @JoinColumn( name = "idUsuario" )
     private Usuario _usuario;
 
+    @OneToMany( mappedBy = "_pregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
+    private List<Opcion> _opciones;
+
     public void setFechacreacion(String fechacreacion) {
         this.fechacreacion = fechacreacion;
     }

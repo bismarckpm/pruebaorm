@@ -20,16 +20,6 @@ public class TipoPregunta extends EntidadBase{
     @Column( name = "descripcion", nullable = false )
     private String _descripcion;
 
-    public List<Opcion> get_opcines() { return _opciones; }
-
-    public void set_opciones( List<Opcion> _opciones )
-    {
-        this._opciones = _opciones;
-    }
-
-    @OneToMany( mappedBy = "_tipopregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<Opcion> _opciones;
-
     public TipoPregunta( long id )
     {
         super( id );

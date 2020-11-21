@@ -63,7 +63,7 @@ public class EncuestaORM_Test{
         EstudioDto estudioDto = new EstudioDto(2);
         encuestaDto.setEstudioDto(estudioDto);
 
-        EncuestaDto resultado = servicio.updateEncuesta(1, encuestaDto);
+        EncuestaDto resultado = servicio.updateEncuesta(4, encuestaDto);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 
@@ -71,7 +71,7 @@ public class EncuestaORM_Test{
     public void deleteEncuestaTest() throws Exception
     {
         ucab.dsw.servicio.EncuestaORM servicio = new ucab.dsw.servicio.EncuestaORM();
-        EncuestaDto resultado = servicio.deleteEncuesta(1);
+        EncuestaDto resultado = servicio.deleteEncuesta(5);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 }
