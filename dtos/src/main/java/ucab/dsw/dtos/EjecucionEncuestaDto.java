@@ -12,7 +12,7 @@ public class EjecucionEncuestaDto extends DtoBase{
     private EncuestaDto encuestaDto;
 //    private PreguntaDto preguntaDto;
     private UsuarioDto usuarioEncuestadoDto;
-    private opcionDto opcionDto;
+    private OpcionDto opcionDto;
     private String respuesta;
     private String estatus;
 
@@ -40,11 +40,11 @@ public class EjecucionEncuestaDto extends DtoBase{
         this.usuarioEncuestadoDto = usuarioEncuestadoDto;
     }
 
-    public opcionDto getOpcionDto() {
+    public OpcionDto getOpcionDto() {
         return opcionDto;
     }
 
-    public void setOpcionDto(opcionDto opcionDto) {
+    public void setOpcionDto(OpcionDto opcionDto) {
         this.opcionDto = opcionDto;
     }
 

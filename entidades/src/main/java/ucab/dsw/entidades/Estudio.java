@@ -31,7 +31,7 @@ public class Estudio extends EntidadBase{
     
     @ManyToOne
     @Column( name = "idSolicitud" )
-    private solicitud _solicitud;
+    private Solicitud _solicitud;
     
     @OneToMany( mappedBy = "_estudio", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     private List<Encuesta> _encuestas;
@@ -52,11 +52,11 @@ public class Estudio extends EntidadBase{
         this._usuario = _usuario;
     }
 
-    public solicitud getSolicitud() {
+    public Solicitud getSolicitud() {
         return _solicitud;
     }
 
-    public void setSolicitud(solicitud _solicitud) {
+    public void setSolicitud(Solicitud _solicitud) {
         this._solicitud = _solicitud;
     }
 

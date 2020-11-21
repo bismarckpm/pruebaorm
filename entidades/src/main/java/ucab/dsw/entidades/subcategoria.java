@@ -9,6 +9,6 @@ package ucab.dsw.entidades;
  *
  * @author Admin
  */
-public class subcategoria {
+public class SubCategoria {
     
 }

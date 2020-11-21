@@ -12,7 +12,7 @@ public class EncuestaDto extends DtoBase{
     }
     
     private UsuarioDto usuarioCreadorDto;
-    private solicitudDto solicitudAnalistaDto;
+    private SolicitudDto solicitudAnalistaDto;
     private EstudioDto estudioDto;
     private List<EjecucionEncuestaDto> ejecucionesEncuestas;
     private String fechacreacion;
@@ -26,11 +26,11 @@ public class EncuestaDto extends DtoBase{
         this.usuarioCreadorDto = usuarioCreadorDto;
     }
 
-    public solicitudDto getSolicitudAnalistaDto() {
+    public SolicitudDto getSolicitudAnalistaDto() {
         return solicitudAnalistaDto;
     }
 
-    public void setSolicitudAnalistaDto(solicitudDto solicitudAnalistaDto) {
+    public void setSolicitudAnalistaDto(SolicitudDto solicitudAnalistaDto) {
         this.solicitudAnalistaDto = solicitudAnalistaDto;
     }
 

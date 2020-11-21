@@ -1,9 +1,17 @@
 package ucab.dsw.dtos;
 
-public class solicitudDto extends DtoBase
+public class SolicitudDto extends DtoBase
 {
     private String nombre;
 
+    private String estatus;
+     
+    private String fecha;
+
+    private UsuarioDto UsuarioDto;
+
+    private SubcategoriaDto SubcategoriaDto;
+    
     public String getNombre()
     {
         return nombre;
@@ -36,18 +44,14 @@ public class solicitudDto extends DtoBase
         this.UsuarioDto = UsuarioDto;
     }
 
-    private String fecha;
 
-    private UsuarioDto UsuarioDto;
 
-    private SubcategoriaDto SubcategoriaDto;
-
-    public SubcategoriaDto getSubcategoriaDtoDto()
+    public SubcategoriaDto getSubcategoriaDto()
     {
         return SubcategoriaDto;
     }
 
-    public void SubcategoriaDtoDtoDto( SubcategoriaDto SubcategoriaDto )
+    public void setSubcategoriaDto( SubcategoriaDto SubcategoriaDto )
     {
         this.SubcategoriaDto = SubcategoriaDto;
     }
@@ -62,5 +66,5 @@ public class solicitudDto extends DtoBase
         this.estatus = estatus;
     }
 
-    private String estatus;
+   
 }

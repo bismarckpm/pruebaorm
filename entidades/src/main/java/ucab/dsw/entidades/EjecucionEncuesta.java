@@ -36,7 +36,7 @@ public class EjecucionEncuesta extends EntidadBase{
     
     @ManyToOne
     @JoinColumn( name = "idOpcion" )
-    private opcion _opcion;
+    private Opcion _opcion;
     
     @Column( name = "respuesta" )
     private String _respuesta;
@@ -65,11 +65,11 @@ public class EjecucionEncuesta extends EntidadBase{
         this._usuarioEncuestado = _usuarioEncuestado;
     }
 
-    public opcion getOpcion() {
+    public Opcion getOpcion() {
         return _opcion;
     }
 
-    public void setOpcion(opcion _opcion) {
+    public void setOpcion(Opcion _opcion) {
         this._opcion = _opcion;
     }
 

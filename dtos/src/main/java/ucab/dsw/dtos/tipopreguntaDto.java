@@ -9,6 +9,14 @@ package ucab.dsw.dtos;
  *
  * @author Admin
  */
-public class tipopreguntaDto {
+public class TipoPreguntaDto extends DtoBase{
     
+    public TipoPreguntaDto()
+    {
+    }
+
+    public TipoPreguntaDto( long id ) throws Exception
+    {
+        super( id );
+    }
 }

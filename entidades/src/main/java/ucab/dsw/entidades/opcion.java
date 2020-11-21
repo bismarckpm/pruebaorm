@@ -12,11 +12,18 @@ import java.util.List;
 
 @Entity
 @Table( name = "opcion" )
-public class opcion extends EntidadBase
+public class Opcion extends EntidadBase
 {
     @Column( name = "descripcion" )
     private String _descripcion;
 
+    @Column( name = "estatus" )
+    private String _estatus;
+
+    @ManyToOne
+    @JoinColumn( name = "idtipopregunta" )
+    private TipoPregunta _tipopregunta;
+    
     public String get_descripcion()
     {
         return _descripcion;
@@ -28,12 +35,12 @@ public class opcion extends EntidadBase
     }
 
  
-    public tipopregunta get_tipopregunta()
+    public TipoPregunta get_tipopregunta()
     {
         return _tipopregunta;
     }
 
-    public void tipopregunta( tipopregunta _tipopregunta )
+    public void set_tipopregunta( TipoPregunta _tipopregunta )
     {
         this._tipopregunta = _tipopregunta;
     }
@@ -51,20 +58,14 @@ public class opcion extends EntidadBase
         this._estatus = _estatus;
     }
 
-    @Column( name = "estatus" )
-    private String _estatus;
+   
 
-    @ManyToOne
-    @JoinColumn( name = "idtipopregunta" )
-    private tipopregunta _tipopregunta;
-
-
-    public opcion( long id )
+    public Opcion( long id )
     {
         super( id );
     }
 
-    public opcion()
+    public Opcion()
     {
 
     }

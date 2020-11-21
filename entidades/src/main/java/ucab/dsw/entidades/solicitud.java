@@ -12,11 +12,26 @@ import java.util.List;
 
 @Entity
 @Table( name = "solicitud" )
-public class solicitud extends EntidadBase
+public class Solicitud extends EntidadBase
 {
     @Column( name = "nombre" )
     private String _nombre;
 
+    @Column( name = "fecha" )
+    private String _fecha;
+    
+    @Column( name = "estatus" )
+    private String _estatus;
+
+    @ManyToOne
+    @JoinColumn( name = "idUsuario" )
+    private Usuario _usuario;
+
+    @ManyToOne
+    @JoinColumn( name = "idsubcategoria" )
+    private SubCategoria _subcategoria;
+    
+    
     public String get_nombre()
     {
         return _nombre;
@@ -43,25 +58,21 @@ public class solicitud extends EntidadBase
         return _usuario;
     }
 
-    public void set_usuarioAn( Usuario _usuario )
+    public void set_usuario( Usuario _usuario )
     {
         this._usuario = _usuario;
     }
 
-    public subcategoria get_subcategoria()
+    public SubCategoria get_subcategoria()
     {
         return _subcategoria;
     }
 
-    public void set_subcategoria( subcategoria _subcategoria )
+    public void set_subcategoria( SubCategoria _subcategoria )
     {
         this._subcategoria = _subcategoria;
     }
     
-    
-    @Column( name = "fecha" )
-    private String _fecha;
-
 
     @Override
     public String get_estatus()
@@ -75,24 +86,14 @@ public class solicitud extends EntidadBase
         this._estatus = _estatus;
     }
 
-    @Column( name = "estatus" )
-    private String _estatus;
 
-    @ManyToOne
-    @JoinColumn( name = "idUsuario" )
-    private Usuario _usuario;
 
-    @ManyToOne
-    @JoinColumn( name = "idsubcategoria" )
-    private subcategoria _subcategoria;
-    
-
-    public solicitud( long id )
+    public Solicitud( long id )
     {
         super( id );
     }
 
-    public solicitud()
+    public Solicitud()
     {
 
     }

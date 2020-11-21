@@ -12,11 +12,15 @@ import java.util.List;
 
 @Entity
 @Table( name = "categoria" )
-public class categoria extends EntidadBase
+public class Categoria extends EntidadBase
 {
     @Column( name = "descripcion" )
     private String _descripcion;
 
+    @Column( name = "estatus" )
+    private String _estatus;
+
+        
     public String get_descripcion()
     {
         return _descripcion;
@@ -39,17 +43,13 @@ public class categoria extends EntidadBase
         this._estatus = _estatus;
     }
 
-    @Column( name = "estatus" )
-    private String _estatus;
 
-
-
-    public categoria( long id )
+    public Categoria( long id )
     {
         super( id );
     }
 
-    public categoria()
+    public Categoria()
     {
 
     }

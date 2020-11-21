@@ -13,7 +13,7 @@ public class EstudioDto extends DtoBase{
     
     private String fechacreacion;
     private UsuarioDto usuarioDto;
-    private solicitudDto solicitudDto;
+    private SolicitudDto solicitudDto;
     private List<EncuestaDto> encuestas;
     private String estatus;
 
@@ -33,11 +33,11 @@ public class EstudioDto extends DtoBase{
         this.usuarioDto = usuarioDto;
     }
 
-    public solicitudDto getSolicitudDto() {
+    public SolicitudDto getSolicitudDto() {
         return solicitudDto;
     }
 
-    public void setSolicitudDto(solicitudDto solicitudDto) {
+    public void setSolicitudDto(SolicitudDto solicitudDto) {
         this.solicitudDto = solicitudDto;
     }
 
