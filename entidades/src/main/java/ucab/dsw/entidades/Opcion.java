@@ -7,21 +7,21 @@ import javax.persistence.*;
 public class Opcion extends EntidadBase{
 
     @Column( name = "descripcion" )
-    private String _descripcion;
+    private String descripcion;
 
     public String get_descripcion()
     {
-        return _descripcion;
+        return descripcion;
     }
 
-    public void set_descripcion( String _descripcion )
+    public void set_descripcion( String descripcion )
     {
-        this._descripcion = _descripcion;
+        this.descripcion = descripcion;
     }
 
     @ManyToOne
     @JoinColumn( name = "idPregunta" )
-    private Pregunta _pregunta;
+    private Pregunta pregunta;
 
     public Opcion( long id )
     {
@@ -30,7 +30,16 @@ public class Opcion extends EntidadBase{
 
     public Opcion(){
 
-        }
+    }
 
+    public Pregunta get_pregunta()
+    {
+        return pregunta;
+    }
+
+    public void set_pregunta( Pregunta pregunta )
+    {
+        this.pregunta = pregunta;
+    }
 
 }

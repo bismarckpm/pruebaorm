@@ -43,5 +43,9 @@ public class EstudioDto extends DtoBase{
         this.solicitud = solicitud;
     }
 
+    public EstudioDto(){}
 
+    public EstudioDto(long id) throws Exception{
+        super(id);
+    }
 }

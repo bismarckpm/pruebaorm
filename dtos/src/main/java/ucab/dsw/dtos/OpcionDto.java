@@ -4,6 +4,7 @@ public class OpcionDto extends DtoBase {
 
     private String descripcion;
     private String estatus;
+    private PreguntaDto preguntaDto;
 
     public String getDescripcion()
     {
@@ -25,4 +26,19 @@ public class OpcionDto extends DtoBase {
         this.estatus = estatus;
     }
 
+    public PreguntaDto getPreguntaDto()
+    {
+        return preguntaDto;
+    }
+
+    public void setPreguntaDto( PreguntaDto preguntaDto )
+    {
+        this.preguntaDto = preguntaDto;
+    }
+
+    public OpcionDto (){}
+
+    public OpcionDto(long id) throws Exception{
+        super(id);
+    }
 }
