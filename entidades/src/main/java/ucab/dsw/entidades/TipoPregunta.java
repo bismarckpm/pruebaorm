@@ -1,20 +1,43 @@
 package ucab.dsw.entidades;
 
+import ucab.dsw.entidades.enums.EstadoEnum;
 
 import javax.persistence.*;
-import java.util.List;
+import java.io.Serializable;
 
 @Entity
-@Table( name = "tipopregunta")
-public class TipoPregunta extends EntidadBase{
+@Table( name = "tipopregunta" )
+public class TipoPregunta extends EntidadBase {
 
-    @OneToMany( mappedBy = "_tipoPregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<Pregunta> _preguntas;
+    @Column(name="descripcion")
+    private String _descripcion;
 
-    public TipoPregunta(long id) {
-        super(id);
+    @Column( name = "estatus" )
+    private String _estatus;
+
+    @Override
+    public String get_estatus()
+    {
+        return _estatus;
     }
 
-    public TipoPregunta() {
+    @Override
+    public void set_estatus( String _estatus )
+    {
+        this._estatus = _estatus;
     }
+
+    public String get_descripcion()
+    {
+        return _descripcion;
+    }
+
+    public void set_descripcion( String _descripcion )
+    {
+        this._descripcion = _descripcion;
+    }
+
+    public TipoPregunta(long id) throws Exception{ super(id);}
+
+    public TipoPregunta(){}
 }

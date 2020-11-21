@@ -73,5 +73,6 @@ public class PreguntaDto extends DtoBase{
     }
 
     public void setOpciones(List<OpcionDto> opciones) {
-        this.opciones = opciones; }
+        this.opciones = opciones;
+    }
 }

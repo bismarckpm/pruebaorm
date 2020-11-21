@@ -45,6 +45,7 @@ public class EstudioDto extends DtoBase {
     }
 
     public void setUsuario(UsuarioDto usuario) {
-        this.usuario = usuario;}
+        this.usuario = usuario;
+    }
 
 }

@@ -85,6 +85,6 @@ public class UsuarioDto extends DtoBase
     }
 
     public void setEstudios(List<EstudioDto> estudios) {
-        this.estudios = estudios; }
-
+        this.estudios = estudios;
+    }
 }
