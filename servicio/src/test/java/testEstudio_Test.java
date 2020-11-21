@@ -16,7 +16,7 @@ public class testEstudio_Test {
         ucab.dsw.servicio.testEstudio servicio = new ucab.dsw.servicio.testEstudio();
         EstudioDto estudioDto = new EstudioDto();
         estudioDto.setFechacreacion( date );
-        UsuarioDto usuarioDto = new UsuarioDto(20);
+        UsuarioDto usuarioDto = new UsuarioDto(1);
         estudioDto.setUsuarioDto(usuarioDto);
         SolicitudDto solicitudDto=new SolicitudDto(1);
         estudioDto.setSolicitudDto(solicitudDto);
@@ -31,14 +31,14 @@ public class testEstudio_Test {
     {
         Date date = new Date();
         ucab.dsw.servicio.testEstudio servicio = new ucab.dsw.servicio.testEstudio();
-        EstudioDto estudioDto = new EstudioDto(2);
+        EstudioDto estudioDto = new EstudioDto(1);
         estudioDto.setFechacreacion( date );
-        estudioDto.setEstatus("C");
+        estudioDto.setEstatus("E");
         SolicitudDto solicitudDto = new SolicitudDto(1);
         estudioDto.setSolicitudDto(solicitudDto);
-        UsuarioDto usuarioDto = new UsuarioDto(18);
+        UsuarioDto usuarioDto = new UsuarioDto(1);
         estudioDto.setUsuarioDto(usuarioDto);
-        EstudioDto resultado = servicio.updateEstudio(2, estudioDto );
+        EstudioDto resultado = servicio.updateEstudio(1, estudioDto );
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 
@@ -55,7 +55,7 @@ public class testEstudio_Test {
     public void findEstudioTest() throws Exception
     {
         ucab.dsw.servicio.testEstudio servicio = new ucab.dsw.servicio.testEstudio();
-        EstudioDto resultado = servicio.findEstudio(2);
+        EstudioDto resultado = servicio.findEstudio(1);
         Assert.assertNotEquals( resultado.getId(), 0  );
     }
 

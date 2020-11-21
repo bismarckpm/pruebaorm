@@ -41,6 +41,7 @@ public class testEstudio extends AplicacionBase{
             System.out.println(estudio.get_fechacreacion());
             System.out.println(estudio.get_usuario());
             System.out.println(estudio.get_solicitud());
+            System.out.println(estudio.get_estatus());
 
             Estudio resul = dao.insert( estudio );
             resultado.setId( resul.get_id() );
@@ -115,6 +116,7 @@ public class testEstudio extends AplicacionBase{
             System.out.println(estudio.get_fechacreacion());
             System.out.println(estudio.get_usuario());
             System.out.println(estudio.get_solicitud());
+            System.out.println(estudio.get_estatus());
             resultado.setId( estudio.get_id() );
         }
         catch ( Exception ex )

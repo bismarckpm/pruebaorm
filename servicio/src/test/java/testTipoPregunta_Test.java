@@ -22,7 +22,7 @@ public class testTipoPregunta_Test {
         ucab.dsw.servicio.testTipoPregunta servicio = new ucab.dsw.servicio.testTipoPregunta();
         TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto(1);
         tipoPreguntaDto.setDescripcion( "testChangePath" );
-        tipoPreguntaDto.setEstatus( "A" );
+        tipoPreguntaDto.setEstatus( "I" );
         TipoPreguntaDto resultado = servicio.changeTipoPregunta(tipoPreguntaDto );
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
@@ -31,7 +31,7 @@ public class testTipoPregunta_Test {
     public void deleteTipoPregunta() throws Exception
     {
         ucab.dsw.servicio.testTipoPregunta servicio = new ucab.dsw.servicio.testTipoPregunta();
-        TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto(6);
+        TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto(11);
         TipoPreguntaDto resultado = servicio.deleteTipoPregunta(tipoPreguntaDto.getId());
         Assert.assertNotEquals( resultado.getId(), 0);
     }
@@ -40,7 +40,7 @@ public class testTipoPregunta_Test {
     public void findTipoPregunta() throws Exception
     {
         ucab.dsw.servicio.testTipoPregunta servicio = new ucab.dsw.servicio.testTipoPregunta();
-        TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto(5);
+        TipoPreguntaDto tipoPreguntaDto = new TipoPreguntaDto(1);
         TipoPreguntaDto resultado = servicio.findTipoPregunta(tipoPreguntaDto.getId());
         System.out.println("Resultado = ");
         System.out.print(resultado);

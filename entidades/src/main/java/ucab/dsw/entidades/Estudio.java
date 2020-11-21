@@ -11,18 +11,6 @@ public class Estudio extends EntidadBase {
     @Column(name = "fechacreacion")
     private Date _fechacreacion;
 
-    @Column(name = "estatus")
-    private String _estatus;
-
-    @Override
-    public String get_estatus() {
-        return super.get_estatus();
-    }
-    @Override
-    public void set_estatus(String _estatus) {
-        super.set_estatus(_estatus);
-    }
-
     //ManyToOne
     @ManyToOne
     @JoinColumn(name = "idUsuario")

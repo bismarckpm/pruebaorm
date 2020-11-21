@@ -23,7 +23,7 @@ public class testPregunta_Test {
 
         preguntaDto.setPregunta("test3");
         preguntaDto.setFechacreacion(date);
-        preguntaDto.setEstatus("I");
+        preguntaDto.setEstatus("A");
         TipoPreguntaDto tipoPregunta = new TipoPreguntaDto(1);
         preguntaDto.setTipoPreguntaDto(tipoPregunta);
         SubcategoriaDto subcategoriaDto = new SubcategoriaDto(1);
@@ -40,7 +40,7 @@ public class testPregunta_Test {
     {
         Date date = new Date();
         ucab.dsw.servicio.testPregunta servicio = new ucab.dsw.servicio.testPregunta();
-        PreguntaDto preguntaDto = new PreguntaDto(3);
+        PreguntaDto preguntaDto = new PreguntaDto(1);
 
         preguntaDto.setPregunta("testUpdate");
         preguntaDto.setFechacreacion(date);
@@ -52,7 +52,7 @@ public class testPregunta_Test {
         UsuarioDto usuarioDto = new UsuarioDto(17);
         preguntaDto.setUsuarioDto(usuarioDto);
 
-        PreguntaDto resultado = servicio.updatePregunta(3,preguntaDto);
+        PreguntaDto resultado = servicio.updatePregunta(1,preguntaDto);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 
@@ -61,7 +61,7 @@ public class testPregunta_Test {
     public void deletePreguntaTest() throws Exception
     {
         ucab.dsw.servicio.testPregunta servicio = new ucab.dsw.servicio.testPregunta();
-        PreguntaDto resultado = servicio.deletePregunta(3);
+        PreguntaDto resultado = servicio.deletePregunta(2);
         Assert.assertNotEquals( resultado.getId(), 0 );
     }
 
