@@ -25,7 +25,7 @@ public class PreguntaDto extends DtoBase
     }
     public void setTipoPregunta(TipoPreguntaDto tipopreguntaDto) { this.tipopreguntaDto = tipopreguntaDto; }
 
-    public SubCategoriaDto getSubcategoriaDtoDto()
+    public SubCategoriaDto getSubcategoriaDto()
     {
         return SubcategoriaDto;
     }
