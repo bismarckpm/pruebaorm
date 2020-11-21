@@ -1,14 +1,10 @@
 package ucab.dsw.entidades;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Entity
 @Table( name = "solicitud" )
@@ -65,12 +61,16 @@ public class Solicitud extends EntidadBase
 
     public SubCategoria get_subcategoria()
     {
-        return _subcategoria;
+        return _subCategoria;
     }
 
+<<<<<<< HEAD
     public void set_subcategoria( SubCategoria _subcategoria )
+=======
+    public void set_subcategoria( SubCategoria _subCategoria)
+>>>>>>> 862e9d9e80dafcc6ba85e8ca693d53be620a940f
     {
-        this._subcategoria = _subcategoria;
+        this._subCategoria = _subCategoria;
     }
     
 
@@ -87,6 +87,17 @@ public class Solicitud extends EntidadBase
     }
 
 
+<<<<<<< HEAD
+=======
+    @ManyToOne
+    @JoinColumn( name = "idUsuario" )
+    private Usuario _usuario;
+
+    @ManyToOne
+    @JoinColumn( name = "idsubcategoria" )
+    private SubCategoria _subCategoria;
+    
+>>>>>>> 862e9d9e80dafcc6ba85e8ca693d53be620a940f
 
     public Solicitud( long id )
     {

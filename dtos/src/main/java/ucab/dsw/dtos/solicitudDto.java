@@ -45,13 +45,23 @@ public class SolicitudDto extends DtoBase
     }
 
 
+<<<<<<< HEAD
 
     public SubcategoriaDto getSubcategoriaDto()
+=======
+    private SubCategoriaDto SubcategoriaDto;
+
+    public SubCategoriaDto getSubcategoriaDtoDto()
+>>>>>>> 862e9d9e80dafcc6ba85e8ca693d53be620a940f
     {
         return SubcategoriaDto;
     }
 
+<<<<<<< HEAD
     public void setSubcategoriaDto( SubcategoriaDto SubcategoriaDto )
+=======
+    public void SubcategoriaDtoDtoDto( SubCategoriaDto SubcategoriaDto )
+>>>>>>> 862e9d9e80dafcc6ba85e8ca693d53be620a940f
     {
         this.SubcategoriaDto = SubcategoriaDto;
     }

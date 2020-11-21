@@ -1,14 +1,16 @@
 
 package ucab.dsw.dtos;
 
-public class TipoPreguntaDto extends DtoBase{
 
+public class SubCategoriaDto  extends DtoBase {
 
-    public TipoPreguntaDto()
-    { }
+    public SubCategoriaDto()
+    {  }
 
-    public TipoPreguntaDto( long id ) throws Exception
+    public SubCategoriaDto( long id ) throws Exception
     { super( id ); }
+
+    private categoriaDto categoriaDto;
 
     private String descripcion;
     private String estatus;
@@ -25,5 +27,9 @@ public class TipoPreguntaDto extends DtoBase{
         this.estatus = estatus;
     }
 
+    public ucab.dsw.dtos.categoriaDto getCategoriaDto() { return categoriaDto; }
+    public void setCategoriaDto(categoriaDto categoriaDto) { this.categoriaDto = categoriaDto; }
 
+
+    
 }

@@ -1,14 +1,10 @@
 package ucab.dsw.entidades;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.List;
 
 @Entity
 @Table( name = "opcion" )
@@ -37,12 +33,16 @@ public class Opcion extends EntidadBase
  
     public TipoPregunta get_tipopregunta()
     {
-        return _tipopregunta;
+        return _tipoPregunta;
     }
 
+<<<<<<< HEAD
     public void set_tipopregunta( TipoPregunta _tipopregunta )
+=======
+    public void tipopregunta( TipoPregunta _tipoPregunta)
+>>>>>>> 862e9d9e80dafcc6ba85e8ca693d53be620a940f
     {
-        this._tipopregunta = _tipopregunta;
+        this._tipoPregunta = _tipoPregunta;
     }
 
 
@@ -58,7 +58,17 @@ public class Opcion extends EntidadBase
         this._estatus = _estatus;
     }
 
+<<<<<<< HEAD
    
+=======
+    @Column( name = "estatus" )
+    private String _estatus;
+
+    @ManyToOne
+    @JoinColumn( name = "idtipopregunta" )
+    private TipoPregunta _tipoPregunta;
+
+>>>>>>> 862e9d9e80dafcc6ba85e8ca693d53be620a940f
 
     public Opcion( long id )
     {

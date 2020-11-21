@@ -33,6 +33,11 @@ public class OpcionDto extends DtoBase
         this.estatus = estatus;
     }
 
+<<<<<<< HEAD
+=======
+    private String estatus;
+
+>>>>>>> 862e9d9e80dafcc6ba85e8ca693d53be620a940f
     public TipoPreguntaDto gettipopreguntaDto()
     {
         return tipopreguntaDto;
@@ -43,4 +48,12 @@ public class OpcionDto extends DtoBase
         this.tipopreguntaDto = tipopreguntaDto;
     }
 
+<<<<<<< HEAD
+=======
+
+    private TipoPreguntaDto tipopreguntaDto;
+
+
+
+>>>>>>> 862e9d9e80dafcc6ba85e8ca693d53be620a940f
 }
