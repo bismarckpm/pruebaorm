@@ -40,9 +40,21 @@ public class Pregunta extends EntidadBase {
 
     public Usuario get_idusuario() { return _idusuario; }
 
+    public void set_idusuario(Usuario _idusuario) {
+        this._idusuario = _idusuario;
+    }
+
     @ManyToOne
     @JoinColumn( name = "idTipoPregunta" )
     private TipoPregunta _tipopregunta;
+
+    public TipoPregunta get_tipopregunta() {
+        return _tipopregunta;
+    }
+
+    public void set_tipopregunta(TipoPregunta _tipopregunta) {
+        this._tipopregunta = _tipopregunta;
+    }
 
     @OneToMany( mappedBy = "_idPregunta", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
     private List<Opcion> _opciones;

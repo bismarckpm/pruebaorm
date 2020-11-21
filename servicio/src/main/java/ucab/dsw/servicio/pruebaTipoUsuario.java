@@ -105,11 +105,4 @@ public class pruebaTipoUsuario extends AplicacionBase
         return  resultado;
     }
 
-
-    @GET
-    @Path( "/consulta" )
-    public String consulta()
-    {
-        return "Epa";
-    }
 }
