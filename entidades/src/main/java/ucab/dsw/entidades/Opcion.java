@@ -19,10 +19,6 @@ public class Opcion extends EntidadBase{
 
     public void set_descripcion( String _descripcion ) { this._descripcion = _descripcion; }
 
-    public TipoPregunta get_tipopregunta() { return _tipopregunta; }
-
-    public void set_tipopregunta() { this._tipopregunta = _tipopregunta; }
-
     @Override
     public String get_estatus() { return _estatus; }
 
@@ -32,30 +28,21 @@ public class Opcion extends EntidadBase{
     @Column( name = "estatus" )
     private String _estatus;
 
-    @ManyToOne
-    @JoinColumn( name = "idTipoPregunta" )
-    private TipoPregunta _tipopregunta;
+    public Pregunta get_pregunta() {
+        return _pregunta;
+    }
 
-    @OneToMany( mappedBy = "_opcion", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST )
-    private List<EjecucionEncuesta> _ejecucionEncuestas;
+    public void set_pregunta(Pregunta _pregunta) {
+        this._pregunta = _pregunta;
+    }
+
+    @ManyToOne
+    @JoinColumn(name="idPregunta")
+    private Pregunta _pregunta;
 
     public Opcion( long id ) { super( id ); }
 
     public Opcion(){
 
     }
-
-    public void set_tipopregunta(TipoPregunta _tipopregunta) {
-        this._tipopregunta = _tipopregunta;
-    }
-
-    public List<EjecucionEncuesta> get_ejecucionEncuestas() {
-        return _ejecucionEncuestas;
-    }
-
-    public void set_ejecucionEncuestas(List<EjecucionEncuesta> _ejecucionEncuestas) {
-        this._ejecucionEncuestas = _ejecucionEncuestas;
-    }
-
-    //Falta anadir pregunta
 }
