@@ -8,6 +8,7 @@ import ucab.dsw.entidades.*;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
+import java.util.List;
 
 
 public class pruebaEjecucionEncuesta_Test {
@@ -30,6 +31,16 @@ public class pruebaEjecucionEncuesta_Test {
         Assert.assertNotEquals( resultado.getId(), 0 );
 
     }
+
+    @Test
+    public void listEjecucionEncuestaTest() throws Exception{
+
+        ucab.dsw.servicio.pruebaEjecucionEncuesta servicio = new ucab.dsw.servicio.pruebaEjecucionEncuesta();
+        List<EjecucionEncuesta> ejecucionEncuesta = servicio.listEjecucionEncuesta();
+        Assert.assertNotEquals( "Ejecucion Encuesta listadas", ejecucionEncuesta.isEmpty() );
+
+    }
+
 
     @Test
     public void updateEjecucionEncuestaTest() throws Exception{

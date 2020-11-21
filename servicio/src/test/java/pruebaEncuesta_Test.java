@@ -8,6 +8,8 @@ import ucab.dsw.entidades.*;
 
 import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 
 public class pruebaEncuesta_Test {
@@ -16,8 +18,7 @@ public class pruebaEncuesta_Test {
 
         ucab.dsw.servicio.pruebaEncuesta servicio = new ucab.dsw.servicio.pruebaEncuesta();
         EncuestaDto encuestaDto = new EncuestaDto();
-        java.util.Date fecha = new java.util.Date("20/11/2020");
-        encuestaDto.setFechaCreacion(fecha);
+        encuestaDto.setFechaCreacion(new SimpleDateFormat("dd/MM/yyyy").parse("15/11/2020"));
         encuestaDto.setEstatus( "C" );
         UsuarioDto usuarioC = new UsuarioDto( 1);
         encuestaDto.setUsuarioCreadorDto( usuarioC);
@@ -31,12 +32,20 @@ public class pruebaEncuesta_Test {
     }
 
     @Test
+    public void listEncuestaTest() throws Exception{
+
+        ucab.dsw.servicio.pruebaEncuesta servicio = new ucab.dsw.servicio.pruebaEncuesta();
+        List<Encuesta> encuesta = servicio.listEncuesta();
+        Assert.assertNotEquals( "Encuesta listadas", encuesta.isEmpty() );
+
+    }
+
+    @Test
     public void updateEncuestaTest() throws Exception{
 
         ucab.dsw.servicio.pruebaEncuesta servicio = new ucab.dsw.servicio.pruebaEncuesta();
-        EncuestaDto encuestaDto = new EncuestaDto();
-        java.util.Date fecha = new java.util.Date("21/11/2020");
-        encuestaDto.setFechaCreacion(fecha);
+        EncuestaDto encuestaDto = new EncuestaDto(1);
+        encuestaDto.setFechaCreacion(new SimpleDateFormat("dd/MM/yyyy").parse("15/11/2020"));
         encuestaDto.setEstatus( "C" );
         UsuarioDto usuarioC = new UsuarioDto( 1);
         encuestaDto.setUsuarioCreadorDto( usuarioC);

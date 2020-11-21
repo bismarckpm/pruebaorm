@@ -919,5 +919,511 @@ SELECT|sys.sys_config:null
       <ObjectGrants>SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,RELOAD,SHUTDOWN,PROCESS,FILE,REFERENCES,INDEX,ALTER,SHOW DATABASES,SUPER,CREATE TEMPORARY TABLES,LOCK TABLES,EXECUTE,REPLICATION SLAVE,REPLICATION CLIENT,CREATE VIEW,SHOW VIEW,CREATE ROUTINE,ALTER ROUTINE,CREATE USER,EVENT,TRIGGER,CREATE TABLESPACE,CREATE ROLE,DROP ROLE!
 </ObjectGrants>
     </user>
+    <table id="287" parent="8" name="categoria"/>
+    <table id="288" parent="8" name="ejecucionencuesta"/>
+    <table id="289" parent="8" name="encuesta"/>
+    <table id="290" parent="8" name="estudio"/>
+    <table id="291" parent="8" name="opcion"/>
+    <table id="292" parent="8" name="pregunta"/>
+    <table id="293" parent="8" name="solicitud"/>
+    <table id="294" parent="8" name="subcategoria"/>
+    <table id="295" parent="8" name="tipopregunta"/>
+    <table id="296" parent="8" name="tipousuario"/>
+    <table id="297" parent="8" name="usuario"/>
+    <column id="298" parent="287" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="299" parent="287" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="300" parent="287" name="estatus">
+      <Position>3</Position>
+      <DataType>enum(&apos;A&apos;, &apos;I&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;A&apos;</DefaultExpression>
+    </column>
+    <key id="301" parent="287" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="302" parent="288" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="303" parent="288" name="idEncuesta">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="304" parent="288" name="idPregunta">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="305" parent="288" name="idUsuario_Encuestado">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="306" parent="288" name="idOpcion">
+      <Position>5</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="307" parent="288" name="respuesta">
+      <Position>6</Position>
+      <DataType>varchar(250)|0s</DataType>
+    </column>
+    <column id="308" parent="288" name="estatus">
+      <Position>7</Position>
+      <DataType>enum(&apos;P&apos;, &apos;C&apos;)|0e</DataType>
+      <DefaultExpression>&apos;P&apos;</DefaultExpression>
+    </column>
+    <index id="309" parent="288" name="fk_EjecucionEncuesta_Encuesta1_idx">
+      <ColNames>idEncuesta</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="310" parent="288" name="fk_EjecucionEncuesta_Pregunta1_idx">
+      <ColNames>idPregunta</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="311" parent="288" name="fk_EjecucionEncuesta_Usuario1_idx">
+      <ColNames>idUsuario_Encuestado</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="312" parent="288" name="fk_EjecucionEncuesta_Opcion1_idx">
+      <ColNames>idOpcion</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="313" parent="288" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="314" parent="288" name="fk_EjecucionEncuesta_Encuesta1">
+      <ColNames>idEncuesta</ColNames>
+      <RefTableName>encuesta</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="315" parent="288" name="fk_EjecucionEncuesta_Pregunta1">
+      <ColNames>idPregunta</ColNames>
+      <RefTableName>pregunta</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="316" parent="288" name="fk_EjecucionEncuesta_Usuario1">
+      <ColNames>idUsuario_Encuestado</ColNames>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="317" parent="288" name="fk_EjecucionEncuesta_Opcion1">
+      <ColNames>idOpcion</ColNames>
+      <RefTableName>opcion</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="318" parent="289" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="319" parent="289" name="idUsuario_Creador">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="320" parent="289" name="idUsuario_Analista">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <column id="321" parent="289" name="idEstudio">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="322" parent="289" name="fechacreacion">
+      <Position>5</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="323" parent="289" name="estatus">
+      <Position>6</Position>
+      <DataType>enum(&apos;C&apos;, &apos;EP&apos;, &apos;F&apos;, &apos;E&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;C&apos;</DefaultExpression>
+    </column>
+    <index id="324" parent="289" name="fk_Encuesta_Usuario1_idx">
+      <ColNames>idUsuario_Creador</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="325" parent="289" name="fk_Encuesta_Usuario2_idx">
+      <ColNames>idUsuario_Analista</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="326" parent="289" name="fk_Encuesta_Estudio1_idx">
+      <ColNames>idEstudio</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="327" parent="289" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="328" parent="289" name="fk_Encuesta_Usuario1">
+      <ColNames>idUsuario_Creador</ColNames>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="329" parent="289" name="fk_Encuesta_Usuario2">
+      <ColNames>idUsuario_Analista</ColNames>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="330" parent="289" name="fk_Encuesta_Estudio1">
+      <ColNames>idEstudio</ColNames>
+      <RefTableName>estudio</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="331" parent="290" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="332" parent="290" name="fechacreacion">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="333" parent="290" name="idUsuario">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="334" parent="290" name="idSolicitud">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="335" parent="290" name="estatus">
+      <Position>5</Position>
+      <DataType>enum(&apos;C&apos;, &apos;EP&apos;, &apos;F&apos;, &apos;E&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;C&apos;</DefaultExpression>
+    </column>
+    <index id="336" parent="290" name="fk_Estudio_Usuario1_idx">
+      <ColNames>idUsuario</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="337" parent="290" name="fk_Estudio_Solicitud1_idx">
+      <ColNames>idSolicitud</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="338" parent="290" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="339" parent="290" name="fk_Estudio_Usuario1">
+      <ColNames>idUsuario</ColNames>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="340" parent="290" name="fk_Estudio_Solicitud1">
+      <ColNames>idSolicitud</ColNames>
+      <RefTableName>solicitud</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="341" parent="291" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="342" parent="291" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="343" parent="291" name="estatus">
+      <Position>3</Position>
+      <DataType>enum(&apos;A&apos;, &apos;I&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;A&apos;</DefaultExpression>
+    </column>
+    <column id="344" parent="291" name="idPregunta">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="345" parent="291" name="fk_Opcion_Pregunta1_idx">
+      <ColNames>idPregunta</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="346" parent="291" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="347" parent="291" name="fk_Opcion_Pregunta1">
+      <ColNames>idPregunta</ColNames>
+      <RefTableName>pregunta</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="348" parent="292" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="349" parent="292" name="pregunta">
+      <Position>2</Position>
+      <DataType>varchar(345)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="350" parent="292" name="fechacreacion">
+      <Position>3</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="351" parent="292" name="estatus">
+      <Position>4</Position>
+      <DataType>enum(&apos;A&apos;, &apos;I&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="352" parent="292" name="idTipoPregunta">
+      <Position>5</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="353" parent="292" name="idSubCategoria">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="354" parent="292" name="idUsuario">
+      <Position>7</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="355" parent="292" name="fk_Pregunta_TipoPregunta1_idx">
+      <ColNames>idTipoPregunta</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="356" parent="292" name="fk_Pregunta_SubCategoria1_idx">
+      <ColNames>idSubCategoria</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="357" parent="292" name="fk_Pregunta_Usuario1_idx">
+      <ColNames>idUsuario</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="358" parent="292" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="359" parent="292" name="fk_Pregunta_TipoPregunta1">
+      <ColNames>idTipoPregunta</ColNames>
+      <RefTableName>tipopregunta</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="360" parent="292" name="fk_Pregunta_SubCategoria1">
+      <ColNames>idSubCategoria</ColNames>
+      <RefTableName>subcategoria</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="361" parent="292" name="fk_Pregunta_Usuario1">
+      <ColNames>idUsuario</ColNames>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="362" parent="293" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="363" parent="293" name="idUsuario">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="364" parent="293" name="idSubCategoria">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="365" parent="293" name="nombre">
+      <Position>4</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="366" parent="293" name="fecha">
+      <Position>5</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="367" parent="293" name="estatus">
+      <Position>6</Position>
+      <DataType>enum(&apos;A&apos;, &apos;I&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;A&apos;</DefaultExpression>
+    </column>
+    <index id="368" parent="293" name="fk_Solicitud_Usuario1_idx">
+      <ColNames>idUsuario</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="369" parent="293" name="fk_Solicitud_SubCategoria1_idx">
+      <ColNames>idSubCategoria</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="370" parent="293" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="371" parent="293" name="fk_Solicitud_Usuario1">
+      <ColNames>idUsuario</ColNames>
+      <RefTableName>usuario</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="372" parent="293" name="fk_Solicitud_SubCategoria1">
+      <ColNames>idSubCategoria</ColNames>
+      <RefTableName>subcategoria</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="373" parent="294" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="374" parent="294" name="idCategoria">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="375" parent="294" name="descripcion">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="376" parent="294" name="estatus">
+      <Position>4</Position>
+      <DataType>enum(&apos;A&apos;, &apos;I&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;A&apos;</DefaultExpression>
+    </column>
+    <index id="377" parent="294" name="fk_SubCategoria_Categoria1_idx">
+      <ColNames>idCategoria</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="378" parent="294" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="379" parent="294" name="fk_SubCategoria_Categoria1">
+      <ColNames>idCategoria</ColNames>
+      <RefTableName>categoria</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="380" parent="295" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="381" parent="295" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="382" parent="295" name="estatus">
+      <Position>3</Position>
+      <DataType>enum(&apos;A&apos;, &apos;I&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;A&apos;</DefaultExpression>
+    </column>
+    <key id="383" parent="295" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="384" parent="296" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="385" parent="296" name="descripcion">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="386" parent="296" name="estatus">
+      <Position>3</Position>
+      <DataType>enum(&apos;A&apos;, &apos;I&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;A&apos;</DefaultExpression>
+    </column>
+    <key id="387" parent="296" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="388" parent="297" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="389" parent="297" name="nombre">
+      <Position>2</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="390" parent="297" name="apellido">
+      <Position>3</Position>
+      <DataType>varchar(45)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="391" parent="297" name="correoelectronico">
+      <Position>4</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="392" parent="297" name="estatus">
+      <Position>5</Position>
+      <DataType>enum(&apos;A&apos;, &apos;I&apos;, &apos;B&apos;)|0e</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;A&apos;</DefaultExpression>
+    </column>
+    <column id="393" parent="297" name="idTipoUsuario">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="394" parent="297" name="fk_Usuario_TipoUsuario_idx">
+      <ColNames>idTipoUsuario</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="395" parent="297" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="396" parent="297" name="fk_Usuario_TipoUsuario">
+      <ColNames>idTipoUsuario</ColNames>
+      <RefTableName>tipousuario</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

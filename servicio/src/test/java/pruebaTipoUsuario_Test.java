@@ -29,7 +29,7 @@ public class pruebaTipoUsuario_Test {
         TipoUsuarioDto tipoUsuarioDto = new TipoUsuarioDto();
         tipoUsuarioDto.setDescripcion("Cliente");
         tipoUsuarioDto.setEstatus("A");
-        TipoUsuarioDto resultado = servicio.updateTipoUsuario(15,tipoUsuarioDto);
+        TipoUsuarioDto resultado = servicio.updateTipoUsuario(1,tipoUsuarioDto);
         Assert.assertNotEquals(resultado.getId(), 0);
     }
 
@@ -37,7 +37,7 @@ public class pruebaTipoUsuario_Test {
     public void deleteTipoUsuarioTest() throws Exception {
 
         ucab.dsw.servicio.pruebaTipoUsuario servicio = new ucab.dsw.servicio.pruebaTipoUsuario();
-        TipoUsuarioDto resultado = servicio.deleteTipoUsuario(14);
+        TipoUsuarioDto resultado = servicio.deleteTipoUsuario(1);
         Assert.assertNotEquals(resultado.getId(), 0);
 
     }

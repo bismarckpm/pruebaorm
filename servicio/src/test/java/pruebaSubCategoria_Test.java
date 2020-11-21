@@ -20,11 +20,10 @@ public class pruebaSubCategoria_Test
         SubCategoriaDto subcategoriaDto = new SubCategoriaDto();
         subcategoriaDto.setDescripcion( "Balon" );
         subcategoriaDto.setEstatus( "A" );
-        CategoriaDto categoria = new CategoriaDto( 1);
+        CategoriaDto categoria = new CategoriaDto( 2);
         subcategoriaDto.setCategoriaDto( categoria );
         SubCategoriaDto resultado = servicio.addSubCategoria( subcategoriaDto );
-        Assert.assertNotEquals( resultado.getId(), 1 );
-
+        Assert.assertNotEquals( resultado.getId(), 0);
     }
 
     @Test
@@ -37,7 +36,7 @@ public class pruebaSubCategoria_Test
         CategoriaDto categoria = new CategoriaDto( 1);
         subcategoriaDto.setCategoriaDto( categoria );
         SubCategoriaDto resultado = servicio.updateSubCategoria (subcategoriaDto);
-        Assert.assertNotEquals( resultado.getId(), 1);
+        Assert.assertNotEquals( resultado.getId(), 0);
 
     }
 
