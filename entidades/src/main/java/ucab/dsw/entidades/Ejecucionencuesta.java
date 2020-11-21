@@ -34,4 +34,35 @@ public class Ejecucionencuesta extends EntidadBase {
         this.respuesta = respuesta;
     }
 
+    public Encuesta getEncuesta() {
+        return encuesta;
+    }
+
+    public void setEncuesta(Encuesta encuesta) {
+        this.encuesta = encuesta;
+    }
+
+    public Pregunta getPregunta() {
+        return pregunta;
+    }
+
+    public void setPregunta(Pregunta pregunta) {
+        this.pregunta = pregunta;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Opcion getOpcion() {
+        return opcion;
+    }
+
+    public void setOpcion(Opcion opcion) {
+        this.opcion = opcion;
+    }
 }
