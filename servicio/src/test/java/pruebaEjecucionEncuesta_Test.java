@@ -41,16 +41,6 @@ public class pruebaEjecucionEncuesta_Test {
     }
 
     @Test
-    public void listEjecucionEncuestaTest() throws Exception{
-
-        ucab.dsw.servicio.pruebaEjecucionEncuesta servicio = new ucab.dsw.servicio.pruebaEjecucionEncuesta();
-        List<EjecucionEncuesta> ejecucionEncuesta = servicio.listEjecucionEncuesta();
-        Assert.assertNotEquals( "Ejecucion Encuesta listadas", ejecucionEncuesta.isEmpty() );
-
-    }
-
-
-    @Test
     public void updateEjecucionEncuestaTest() throws Exception{
 
         ucab.dsw.servicio.pruebaEjecucionEncuesta servicio = new ucab.dsw.servicio.pruebaEjecucionEncuesta();
