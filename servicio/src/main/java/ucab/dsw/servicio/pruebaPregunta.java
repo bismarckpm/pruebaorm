@@ -21,7 +21,7 @@ public class pruebaPregunta {
             pregunta.set_estatus( preguntaDto.getEstatus() );
             TipoPregunta tipoPregunta = new TipoPregunta(preguntaDto.getTipoPreguntaDto().getId());
             pregunta.set_tipoPregunta( tipoPregunta );
-            SubCategoria subcategoria = new SubCategoria(preguntaDto.getSubcategoria().getId());
+            SubCategoria subcategoria = new SubCategoria(preguntaDto.getSubCategoriaDto().getId());
             pregunta.set_subcategoria( subcategoria );
             //Usuario usuario = new Usuario(preguntaDto.getUsuario.getId());
             //pregunta.set_usuario( usuario );
