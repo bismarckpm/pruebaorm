@@ -27,6 +27,7 @@ public class encuestaORMWS_Test {
         encuestaDto.setEstudioDto( estudio );
         EncuestaDto resultado = servicio.addEncuesta( encuestaDto );
         Assert.assertNotEquals( resultado.getId(), 0  );
+
     }
 
     @Test

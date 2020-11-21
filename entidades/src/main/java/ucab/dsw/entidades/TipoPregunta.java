@@ -33,7 +33,7 @@ public class TipoPregunta extends EntidadBase {
         this._estatus = _estatus;
     }
 
-    public TipoPregunta( long id )
+    public TipoPregunta(long id )
     {
         super( id );
     }

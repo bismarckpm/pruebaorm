@@ -14,11 +14,11 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path( "/estudio" )
+//@Path( "/estudio" )
 @Produces( MediaType.APPLICATION_JSON )
 @Consumes( MediaType.APPLICATION_JSON )
 public class estudioORMWS {
-    
+
     @PUT
     @Path( "/agregar" )
     public EstudioDto addEstudio(EstudioDto estudioDto )

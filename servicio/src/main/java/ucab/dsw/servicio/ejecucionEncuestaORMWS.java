@@ -20,7 +20,7 @@ import java.util.List;
 @Produces( MediaType.APPLICATION_JSON )
 @Consumes( MediaType.APPLICATION_JSON )
 public class ejecucionEncuestaORMWS {
-    
+
     @PUT
     @Path( "/agregar" )
     public EjecucionEncuestaDto addEjecucionEncuesta(EjecucionEncuestaDto ejecucionEncuestaDto )

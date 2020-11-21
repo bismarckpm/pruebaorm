@@ -46,7 +46,7 @@ public class encuestaORMWS {
         return  resultado;
     }
 
-    @GET
+ @GET
     @Path("/buscar")
     public List<Encuesta> showEncuesta()
     {
@@ -70,6 +70,7 @@ public class encuestaORMWS {
         }
         return encuestas;
     }
+
 
     @PUT
     @Path( "/actualizar/{id}" )

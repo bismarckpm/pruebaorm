@@ -12,12 +12,9 @@ public class CategoriaDto extends DtoBase{
 
     private String estatus;
 
-    public CategoriaDto()
-    {
-    }
+    public CategoriaDto() { }
 
-    public CategoriaDto( long id ) throws Exception
-    {
+    public CategoriaDto( long id ) throws Exception {
         super( id );
     }
 

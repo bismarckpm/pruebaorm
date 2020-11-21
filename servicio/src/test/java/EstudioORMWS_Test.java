@@ -3,6 +3,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import ucab.dsw.dtos.EstudioDto;
+import ucab.dsw.dtos.EstudioDto;
+import ucab.dsw.dtos.SolicitudDto;
 import ucab.dsw.dtos.UsuarioDto;
 import ucab.dsw.dtos.SolicitudDto;
 import ucab.dsw.entidades.Estudio;

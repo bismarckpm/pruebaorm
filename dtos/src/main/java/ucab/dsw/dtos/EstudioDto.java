@@ -56,7 +56,7 @@ public class EstudioDto extends DtoBase{
         this.usuario = usuario;
     }
 
-    public SolicitudDto getSolicitud()
+   public SolicitudDto getSolicitud()
     {
         return solicitud;
     }
