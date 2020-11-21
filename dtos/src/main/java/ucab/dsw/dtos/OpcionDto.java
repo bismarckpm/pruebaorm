@@ -2,6 +2,8 @@ package ucab.dsw.dtos;
 
 public class OpcionDto extends DtoBase{
 
+    public OpcionDto(){}
+    public OpcionDto(long id) throws Exception {super(id);}
     private String descripcion;
 
     private String estatus;
@@ -36,6 +38,16 @@ public class OpcionDto extends DtoBase{
     public void setEstatus( String estatus )
     {
         this.estatus = estatus;
+    }
+
+    public OpcionDto( long id ) throws Exception
+    {
+        super( id );
+    }
+
+    public OpcionDto()
+    {
+
     }
 
 }

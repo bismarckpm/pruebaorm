@@ -20,7 +20,7 @@ import java.util.List;
 @Produces( MediaType.APPLICATION_JSON )
 @Consumes( MediaType.APPLICATION_JSON )
 public class ejecucionEncuestaORMWS {
-    
+
     @PUT
     @Path( "/agregar" )
     public EjecucionEncuestaDto addEjecucionEncuesta(EjecucionEncuestaDto ejecucionEncuestaDto )
@@ -62,17 +62,9 @@ public class ejecucionEncuestaORMWS {
             for(EjecucionEncuesta ejecucionEncuesta : ejecucionEncuestas) {
                 System.out.print(ejecucionEncuesta.get_id());
                 System.out.print(", ");
-                System.out.print(ejecucionEncuesta.get_pregunta());
+                System.out.print(ejecucionEncuesta.get_respuesta());
                 System.out.print(", ");
                 System.out.print(ejecucionEncuesta.get_estatus());
-                System.out.print(", ");
-                System.out.print(ejecucionEncuesta.get_encuesta());
-                System.out.print(", ");
-                System.out.print(ejecucionEncuesta.get_pregunta());
-                System.out.print(", ");
-                System.out.print(ejecucionEncuesta.get_usuarioencuestado());
-                System.out.print(", ");
-                System.out.print(ejecucionEncuesta.get_opcion());
                 System.out.println();
             }
         }

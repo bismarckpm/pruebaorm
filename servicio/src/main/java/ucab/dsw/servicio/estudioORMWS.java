@@ -5,7 +5,7 @@ import ucab.dsw.entidades.Encuesta;
 import ucab.dsw.entidades.Estudio;
 import ucab.dsw.entidades.Solicitud;
 import ucab.dsw.entidades.Usuario;
-
+import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
 import javax.faces.push.Push;
 import javax.ws.rs.*;
@@ -14,11 +14,11 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path( "/estudio" )
+//@Path( "/estudio" )
 @Produces( MediaType.APPLICATION_JSON )
 @Consumes( MediaType.APPLICATION_JSON )
 public class estudioORMWS {
-    
+
     @PUT
     @Path( "/agregar" )
     public EstudioDto addEstudio(EstudioDto estudioDto )
@@ -54,13 +54,11 @@ public class estudioORMWS {
             estudios = dao.findAll(Estudio.class);
             System.out.println("Estudios: ");
             for(Estudio estudio : estudios) {
+                System.out.print(estudio.get_id());
+                System.out.print(", ");
                 System.out.print(estudio.get_fechaCreacion());
                 System.out.print(", ");
                 System.out.print(estudio.get_estatus());
-                System.out.print(", ");
-                System.out.print(estudio.get_usuario());
-                System.out.print(", ");
-                System.out.print(estudio.get_solicitud());
                 System.out.println();
             }
         }

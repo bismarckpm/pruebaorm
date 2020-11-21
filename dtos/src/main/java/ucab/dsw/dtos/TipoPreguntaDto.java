@@ -5,7 +5,7 @@ public class TipoPreguntaDto extends DtoBase{
 
     private String descripcion;
 
-    private String status;
+    private String estatus;
 
     public String getDescripcion() {
         return descripcion;
@@ -15,12 +15,13 @@ public class TipoPreguntaDto extends DtoBase{
         this.descripcion = descripcion;
     }
 
-    public String getStatus() {
-        return status;
+
+    public String getEstatus() {
+        return estatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setEstatus(String estatus) {
+        this.estatus = estatus;
     }
 
     public TipoPreguntaDto()

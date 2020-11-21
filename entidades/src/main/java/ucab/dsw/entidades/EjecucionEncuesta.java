@@ -54,7 +54,7 @@ public class EjecucionEncuesta extends EntidadBase{
         return _respuesta;
     }
 
-    public void set_respuesta( String _descripcion )
+    public void set_respuesta( String _respuesta )
     {
         this._respuesta = _respuesta;
     }

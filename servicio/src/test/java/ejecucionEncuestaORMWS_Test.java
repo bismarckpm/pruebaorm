@@ -12,11 +12,12 @@ import ucab.dsw.dtos.OpcionDto;
 import java.util.List;
 
 public class ejecucionEncuestaORMWS_Test {
+
     @Test
     public void addEjecucionEncuestaTest() throws Exception {
         ucab.dsw.servicio.ejecucionEncuestaORMWS servicio = new ucab.dsw.servicio.ejecucionEncuestaORMWS();
         EjecucionEncuestaDto ejecucionEncuestaDto = new EjecucionEncuestaDto();
-        ejecucionEncuestaDto.setRespuesta( "Respuesta 1");
+        ejecucionEncuestaDto.setRespuesta("Respuesta 1");
         ejecucionEncuestaDto.setEstatus( "P");
         EncuestaDto encuesta = new EncuestaDto(1);
         ejecucionEncuestaDto.setEncuesta( encuesta );

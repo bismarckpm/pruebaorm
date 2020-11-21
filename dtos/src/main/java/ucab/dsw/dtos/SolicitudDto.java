@@ -2,6 +2,8 @@ package ucab.dsw.dtos;
 
 public class SolicitudDto extends DtoBase{
 
+    public SolicitudDto(){}
+    public SolicitudDto(long id) throws Exception {super(id);}
     private String nombre;
 
     private String estatus;
@@ -56,6 +58,15 @@ public class SolicitudDto extends DtoBase{
 
     public void setFecha( String fecha) { this.fecha = fecha; }
 
+    public SolicitudDto( long id ) throws Exception
+    {
+        super( id );
+    }
+
+    public SolicitudDto()
+    {
+
+    }
 
 }
 

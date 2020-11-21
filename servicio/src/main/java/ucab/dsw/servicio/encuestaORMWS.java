@@ -46,7 +46,7 @@ public class encuestaORMWS {
         return  resultado;
     }
 
-    @GET
+ @GET
     @Path("/buscar")
     public List<Encuesta> showEncuesta()
     {
@@ -61,12 +61,6 @@ public class encuestaORMWS {
                 System.out.print(encuesta.get_fechaCreacion());
                 System.out.print(", ");
                 System.out.print(encuesta.get_estatus());
-                System.out.print(", ");
-                System.out.print(encuesta.get_usuariocreador());
-                System.out.print(", ");
-                System.out.print(encuesta.get_usuarioanalista());
-                System.out.print(", ");
-                System.out.print(encuesta.get_estudio());
                 System.out.println();
             }
         }
@@ -77,6 +71,7 @@ public class encuestaORMWS {
         return encuestas;
     }
 
+
     @PUT
     @Path( "/actualizar/{id}" )
     public EncuestaDto editEncuesta( EncuestaDto encuestaDto)
@@ -85,7 +80,7 @@ public class encuestaORMWS {
         try
         {
             DaoEncuesta dao = new DaoEncuesta();
-            Encuesta encuesta = new Encuesta();
+            Encuesta encuesta = new Encuesta(encuestaDto.getId());
             encuesta.set_fechaCreacion( encuestaDto.getFechaCreacion() );
             encuesta.set_estatus( encuestaDto.getEstatus() );
             Usuario usuarioCreador = new Usuario(encuestaDto.getUsuarioCreadorDto().getId());
