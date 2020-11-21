@@ -3,10 +3,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import ucab.dsw.dtos.EstudioDto;
-import ucab.dsw.dtos.EstudioDto;
 import ucab.dsw.dtos.UsuarioDto;
+import ucab.dsw.dtos.SolicitudDto;
 import ucab.dsw.entidades.Estudio;
 import ucab.dsw.entidades.Estudio;
+import java.text.SimpleDateFormat;
+
 import java.util.List;
 
 public class EstudioORMWS_Test {
@@ -15,8 +17,7 @@ public class EstudioORMWS_Test {
     public void addEstudioTest() throws Exception {
         ucab.dsw.servicio.estudioORMWS servicio = new ucab.dsw.servicio.estudioORMWS();
         EstudioDto estudioDto = new EstudioDto();
-        java.util.Date fecha = new java.util.Date("21/11/2020");
-        estudioDto.setFechaCreacion(fecha);
+        estudioDto.setFechaCreacion(new SimpleDateFormat("dd/MM/yyyy").parse("12/11/2020"));
         estudioDto.setEstatus( "C" );
         UsuarioDto usuario = new UsuarioDto( 1);
         estudioDto.setUsuario( usuario );
@@ -39,8 +40,7 @@ public class EstudioORMWS_Test {
 
         ucab.dsw.servicio.estudioORMWS servicio = new ucab.dsw.servicio.estudioORMWS();
         EstudioDto estudioDto = new EstudioDto(1);
-        java.util.Date fecha = new java.util.Date("22/11/2020");
-        estudioDto.setFechaCreacion(fecha);
+        estudioDto.setFechaCreacion(new SimpleDateFormat("dd/MM/yyyy").parse("15/11/2020"));
         estudioDto.setEstatus( "E" );
         UsuarioDto usuario = new UsuarioDto( 1);
         estudioDto.setUsuario( usuario );

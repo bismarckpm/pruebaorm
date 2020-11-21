@@ -7,11 +7,11 @@ import javax.persistence.*;
 public class TipoPregunta extends EntidadBase {
 
 
-    @Column( name = "descripcion", nullable = false )
+    @Column( name = "descripcion")
     private String descripcion;
 
-    @Column( name = "status",columnDefinition = "CHECK (status IN ('I','A'))")
-    private String status;
+    @Column( name = "estatus")
+    private String _estatus;
 
     public String getDescripcion() {
         return descripcion;
@@ -21,12 +21,16 @@ public class TipoPregunta extends EntidadBase {
         this.descripcion = descripcion;
     }
 
-    public String getStatus() {
-        return status;
+    @Override
+    public String get_estatus()
+    {
+        return _estatus;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    @Override
+    public void set_estatus( String _estatus )
+    {
+        this._estatus = _estatus;
     }
 
     public TipoPregunta( long id )

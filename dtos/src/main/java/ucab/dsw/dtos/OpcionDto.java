@@ -38,4 +38,14 @@ public class OpcionDto extends DtoBase{
         this.estatus = estatus;
     }
 
+    public OpcionDto( long id ) throws Exception
+    {
+        super( id );
+    }
+
+    public OpcionDto()
+    {
+
+    }
+
 }

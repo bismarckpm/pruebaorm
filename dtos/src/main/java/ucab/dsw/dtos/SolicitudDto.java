@@ -56,6 +56,15 @@ public class SolicitudDto extends DtoBase{
 
     public void setFecha( String fecha) { this.fecha = fecha; }
 
+    public SolicitudDto( long id ) throws Exception
+    {
+        super( id );
+    }
+
+    public SolicitudDto()
+    {
+
+    }
 
 }
 
