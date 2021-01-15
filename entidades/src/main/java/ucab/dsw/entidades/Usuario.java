@@ -17,42 +17,42 @@ public class Usuario extends EntidadBase
     @Column( name = "nombre" )
     private String _nombre;
 
-    public String get_nombre()
+    public String getNombre()
     {
         return _nombre;
     }
 
-    public void set_nombre( String _nombre )
+    public void setNombre( String _nombre )
     {
         this._nombre = _nombre;
     }
 
-    public String get_apellido()
+    public String getApellido()
     {
         return _apellido;
     }
 
-    public void set_apellido( String _apellido )
+    public void setApellido( String _apellido )
     {
         this._apellido = _apellido;
     }
 
-    public String get_correoelectronico()
+    public String getCorreoElectronico()
     {
         return _correoelectronico;
     }
 
-    public void set_correoelectronico( String _correoelectronico )
+    public void setCorreoElectronico( String _correoelectronico )
     {
         this._correoelectronico = _correoelectronico;
     }
 
-    public TipoUsuario get_tipousuario()
+    public TipoUsuario getTipoUsuario()
     {
         return _tipousuario;
     }
 
-    public void set_tipousuario( TipoUsuario _tipousuario )
+    public void setTipoUsuario( TipoUsuario _tipousuario )
     {
         this._tipousuario = _tipousuario;
     }
@@ -60,17 +60,30 @@ public class Usuario extends EntidadBase
     @Column( name = "apellido" )
     private String _apellido;
 
+    public String getToken()
+    {
+        return _token;
+    }
+
+    public void setToken( String token )
+    {
+        _token = token;
+    }
+
+    @Column( name = "token" )
+    private String _token;
+
     @Column( name = "correoelectronico" )
     private String _correoelectronico;
 
     @Override
-    public String get_estatus()
+    public String getEstatus()
     {
         return _estatus;
     }
 
     @Override
-    public void set_estatus( String _estatus )
+    public void setEstatus( String _estatus )
     {
         this._estatus = _estatus;
     }

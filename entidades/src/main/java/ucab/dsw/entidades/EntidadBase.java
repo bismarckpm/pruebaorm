@@ -35,17 +35,17 @@ public class EntidadBase implements Serializable
     }
 
 
-    public long get_id()
+    public long getId()
     {
         return _id;
     }
 
-    public String get_estatus()
+    public String getEstatus()
     {
         return _estatus;
     }
 
-    public void set_estatus( String _estatus )
+    public void setEstatus( String _estatus )
     {
         this._estatus = _estatus;
     }

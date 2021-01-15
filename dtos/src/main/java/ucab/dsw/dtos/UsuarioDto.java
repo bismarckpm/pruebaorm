@@ -71,4 +71,16 @@ public class UsuarioDto extends DtoBase
     }
 
     private String estatus;
+
+    public String getToken()
+    {
+        return token;
+    }
+
+    public void setToken( String token )
+    {
+        this.token = token;
+    }
+
+    private String token;
 }

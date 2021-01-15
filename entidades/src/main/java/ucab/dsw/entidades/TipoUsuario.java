@@ -12,12 +12,12 @@ import java.util.List;
 @Table( name = "tipousuario" )
 public class TipoUsuario extends EntidadBase
 {
-    public String get_descripcion()
+    public String getDescripcion()
     {
         return _descripcion;
     }
 
-    public void set_descripcion( String _descripcion )
+    public void setDescripcion( String _descripcion )
     {
         this._descripcion = _descripcion;
     }
@@ -25,12 +25,12 @@ public class TipoUsuario extends EntidadBase
     @Column( name = "descripcion", nullable = false )
     private String _descripcion;
 
-    public List<Usuario> get_usuarios()
+    public List<Usuario> getUsuarios()
     {
         return _usuarios;
     }
 
-    public void set_usuarios( List<Usuario> _usuarios )
+    public void setUsuarios( List<Usuario> _usuarios )
     {
         this._usuarios = _usuarios;
     }

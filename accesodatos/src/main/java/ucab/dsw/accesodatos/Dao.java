@@ -144,7 +144,7 @@ public class Dao<T>
         try
         {
             final EntidadBase base = ( EntidadBase ) _em.find( type, id );
-            base.get_id();
+            base.getId();
             entity = ( T ) base;
         }
         catch ( Exception e )
