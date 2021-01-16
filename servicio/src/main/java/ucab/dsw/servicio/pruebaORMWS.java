@@ -28,8 +28,7 @@ public class pruebaORMWS extends AplicacionBase
 {
     @PUT
     @Path( "/adduser" )
-    public RespuestaDto<UsuarioDto> addUser( UsuarioDto usuarioDto )
-    {
+    public RespuestaDto<UsuarioDto> addUser( UsuarioDto usuarioDto ) {
         UsuarioDto resultado = new UsuarioDto();
         RespuestaDto<UsuarioDto> respuesta = new RespuestaDto<>();
 

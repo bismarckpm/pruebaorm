@@ -7,6 +7,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
 import javax.crypto.SecretKey;
+import javax.xml.bind.DatatypeConverter;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
@@ -73,7 +74,7 @@ public class JWT
             throw e;
         }
 
-
+        System.out.println(result);
         return result;
     }
 
@@ -112,6 +113,7 @@ public class JWT
                     .parseClaimsJws( token );
 
             result = claims.getBody().getSubject();
+            System.out.println(claims.getBody());
         }
         catch ( Exception e )
         {
@@ -120,4 +122,26 @@ public class JWT
 
         return result;
     }
+
+    public static Claims getClaims(String token )
+    {
+        Claims result;
+        try
+        {
+            Jws<Claims> claims = Jwts.parser()
+                    .requireIssuer( _issuer )
+                    .setSigningKey( _secretKey )
+                    .parseClaimsJws( token );
+
+            result = claims.getBody();
+        }
+        catch ( Exception e )
+        {
+            throw e;
+        }
+
+        return result;
+    }
+
+
 }

@@ -1,3 +1,6 @@
+ucab\dsw\dtos\PreguntaDto.class
 ucab\dsw\dtos\DtoBase.class
 ucab\dsw\dtos\UsuarioDto.class
+ucab\dsw\dtos\RespuestaDto.class
 ucab\dsw\dtos\TipoUsuarioDto.class
+ucab\dsw\dtos\TipoPreguntaDto.class

@@ -28,8 +28,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c9c357f-2b07-42bd-afe8-0f758d0713a9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilidades/utilidades.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accesodatos/accesodatos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/accesodatos/accesodatos.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accesodatos/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accesodatos/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accesodatos/target/accesodatos-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/accesodatos/target/accesodatos-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accesodatos/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accesodatos/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accesodatos/target/classes/ucab/dsw/accesodatos/Dao.class" beforeDir="false" afterPath="$PROJECT_DIR$/accesodatos/target/classes/ucab/dsw/accesodatos/Dao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accesodatos/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/accesodatos/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/directorioactivo/src/main/java/DirectorioActivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/directorioactivo/src/main/java/ucab/dsw/directorio/DirectorioActivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/directorioactivo/target/classes/DirectorioActivo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dtos/target/classes/ucab/dsw/dtos/DtoBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/dtos/target/classes/ucab/dsw/dtos/DtoBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dtos/target/classes/ucab/dsw/dtos/UsuarioDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/dtos/target/classes/ucab/dsw/dtos/UsuarioDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dtos/target/dtos.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dtos/target/dtos.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dtos/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/dtos/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dtos/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dtos/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dtos/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/dtos/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/entidades.iml" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/entidades.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/target/classes/ucab/dsw/entidades/EntidadBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/target/classes/ucab/dsw/entidades/EntidadBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/target/classes/ucab/dsw/entidades/TipoUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/target/classes/ucab/dsw/entidades/TipoUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/target/classes/ucab/dsw/entidades/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/target/classes/ucab/dsw/entidades/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/target/entidades.jar" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/target/entidades.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entidades/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/entidades/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mappers/mappers.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mappers/mappers.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mappers/target/mappers-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mappers/target/mappers-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mappers/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mappers/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/servicio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/servicio.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/src/main/java/ucab/dsw/servicio/pruebaORMWS.java" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/src/main/java/ucab/dsw/servicio/pruebaORMWS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/src/test/java/pruebaDirectorioActivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/src/test/java/pruebaDirectorioActivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/classes/ucab/dsw/servicio/AplicacionBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/classes/ucab/dsw/servicio/AplicacionBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/classes/ucab/dsw/servicio/pruebaORMWS.class" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/classes/ucab/dsw/servicio/pruebaORMWS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/pruebaORM-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/pruebaORM-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/classes/ucab/dsw/servicio/AplicacionBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/classes/ucab/dsw/servicio/AplicacionBase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/classes/ucab/dsw/servicio/pruebaORMWS.class" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/classes/ucab/dsw/servicio/pruebaORMWS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/lib/accesodatos-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/lib/accesodatos-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/lib/com.apetoi.api.logic-dtos-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/lib/entidades-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/lib/entidades-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/lib/exceptions-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/lib/properties-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/servicio-1.0-SNAPSHOT/WEB-INF/lib/ucab.dsw-dtos-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/servicio/target/test-classes/pruebaORMWS_Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/servicio/target/test-classes/pruebaORMWS_Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilidades/src/main/java/ucab/dsw/utilidades/JWT.java" beforeDir="false" afterPath="$PROJECT_DIR$/utilidades/src/main/java/ucab/dsw/utilidades/JWT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilidades/target/classes/ucab/dsw/utilidades/JWT.class" beforeDir="false" afterPath="$PROJECT_DIR$/utilidades/target/classes/ucab/dsw/utilidades/JWT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilidades/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/utilidades/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilidades/target/utilidades-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/utilidades/target/utilidades-1.0-SNAPSHOT.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +101,9 @@
         <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
   </component>
   <component name="ProblemsViewState">
     <option name="showPreview" value="true" />
@@ -119,9 +168,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$MAVEN_REPOSITORY$/com/apetoi/api/logic/dtos" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -129,20 +179,53 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.pruebaORMWS_Test.deleteUsuarioTest">
-    <configuration name="All in servicio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="servicio" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+  <component name="RunManager" selected="JUnit.pruebaDirectorioActivo.AutenticarJWT">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="pruebaORMWS_Test.addUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="pruebaDirectorioActivo.AutenticarJWT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="servicio" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="pruebaORMWS_Test" />
-      <option name="METHOD_NAME" value="addUserTest" />
+      <option name="MAIN_CLASS_NAME" value="pruebaDirectorioActivo" />
+      <option name="METHOD_NAME" value="AutenticarJWT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pruebaDirectorioActivo.ConsultarJWT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="servicio" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="pruebaDirectorioActivo" />
+      <option name="METHOD_NAME" value="ConsultarJWT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pruebaDirectorioActivo.ValidateJWT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="servicio" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="pruebaDirectorioActivo" />
+      <option name="METHOD_NAME" value="ValidateJWT" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="pruebaDirectorioActivo.createUserLDAP" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="servicio" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="pruebaDirectorioActivo" />
+      <option name="METHOD_NAME" value="createUserLDAP" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,22 +241,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="pruebaORMWS_Test.updateUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="servicio" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="pruebaORMWS_Test" />
-      <option name="METHOD_NAME" value="updateUserTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.pruebaDirectorioActivo.AutenticarJWT" />
+        <item itemvalue="JUnit.pruebaDirectorioActivo.ValidateJWT" />
+        <item itemvalue="JUnit.pruebaDirectorioActivo.ConsultarJWT" />
+        <item itemvalue="JUnit.pruebaDirectorioActivo.createUserLDAP" />
         <item itemvalue="JUnit.pruebaORMWS_Test.deleteUsuarioTest" />
-        <item itemvalue="JUnit.pruebaORMWS_Test.updateUserTest" />
-        <item itemvalue="JUnit.pruebaORMWS_Test.addUserTest" />
-        <item itemvalue="JUnit.All in servicio" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +271,7 @@
       <workItem from="1605750387835" duration="6837000" />
       <workItem from="1605819932984" duration="7643000" />
       <workItem from="1610768188072" duration="385000" />
-      <workItem from="1610768593170" duration="163000" />
+      <workItem from="1610768593170" duration="11066000" />
     </task>
     <servers />
   </component>
@@ -249,33 +323,46 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1605638240594" />
-    <state x="796" y="96" key="#com.intellij.ide.util.MemberChooser" timestamp="1605851608164">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="746" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1610773224976">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state x="746" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1280.980@0.0.1280.980" timestamp="1610773224976" />
     <state x="796" y="96" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1605851608164" />
     <state x="466" y="233" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605853565747">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="466" y="233" width="433" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1605853565747" />
+    <state x="374" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610773865046">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="374" y="242" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.980@0.0.1280.980" timestamp="1610773865046" />
+    <state x="424" y="237" key="FileChooserDialogImpl" timestamp="1610770687750">
+      <screen x="0" y="0" width="1280" height="980" />
+    </state>
+    <state x="424" y="237" key="FileChooserDialogImpl/0.0.1280.980@0.0.1280.980" timestamp="1610770687750" />
     <state x="507" y="266" key="Github.CreateGistDialog" timestamp="1605854281039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="507" y="266" key="Github.CreateGistDialog/0.0.1366.728@0.0.1366.728" timestamp="1605854281039" />
-    <state width="1323" height="265" key="GridCell.Tab.0.bottom" timestamp="1605853689922">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1238" height="268" key="GridCell.Tab.0.bottom" timestamp="1610781509963">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state width="1238" height="268" key="GridCell.Tab.0.bottom/0.0.1280.980@0.0.1280.980" timestamp="1610781509963" />
     <state width="1323" height="265" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605853689922" />
-    <state width="1323" height="265" key="GridCell.Tab.0.center" timestamp="1605853689922">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1238" height="268" key="GridCell.Tab.0.center" timestamp="1610781509963">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state width="1238" height="268" key="GridCell.Tab.0.center/0.0.1280.980@0.0.1280.980" timestamp="1610781509963" />
     <state width="1323" height="265" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605853689922" />
-    <state width="1323" height="265" key="GridCell.Tab.0.left" timestamp="1605853689922">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1238" height="268" key="GridCell.Tab.0.left" timestamp="1610781509963">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state width="1238" height="268" key="GridCell.Tab.0.left/0.0.1280.980@0.0.1280.980" timestamp="1610781509963" />
     <state width="1323" height="265" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605853689922" />
-    <state width="1323" height="265" key="GridCell.Tab.0.right" timestamp="1605853689922">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1238" height="268" key="GridCell.Tab.0.right" timestamp="1610781509963">
+      <screen x="0" y="0" width="1280" height="980" />
     </state>
+    <state width="1238" height="268" key="GridCell.Tab.0.right/0.0.1280.980@0.0.1280.980" timestamp="1610781509963" />
     <state width="1323" height="265" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605853689922" />
     <state x="124" y="69" key="SettingsEditor" timestamp="1610768809426">
       <screen x="0" y="0" width="1280" height="980" />
