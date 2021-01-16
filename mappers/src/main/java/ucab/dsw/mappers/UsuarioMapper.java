@@ -19,6 +19,7 @@ public class UsuarioMapper
         entity.setApellido( dto.getApellido() );
         entity.setCorreoElectronico( dto.getCorreoelectronico() );
         entity.setEstatus( dto.getEstatus() );
+        entity.setUsername( dto.getUsername() );
 
 
         if ( Objects.nonNull( dto.getTipoUsuarioDto() ) )
@@ -39,6 +40,7 @@ public class UsuarioMapper
         dto.setApellido( entity.getApellido());
         dto.setCorreoelectronico(entity.getCorreoElectronico());
         dto.setEstatus( entity.getEstatus() );
+        dto.setUsername( entity.getUsername() );
         dto.setTipoUsuarioDto( TipoUsuarioMapper.mapEntityToDto( entity.getTipoUsuario()));
 
 

@@ -19,8 +19,7 @@ public class UsuarioDto extends DtoBase
         return apellido;
     }
 
-    public void setApellido( String apellido )
-    {
+    public void setApellido( String apellido ) {
         this.apellido = apellido;
     }
 
@@ -83,4 +82,15 @@ public class UsuarioDto extends DtoBase
     }
 
     private String token;
+
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
 }

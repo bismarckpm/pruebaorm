@@ -1,17 +1,13 @@
 package ucab.dsw.entidades;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table( name = "usuario" )
+@NamedQueries({
+        @NamedQuery(name = "getUsuarioByUsername", query = "select u from Usuario u where u._username = :username"),
+})
 public class Usuario extends EntidadBase
 {
     @Column( name = "nombre" )
@@ -90,6 +86,17 @@ public class Usuario extends EntidadBase
 
     @Column( name = "estatus" )
     private String _estatus;
+
+    @Column( name = "username" )
+    private String _username;
+
+    public String getUsername() {
+        return _username;
+    }
+
+    public void setUsername(String _username) {
+        this._username = _username;
+    }
 
     @ManyToOne
     @JoinColumn( name = "idTipoUsuario" )

@@ -1,24 +1,19 @@
 package ucab.dsw.servicio;
+
 import ucab.dsw.accesodatos.DaoUsuario;
 import ucab.dsw.dtos.RespuestaDto;
-import ucab.dsw.dtos.TipoUsuarioDto;
 import ucab.dsw.dtos.UsuarioDto;
-import ucab.dsw.entidades.TipoUsuario;
 import ucab.dsw.entidades.Usuario;
 import ucab.dsw.excepciones.PruebaExcepcion;
 import ucab.dsw.mappers.UsuarioMapper;
 import ucab.dsw.utilidades.JWT;
+import ucab.dsw.directorioactivo.DirectorioActivo;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Application;
-import javax.ws.rs.core.Context;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 
 @Path( "/prueba" )
@@ -28,7 +23,7 @@ public class pruebaORMWS extends AplicacionBase
 {
     @PUT
     @Path( "/adduser" )
-    public RespuestaDto<UsuarioDto> addUser( UsuarioDto usuarioDto )
+    public Response addUser(UsuarioDto usuarioDto )
     {
         UsuarioDto resultado = new UsuarioDto();
         RespuestaDto<UsuarioDto> respuesta = new RespuestaDto<>();
@@ -45,19 +40,21 @@ public class pruebaORMWS extends AplicacionBase
             respuesta.setEstado( "OK" );
             respuesta.setObjeto( resultado );
 
+            return Response.ok(respuesta).build();
+
         }
         catch ( Exception ex )
         {
             respuesta.setEstado( "ERROR" );
             respuesta.setMensaje( ex.getMessage() );
             respuesta.setMensajesoporte( ex.getLocalizedMessage() );
+            return Response.status(500).entity(respuesta).build();
         }
-        return  respuesta;
     }
 
     @POST
     @Path( "/consulta" )
-    public RespuestaDto<UsuarioDto> consulta(UsuarioDto usuarioDto) throws PruebaExcepcion
+    public Response consulta(UsuarioDto usuarioDto) throws PruebaExcepcion
     {
         UsuarioDto resultado = new UsuarioDto();
         RespuestaDto<UsuarioDto> respuesta = new RespuestaDto<>();
@@ -70,14 +67,58 @@ public class pruebaORMWS extends AplicacionBase
             resultado = UsuarioMapper.mapEntityToDto( resul );
             respuesta.setEstado( "OK" );
             respuesta.setObjeto( resultado );
+            return Response.ok(respuesta).build();
         }
         catch ( Exception ex )
         {
             respuesta.setEstado( "ERROR" );
             respuesta.setMensaje( ex.getMessage() );
             respuesta.setMensajesoporte( ex.getLocalizedMessage() );
+            return Response.status(500).entity(respuesta).build();
         }
-        return  respuesta;
+    }
+
+    @POST
+    @Path( "/autenticacion" )
+    public Response autenticarUsuario (UsuarioDto usuarioDto){
+
+        RespuestaDto<UsuarioDto> respuesta = new RespuestaDto<>();
+        try {
+            boolean registrado;
+            UsuarioDto resultado;
+
+            DaoUsuario daoUsuario = new DaoUsuario();
+            DirectorioActivo directorioActivo = new DirectorioActivo();
+            Usuario usuario;
+            JsonObject res;
+
+            registrado = directorioActivo.userAuthentication(usuarioDto);
+
+            if (registrado) {
+
+                usuario = daoUsuario.getUsuarioByUsername(usuarioDto.getUsername());
+                String token = generateToken(usuarioDto);
+                usuario.setToken(token);   // le seteo el token al usuario
+                resultado = UsuarioMapper.mapEntityToDto(usuario);
+                daoUsuario.update(usuario); //hago update del usuario
+                respuesta.setEstado("OK");
+                respuesta.setObjeto( resultado );
+                respuesta.setToken( token );
+                return Response.ok(respuesta).build();
+
+            }else{
+                respuesta.setEstado( "ERROR" );
+                respuesta.setMensaje( "AUTENTICACION INVALIDA" );
+                return Response.status(500).entity(respuesta).build();
+            }
+        }
+        catch ( Exception ex )
+        {
+            respuesta.setEstado( "ERROR" );
+            respuesta.setMensaje( ex.getMessage() );
+            respuesta.setMensajesoporte( ex.getLocalizedMessage() );
+            return Response.status(500).entity(respuesta).build();
+        }
     }
 
 
